@@ -195,7 +195,7 @@ async def on_message(message):
     messages = [":kiss: i am Rimuru's bestie <:MiliamOutOfHoney:852142725179899924>"]
     await message.reply(random.choice(messages), mention_author=False) 
 
-##Rimuru's bar
+##bar
   if message.content.startswith('~beer'):
     messages = [":beer: here you go <:Shizuowo:851648667404337172>", ":beer: here <:Shizuowo:851648667404337172>", ":beer: ~aaaa.. Treyni sure makes the best beer <:ShizuEmbarrassedTears:850973942650765332>"]
     await message.reply(random.choice(messages), mention_author=False)                        
@@ -230,7 +230,7 @@ async def on_message(message):
     embed.add_field(name=":jigsaw:  Fun", value="`~todo`  `~tierlist`  `~bunny`", inline=False)       
     embed.add_field(name=":earth_americas:  Profile", value="`~simp`  `~hearts`  `~avatar`", inline=False) 
     embed.add_field(name=":performing_arts:  Roleplay", value="`~nickname`  `~sing`  `~shizue`  `~shuna`  `~shion`  `~miliam`", inline=False) 
-    embed.add_field(name=":beers:  Rimuru's bar", value="`~water`  `~milk`  `~juice`  `~cocktail`  `~whisky`  `~wine`  `~beer`", inline=False)
+    embed.add_field(name=":beers:  Bar", value="`~water`  `~milk`  `~juice`  `~cocktail`  `~whisky`  `~wine`  `~beer`", inline=False)
     embed.add_field(name=":crystal_ball:  Festival Games", value="`~fortune`", inline=False)                         
     await message.reply(embed=embed, mention_author=False)
 
