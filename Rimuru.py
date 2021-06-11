@@ -45,7 +45,7 @@ async def on_message(message):
     messages = ["good morning <:Shizuowo:851648667404337172>", "morning <:Shizuowo:851648667404337172>"]
     await message.reply(random.choice(messages), mention_author=False)  
   if message.content.startswith('~sex'):
-    msg = 'b..bbaka'.format(message)
+    msg = 'b..bbaka!!'.format(message)
     await message.reply(msg, mention_author=False)
   if message.content.startswith('~bad slime'):
     messages = ["<a:BadSlime:851645305165840414>", "nuu.. i am not a bad slime <:Shizuowo:851648667404337172>"]
@@ -109,7 +109,13 @@ async def on_message(message):
   if message.content.startswith('~tierlist'):
     embed=discord.Embed(color=discord.Color.blue()) 
     embed.set_image(url="https://i.imgur.com/TM1Gd68.png")     
-    await message.reply(embed=embed, mention_author=False)            
+    await message.reply(embed=embed, mention_author=False) 
+
+#~bunny
+  if message.content.startswith('~bunny'):
+    embed=discord.Embed(color=discord.Color.blue()) 
+    embed.set_image(url="https://i.imgur.com/ZEOEJvl.jpg")     
+    await message.reply(embed=embed, mention_author=False)       
 
 ##profile
 #~simp
@@ -158,7 +164,7 @@ async def on_message(message):
       await message.add_reaction('✅')       
     if vc is None:
       await message.add_reaction('❌')   
-      await message.reply('b..bbaka You have to be in a voice channel first', mention_author=False)                   
+      await message.reply('b..bbaka!! You have to be in a voice channel first', mention_author=False)                   
     guild = message.guild
     voice_client: discord.VoiceClient = discord.utils.get(client.voice_clients, guild=guild)    
     audio_source = discord.FFmpegPCMAudio('https://mp3.fastupload.co/data/1622193194/rimuru.mp3')
@@ -169,30 +175,82 @@ async def on_message(message):
     await asyncio.sleep(90)                                       
     await voice_client.disconnect()   
 
-#~bunny
-  if message.content.startswith('~bunny'):
-    embed=discord.Embed(color=discord.Color.blue()) 
-    embed.set_image(url="https://i.imgur.com/ZEOEJvl.jpg")     
-    await message.reply(embed=embed, mention_author=False)    
-
 #~shizue
   if message.content.startswith('~shizue'):
     messages = ["i..i.. like Rimuru-sama <:ShizuEmbarrassedCry:850973942650765332> ~aa"]
     await message.reply(random.choice(messages), mention_author=False)        
 
-#~shuna
-  if message.content.startswith('~shuna'):
-    messages = [":ribbon: i do cooking, cleaning, and weaving for Rimuru-sama <:ShunaHuggy:851282340247633941>"]
-    await message.reply(random.choice(messages), mention_author=False) 
+#~actions
+  if message.content.startswith('~cuddle'):
+    gif = ["https://i.imgur.com/AmW4JXv.gif", "https://i.imgur.com/ZEOEJvl.jpg", "https://i.imgur.com/BBltNs5.gif"]
+    embed=discord.Embed(color=discord.Color.blue()) 
+    embed.set_image(url=random.choice(gif))       
+    await message.reply(embed=embed, mention_author=False)   
+  if message.content.startswith('~hug'):
+    gif = ["https://i.imgur.com/qz4roYL.gif", "https://i.imgur.com/BBltNs5.gif", "https://i.imgur.com/BLWNnFl.gif"]
+    embed=discord.Embed(color=discord.Color.blue()) 
+    embed.set_image(url=random.choice(gif))       
+    await message.reply(embed=embed, mention_author=False)
+  if message.content.startswith('~pat'):
+    gif = ["https://i.imgur.com/jalh0TO.gif", "https://i.imgur.com/5WQiUFH.gif", "https://i.imgur.com/waDgdYE.gif"]
+    embed=discord.Embed(color=discord.Color.blue()) 
+    embed.set_image(url=random.choice(gif))       
+    await message.reply(embed=embed, mention_author=False)
+  if message.content.startswith('~kiss'):
+    gif = ["https://i.imgur.com/GDti9sg.gif", "https://i.imgur.com/pFboGNv.gif", "https://i.imgur.com/tTNi2ny.gif", "https://i.imgur.com/FQB8F7f.gif"]
+    embed=discord.Embed(color=discord.Color.blue()) 
+    embed.set_image(url=random.choice(gif))       
+    await message.reply(embed=embed, mention_author=False)
+  if message.content.startswith('~lick'):
+    gif = ["https://i.imgur.com/VGHwWUa.gif", "https://i.imgur.com/yi7CU5t.gif", "https://i.imgur.com/LHrs2i5.gif"]
+    embed=discord.Embed(color=discord.Color.blue()) 
+    embed.set_image(url=random.choice(gif))       
+    await message.reply(embed=embed, mention_author=False) 
+  if message.content.startswith('~bite'):
+    gif = ["https://i.imgur.com/oEBOetR.gif", "https://i.imgur.com/OgzfiuM.gif", "https://i.imgur.com/8qvlj0M.gif"]
+    embed=discord.Embed(color=discord.Color.blue()) 
+    embed.set_image(url=random.choice(gif))       
+    await message.reply(embed=embed, mention_author=False)
+  if message.content.startswith('~slap'):
+    gif = ["https://i.imgur.com/af7n02p.gif", "https://i.imgur.com/UZRKtQ0.gif", "https://i.imgur.com/CWdDw6x.gif"]
+    embed=discord.Embed(color=discord.Color.blue()) 
+    embed.set_image(url=random.choice(gif))       
+    await message.reply(embed=embed, mention_author=False)   
+  if message.content.startswith('~punch'):
+    gif = ["https://i.imgur.com/af7n02p.gif", "https://i.imgur.com/UZRKtQ0.gif", "https://i.imgur.com/CWdDw6x.gif"]
+    embed=discord.Embed(color=discord.Color.blue()) 
+    embed.set_image(url=random.choice(gif))       
+    await message.reply(embed=embed, mention_author=False) 
+  if message.content.startswith('~kill'):
+    gif = ["https://i.imgur.com/af7n02p.gif", "https://i.imgur.com/UZRKtQ0.gif", "https://i.imgur.com/CWdDw6x.gif"]
+    embed=discord.Embed(color=discord.Color.blue()) 
+    embed.set_image(url=random.choice(gif))       
+    await message.reply(embed=embed, mention_author=False)                          
 
-#~shion
-  if message.content.startswith('~shion'):
-    messages = [":bento: Rimuru-sama.. i made a special dish today <:RimuruDed:851648690938183711> Rimuru-sama??"]
+##restaurant
+  if message.content.startswith('~pizza'):
+    messages = [":pizza: here you go <:Shizuowo:851648667404337172>", ":pizza: here <:Shizuowo:851648667404337172>"] 
     await message.reply(random.choice(messages), mention_author=False) 
-
-#~miliam
-  if message.content.startswith('~miliam'):
-    messages = [":kiss: i am Rimuru's bestie <:MiliamOutOfHoney:852142725179899924>"]
+  if message.content.startswith('~taco'):
+    messages = [":taco: here you go <:Shizuowo:851648667404337172>", ":taco: here <:Shizuowo:851648667404337172>"]
+    await message.reply(random.choice(messages), mention_author=False)  
+  if message.content.startswith('~burrito'):
+    messages = [":burrito: here you go <:Shizuowo:851648667404337172>", ":burrito: here <:Shizuowo:851648667404337172>"]
+    await message.reply(random.choice(messages), mention_author=False)          
+  if message.content.startswith('~hotdog'):
+    messages = [":hotdog: here you go <:Shizuowo:851648667404337172>", ":hotdog: here <:Shizuowo:851648667404337172>"]
+    await message.reply(random.choice(messages), mention_author=False)    
+  if message.content.startswith('~hamburger'):
+    messages = [":hamburger: here you go <:Shizuowo:851648667404337172>", ":hamburger: here <:Shizuowo:851648667404337172>"]
+    await message.reply(random.choice(messages), mention_author=False)  
+  if message.content.startswith('~sandwich'):
+    messages = [":sandwich: here you go <:Shizuowo:851648667404337172>", ":sandwich: here <:Shizuowo:851648667404337172>"] 
+    await message.reply(random.choice(messages), mention_author=False)      
+  if message.content.startswith('~fries'):
+    messages = [":fries: here you go <:Shizuowo:851648667404337172>", ":fries: here <:Shizuowo:851648667404337172>"] 
+    await message.reply(random.choice(messages), mention_author=False)  
+  if message.content.startswith('~ramen'):
+    messages = [":ramen: here you go <:Shizuowo:851648667404337172>", ":ramen: here <:Shizuowo:851648667404337172>"]
     await message.reply(random.choice(messages), mention_author=False) 
 
 ##bar
@@ -225,14 +283,16 @@ async def on_message(message):
 
 #~help
   if message.content.startswith('~help'): 
-    embed = discord.Embed(title=":t_rex:  Rimuru", url="https://top.gg/bot/841573836445188136#/", color=discord.Color.blue())     
-    embed.add_field(name=":mobile_phone:  Interactions", value="`~rimuru`  `~Yo`  `~hi`  `~hello`  `~hey`  `~good morning`  `~good night`  `~bad slime`  `~good slime`  `~bye`", inline=False)
+    embed = discord.Embed(title=":t_rex:  Rimuru", url="https://top.gg/bot/841573836445188136/vote", color=discord.Color.blue())     
+    embed.add_field(name=":keyboard:  Interactions", value="`~rimuru`  `~Yo`  `~hi`  `~hello`  `~hey`  `~good morning`  `~good night`  `~bad slime`  `~good slime`  `~bye`", inline=False)
     embed.add_field(name=":jigsaw:  Fun", value="`~todo`  `~tierlist`  `~bunny`", inline=False)       
     embed.add_field(name=":earth_americas:  Profile", value="`~simp`  `~hearts`  `~avatar`", inline=False) 
-    embed.add_field(name=":performing_arts:  Roleplay", value="`~nickname`  `~sing`  `~shizue`  `~shuna`  `~shion`  `~miliam`", inline=False) 
+    embed.add_field(name=":performing_arts:  Roleplay", value="`~nickname`  `~sing`  `~shizue`", inline=False) 
+    embed.add_field(name=":clapper:  Actions", value="`~cuddle`  `~hug`  `~pat`  `~kiss`  `~lick`  `~bite`  `~slap`  `~punch`  `~kill`", inline=False)   
+    embed.add_field(name=":fork_knife_plate:  Restaurant", value="`~pizza`  `~taco`  `~burrito`  `~hotdog`  `~hamburger`  `~sandwich`  `~fries`  `~ramen`", inline=False)    
     embed.add_field(name=":beers:  Bar", value="`~water`  `~milk`  `~juice`  `~cocktail`  `~whisky`  `~wine`  `~beer`", inline=False)
     embed.add_field(name=":crystal_ball:  Festival Games", value="`~fortune`", inline=False)                         
     await message.reply(embed=embed, mention_author=False)
 
 #run
-client.run(os.getenv('TOKEN'))
+client.run(os.getenv('TOKEN')) 
