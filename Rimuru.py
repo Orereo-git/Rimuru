@@ -3,6 +3,8 @@ import json
 import random
 import asyncio
 import discord
+#to keep Rimuru awake
+from keep_awake import keep_awake
 
 client = discord.Client()
         
@@ -117,6 +119,13 @@ async def on_message(message):
     embed.set_image(url="https://i.imgur.com/ZEOEJvl.jpg")     
     await message.reply(embed=embed, mention_author=False)       
 
+#~neko
+  if message.content.startswith('~neko'):
+    embed=discord.Embed(color=discord.Color.blue()) 
+    neko = 'https://nekos.life/api/neko'
+    embed.set_image(url=neko)     
+    await message.reply(embed=embed, mention_author=False) 
+
 ##profile
 #~simp
   if message.content.startswith('~simp'):     
@@ -181,49 +190,49 @@ async def on_message(message):
     await message.reply(random.choice(messages), mention_author=False)        
 
 #~actions
-  if message.content.startswith('~cuddle @'):
+  if message.content.startswith('~cuddle '):
     gif = ["https://i.imgur.com/zEpEFdR.gif", "https://i.imgur.com/0vMxXPD.gif", "https://i.imgur.com/BBltNs5.gif", "https://i.imgur.com/AbwGSGe.mp4"]
     embed=discord.Embed(color=discord.Color.blue()) 
     embed.set_author(name="{0}!! aww!!".format(message.author.name), icon_url=message.author.avatar_url)  
     embed.set_image(url=random.choice(gif))       
     await message.reply(embed=embed, mention_author=False)   
-  if message.content.startswith('~hug @'):
+  if message.content.startswith('~hug '):
     gif = ["https://i.imgur.com/BLWNnFl.gif", "https://i.imgur.com/ZNexQYs.gif", "https://i.imgur.com/AmW4JXv.gif"]
     embed=discord.Embed(color=discord.Color.blue()) 
     embed.set_author(name="{0}!! huggy!!".format(message.author.name), icon_url=message.author.avatar_url)      
     embed.set_image(url=random.choice(gif))       
     await message.reply(embed=embed, mention_author=False)
-  if message.content.startswith('~pat @'):
+  if message.content.startswith('~pat '):
     gif = ["https://i.imgur.com/jalh0TO.gif", "https://i.imgur.com/5WQiUFH.gif", "https://i.imgur.com/waDgdYE.gif"]
     embed=discord.Embed(color=discord.Color.blue()) 
     embed.set_author(name="{0}!! pat..pat!!".format(message.author.name), icon_url=message.author.avatar_url)   
     embed.set_image(url=random.choice(gif))       
     await message.reply(embed=embed, mention_author=False)
-  if message.content.startswith('~kiss @'):
+  if message.content.startswith('~kiss '):
     gif = ["https://i.imgur.com/GDti9sg.gif", "https://i.imgur.com/pFboGNv.gif", "https://i.imgur.com/tTNi2ny.gif", "https://i.imgur.com/FQB8F7f.gif", "https://i.imgur.com/CCOE8cJ.gif"]
     embed=discord.Embed(color=discord.Color.blue()) 
     embed.set_author(name="{0}!! chuu!!".format(message.author.name), icon_url=message.author.avatar_url)   
     embed.set_image(url=random.choice(gif))       
     await message.reply(embed=embed, mention_author=False)
-  if message.content.startswith('~lick @'):
+  if message.content.startswith('~lick '):
     gif = ["https://i.imgur.com/VGHwWUa.gif", "https://i.imgur.com/yi7CU5t.gif", "https://i.imgur.com/LHrs2i5.gif"]
     embed=discord.Embed(color=discord.Color.blue())
     embed.set_author(name="{0}!! lzzzz!!".format(message.author.name), icon_url=message.author.avatar_url)    
     embed.set_image(url=random.choice(gif))       
     await message.reply(embed=embed, mention_author=False) 
-  if message.content.startswith('~bite @'):
+  if message.content.startswith('~bite '):
     gif = ["https://i.imgur.com/oEBOetR.gif", "https://i.imgur.com/OgzfiuM.gif", "https://i.imgur.com/8qvlj0M.gif"]
     embed=discord.Embed(color=discord.Color.blue()) 
     embed.set_author(name="{0}!! nom!!".format(message.author.name), icon_url=message.author.avatar_url)   
     embed.set_image(url=random.choice(gif))       
     await message.reply(embed=embed, mention_author=False)
-  if message.content.startswith('~slap @'):
+  if message.content.startswith('~slap '):
     gif = ["https://i.imgur.com/af7n02p.gif", "https://i.imgur.com/UZRKtQ0.gif", "https://i.imgur.com/CWdDw6x.gif"]
     embed=discord.Embed(color=discord.Color.blue()) 
     embed.set_author(name="{0}!! whip!!".format(message.author.name), icon_url=message.author.avatar_url)   
     embed.set_image(url=random.choice(gif))       
     await message.reply(embed=embed, mention_author=False)   
-  if message.content.startswith('~kill @'):
+  if message.content.startswith('~kill '):
     gif = ["https://i.imgur.com/nNgJdci.gif", "https://i.imgur.com/JUJcXN6.gif", "https://i.imgur.com/gE0AE8V.gif"]
     embed=discord.Embed(color=discord.Color.blue()) 
     embed.set_author(name="{0}!! wasted!!".format(message.author.name), icon_url=message.author.avatar_url)   
@@ -283,19 +292,41 @@ async def on_message(message):
   if message.content.startswith('~fortune'):
     messages = [":tanabata_tree: great blessing (大吉, dai-kichi)", ":tanabata_tree: middle blessing (中吉, chū-kichi)", ":tanabata_tree: small blessing (小吉, shō-kichi)", ":tanabata_tree: blessing (吉, kichi)", ":tanabata_tree: half-blessing (半吉, han-kichi)", ":tanabata_tree: future blessing (末吉, sue-kichi)", ":tanabata_tree: future small blessing (末小吉, sue-shō-kichi)", ":ghost: curse (凶, kyō)", ":ghost: small curse (小凶, shō-kyō)", ":ghost: half-curse (半凶, han-kyō)", ":ghost: future curse (末凶, sue-kyō)", ":ghost: great curse (大凶, dai-kyō)"]
     await message.reply(random.choice(messages), mention_author=False)
+  if message.content.startswith('~slots'):
+    msg = [" :tangerine: " , " :apple: ", " :watermelon: ", " <:Shizuowo:851648667404337172> "]
+    embed1=discord.Embed(title="🎰 Slot Machine 🎰", description=random.choice(msg), color=discord.Color.blue()) 
+    embed2=discord.Embed(title="🎰 Slot Machine 🎰", description=random.choice(msg) + random.choice(msg), color=discord.Color.blue()) 
+    embed3=discord.Embed(title="🎰 Slot Machine 🎰", description=random.choice(msg) + random.choice(msg) + random.choice(msg), color=discord.Color.blue())  
+    embed4=discord.Embed(title="🎰 Slot Machine 🎰", description=random.choice(msg) + random.choice(msg) + random.choice(msg) + random.choice(msg), color=discord.Color.blue()) 
+    embed5=discord.Embed(title="🎰 Slot Machine 🎰", description=random.choice(msg) + random.choice(msg) + random.choice(msg) + random.choice(msg) + random.choice(msg), color=discord.Color.blue()) 
+    embed6=discord.Embed(title="🎰 Slot Machine 🎰", description=random.choice(msg) + random.choice(msg) + random.choice(msg) + random.choice(msg) + random.choice(msg) + random.choice(msg), color=discord.Color.blue()) 
+    embed6.set_footer(text="aww.. better luck next time!!")        
+    em = await message.reply(embed=embed1, mention_author=False)
+    await asyncio.sleep(1)
+    await em.edit(embed=embed2, mention_author=False) 
+    await asyncio.sleep(1)
+    await em.edit(embed=embed3, mention_author=False)
+    await asyncio.sleep(1)
+    await em.edit(embed=embed4, mention_author=False)
+    await asyncio.sleep(1)
+    await em.edit(embed=embed5, mention_author=False)
+    await asyncio.sleep(1)
+    await em.edit(embed=embed6, mention_author=False)
+
 
 #~help
   if message.content.startswith('~help'): 
     embed = discord.Embed(title=":t_rex:  Rimuru", url="https://top.gg/bot/841573836445188136/vote", color=discord.Color.blue())     
     embed.add_field(name=":keyboard:  Interactions", value="`~rimuru`  `~Yo`  `~hi`  `~hello`  `~hey`  `~good morning`  `~good night`  `~bad slime`  `~good slime`  `~bye`", inline=False)
-    embed.add_field(name=":jigsaw:  Fun", value="`~todo`  `~tierlist`  `~bunny`", inline=False)       
+    embed.add_field(name=":jigsaw:  Fun", value="`~todo`  `~tierlist`  `~bunny`  `~neko`", inline=False)       
     embed.add_field(name=":earth_americas:  Profile", value="`~simp`  `~hearts`  `~avatar`", inline=False) 
     embed.add_field(name=":performing_arts:  Roleplay", value="`~nickname`  `~sing`  `~shizue`", inline=False) 
-    embed.add_field(name=":clapper:  Actions", value="`~cuddle`  `~hug`  `~pat`  `~kiss`  `~lick`  `~bite`  `~slap`  `~kill`", inline=False)   
+    embed.add_field(name=":clapper:  Actions", value="`~cuddle @mention`  `~hug @mention`  `~pat @mention`  `~kiss @mention`  `~lick @mention`  `~bite @mention`  `~slap @mention`  `~kill @mention`", inline=False)   
     embed.add_field(name=":fork_knife_plate:  Restaurant", value="`~pizza`  `~taco`  `~burrito`  `~hotdog`  `~hamburger`  `~sandwich`  `~fries`  `~ramen`", inline=False)    
     embed.add_field(name=":beers:  Bar", value="`~water`  `~milk`  `~juice`  `~cocktail`  `~whisky`  `~wine`  `~beer`", inline=False)
-    embed.add_field(name=":crystal_ball:  Festival Games", value="`~fortune`", inline=False)                         
+    embed.add_field(name=":crystal_ball:  Festival Games", value="`~fortune`  `~slots`", inline=False)                         
     await message.reply(embed=embed, mention_author=False)
 
 #run
+keep_awake()
 client.run(os.getenv('TOKEN')) 
