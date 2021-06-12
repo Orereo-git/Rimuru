@@ -182,12 +182,12 @@ async def on_message(message):
 
 #~actions
   if message.content.startswith('~cuddle'):
-    gif = ["https://i.imgur.com/AmW4JXv.gif", "https://i.imgur.com/ZEOEJvl.jpg", "https://i.imgur.com/BBltNs5.gif"]
+    gif = ["https://i.imgur.com/zEpEFdR.gif", "https://i.imgur.com/0vMxXPD.gif", "https://i.imgur.com/BBltNs5.gif", "https://i.imgur.com/AbwGSGe.mp4"]
     embed=discord.Embed(color=discord.Color.blue()) 
     embed.set_image(url=random.choice(gif))       
     await message.reply(embed=embed, mention_author=False)   
   if message.content.startswith('~hug'):
-    gif = ["https://i.imgur.com/qz4roYL.gif", "https://i.imgur.com/BBltNs5.gif", "https://i.imgur.com/BLWNnFl.gif"]
+    gif = ["https://i.imgur.com/BLWNnFl.gif", "https://i.imgur.com/ZNexQYs.gif", "https://i.imgur.com/AmW4JXv.gif"]
     embed=discord.Embed(color=discord.Color.blue()) 
     embed.set_image(url=random.choice(gif))       
     await message.reply(embed=embed, mention_author=False)
@@ -197,7 +197,7 @@ async def on_message(message):
     embed.set_image(url=random.choice(gif))       
     await message.reply(embed=embed, mention_author=False)
   if message.content.startswith('~kiss'):
-    gif = ["https://i.imgur.com/GDti9sg.gif", "https://i.imgur.com/pFboGNv.gif", "https://i.imgur.com/tTNi2ny.gif", "https://i.imgur.com/FQB8F7f.gif"]
+    gif = ["https://i.imgur.com/GDti9sg.gif", "https://i.imgur.com/pFboGNv.gif", "https://i.imgur.com/tTNi2ny.gif", "https://i.imgur.com/FQB8F7f.gif", "https://i.imgur.com/CCOE8cJ.gif"]
     embed=discord.Embed(color=discord.Color.blue()) 
     embed.set_image(url=random.choice(gif))       
     await message.reply(embed=embed, mention_author=False)
@@ -216,13 +216,8 @@ async def on_message(message):
     embed=discord.Embed(color=discord.Color.blue()) 
     embed.set_image(url=random.choice(gif))       
     await message.reply(embed=embed, mention_author=False)   
-  if message.content.startswith('~punch'):
-    gif = ["https://i.imgur.com/af7n02p.gif", "https://i.imgur.com/UZRKtQ0.gif", "https://i.imgur.com/CWdDw6x.gif"]
-    embed=discord.Embed(color=discord.Color.blue()) 
-    embed.set_image(url=random.choice(gif))       
-    await message.reply(embed=embed, mention_author=False) 
   if message.content.startswith('~kill'):
-    gif = ["https://i.imgur.com/af7n02p.gif", "https://i.imgur.com/UZRKtQ0.gif", "https://i.imgur.com/CWdDw6x.gif"]
+    gif = ["https://i.imgur.com/nNgJdci.gif", "https://i.imgur.com/JUJcXN6.gif", "https://i.imgur.com/gE0AE8V.gif"]
     embed=discord.Embed(color=discord.Color.blue()) 
     embed.set_image(url=random.choice(gif))       
     await message.reply(embed=embed, mention_author=False)                          
@@ -288,7 +283,7 @@ async def on_message(message):
     embed.add_field(name=":jigsaw:  Fun", value="`~todo`  `~tierlist`  `~bunny`", inline=False)       
     embed.add_field(name=":earth_americas:  Profile", value="`~simp`  `~hearts`  `~avatar`", inline=False) 
     embed.add_field(name=":performing_arts:  Roleplay", value="`~nickname`  `~sing`  `~shizue`", inline=False) 
-    embed.add_field(name=":clapper:  Actions", value="`~cuddle`  `~hug`  `~pat`  `~kiss`  `~lick`  `~bite`  `~slap`  `~punch`  `~kill`", inline=False)   
+    embed.add_field(name=":clapper:  Actions", value="`~cuddle`  `~hug`  `~pat`  `~kiss`  `~lick`  `~bite`  `~slap`  `~kill`", inline=False)   
     embed.add_field(name=":fork_knife_plate:  Restaurant", value="`~pizza`  `~taco`  `~burrito`  `~hotdog`  `~hamburger`  `~sandwich`  `~fries`  `~ramen`", inline=False)    
     embed.add_field(name=":beers:  Bar", value="`~water`  `~milk`  `~juice`  `~cocktail`  `~whisky`  `~wine`  `~beer`", inline=False)
     embed.add_field(name=":crystal_ball:  Festival Games", value="`~fortune`", inline=False)                         
