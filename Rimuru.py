@@ -3,8 +3,6 @@ import json
 import random
 import asyncio
 import discord
-#to keep Rimuru awake
-from keep_awake import keep_awake
 
 client = discord.Client()
         
@@ -340,5 +338,4 @@ async def on_message(message):
     await message.reply(embed=embed, mention_author=False)
 
 #run
-keep_awake()
 client.run(os.getenv('TOKEN')) 
