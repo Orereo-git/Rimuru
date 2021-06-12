@@ -162,7 +162,7 @@ async def on_message(message):
     nicknames = ["Rigurd", "Rigur", "Gobta", "Kaijin", "Garm", "Dold", "Myrd", "Benimaru", "Shuna", "Shion", "Souei", "Hakuro", "Kurobe", "Abil", "Gabil", "Soka", "Diablo"]
     await message.author.edit(nick=(random.choice(nicknames)))
     await message.add_reaction('✅')     
-    messages = ["<:ShizuEmbarrassedCry:850973942650765332> ~aa.. cute name for a cute person", "<:ShizuEmbarrassedCry:850973942650765332> ~aa.. adorable name for an adorable person"]
+    messages = ["<:ShizuEmbarrassedTears:850973942650765332> ~aa.. cute name for a cute person", "<:ShizuEmbarrassedTears:850973942650765332> ~aa.. adorable name for an adorable person"]
     await message.reply(random.choice(messages), mention_author=False)       
 
 #~sing    
@@ -294,16 +294,16 @@ async def on_message(message):
     await message.reply(random.choice(messages), mention_author=False)
   if message.content.startswith('~slots'):
     msg = [" :tangerine: " , " :apple: ", " :watermelon: ", " <:Shizuowo:851648667404337172> "]
-    embed=discord.Embed(title="🎰 Slot Machine 🎰", description=" <:Shizuowo:851648667404337172> <:Shizuowo:851648667404337172> <:Shizuowo:851648667404337172> <:Shizuowo:851648667404337172> <:Shizuowo:851648667404337172> <:Shizuowo:851648667404337172> ", color=discord.Color.blue())
+    embed=discord.Embed(title="🎰 Slot Machine 🎰", description=" <:Shizuowo:851648667404337172> <:Shizuowo:851648667404337172> <:Shizuowo:851648667404337172> <:Shizuowo:851648667404337172> <:Shizuowo:851648667404337172> <:Shizuowo:851648667404337172> ", color=discord.Color.blue())  
     embed1=discord.Embed(title="🎰 Slot Machine 🎰", description=random.choice(msg) + random.choice(msg) + random.choice(msg) + random.choice(msg) + random.choice(msg) + random.choice(msg), color=discord.Color.blue())
     embed2=discord.Embed(title="🎰 Slot Machine 🎰", description=random.choice(msg) + random.choice(msg) + random.choice(msg) + random.choice(msg) + random.choice(msg) + random.choice(msg), color=discord.Color.blue())
     embed3=discord.Embed(title="🎰 Slot Machine 🎰", description=random.choice(msg) + random.choice(msg) + random.choice(msg) + random.choice(msg) + random.choice(msg) + random.choice(msg), color=discord.Color.blue())  
     embed4=discord.Embed(title="🎰 Slot Machine 🎰", description=random.choice(msg) + random.choice(msg) + random.choice(msg) + random.choice(msg) + random.choice(msg) + random.choice(msg), color=discord.Color.blue()) 
     embed5=discord.Embed(title="🎰 Slot Machine 🎰", description=random.choice(msg) + random.choice(msg) + random.choice(msg) + random.choice(msg) + random.choice(msg) + random.choice(msg), color=discord.Color.blue()) 
     embed6=discord.Embed(title="🎰 Slot Machine 🎰", description=random.choice(msg) + random.choice(msg) + random.choice(msg) + random.choice(msg) + random.choice(msg) + random.choice(msg), color=discord.Color.blue()) 
-    embed6.set_footer(text="aww.. better luck next time!!")        
-    em = await message.reply(embed=embed, mention_author=False)
-    await asyncio.sleep(1)
+    embed6.set_footer(text="aww.. better luck next time!!") 
+    em = await message.reply(embed=embed, mention_author=False)   
+    await asyncio.sleep(0.5)
     await em.edit(embed=embed1, mention_author=False)
     await asyncio.sleep(0.5)
     await em.edit(embed=embed2, mention_author=False) 
@@ -325,7 +325,6 @@ async def on_message(message):
     await em.edit(embed=embed5, mention_author=False)
     await asyncio.sleep(0.5)
     await em.edit(embed=embed6, mention_author=False)    
-
 
 #~help
   if message.content.startswith('~help'): 
