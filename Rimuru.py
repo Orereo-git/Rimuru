@@ -177,48 +177,56 @@ async def on_message(message):
 
 #~shizue
   if message.content.startswith('~shizue'):
-    messages = ["i..i.. like Rimuru-sama <:ShizuEmbarrassedCry:850973942650765332> ~aa"]
+    messages = ["i..i.. like Rimuru-sama <:ShizuEmbarrassedTears:850973942650765332> ~aa"]
     await message.reply(random.choice(messages), mention_author=False)        
 
 #~actions
-  if message.content.startswith('~cuddle'):
+  if message.content.startswith('~cuddle @'):
     gif = ["https://i.imgur.com/zEpEFdR.gif", "https://i.imgur.com/0vMxXPD.gif", "https://i.imgur.com/BBltNs5.gif", "https://i.imgur.com/AbwGSGe.mp4"]
     embed=discord.Embed(color=discord.Color.blue()) 
+    embed.set_author(name="{0}!! aww!!".format(message.author.name), icon_url=message.author.avatar_url)  
     embed.set_image(url=random.choice(gif))       
     await message.reply(embed=embed, mention_author=False)   
-  if message.content.startswith('~hug'):
+  if message.content.startswith('~hug @'):
     gif = ["https://i.imgur.com/BLWNnFl.gif", "https://i.imgur.com/ZNexQYs.gif", "https://i.imgur.com/AmW4JXv.gif"]
     embed=discord.Embed(color=discord.Color.blue()) 
+    embed.set_author(name="{0}!! huggy!!".format(message.author.name), icon_url=message.author.avatar_url)      
     embed.set_image(url=random.choice(gif))       
     await message.reply(embed=embed, mention_author=False)
-  if message.content.startswith('~pat'):
+  if message.content.startswith('~pat @'):
     gif = ["https://i.imgur.com/jalh0TO.gif", "https://i.imgur.com/5WQiUFH.gif", "https://i.imgur.com/waDgdYE.gif"]
     embed=discord.Embed(color=discord.Color.blue()) 
+    embed.set_author(name="{0}!! pat..pat!!".format(message.author.name), icon_url=message.author.avatar_url)   
     embed.set_image(url=random.choice(gif))       
     await message.reply(embed=embed, mention_author=False)
-  if message.content.startswith('~kiss'):
+  if message.content.startswith('~kiss @'):
     gif = ["https://i.imgur.com/GDti9sg.gif", "https://i.imgur.com/pFboGNv.gif", "https://i.imgur.com/tTNi2ny.gif", "https://i.imgur.com/FQB8F7f.gif", "https://i.imgur.com/CCOE8cJ.gif"]
     embed=discord.Embed(color=discord.Color.blue()) 
+    embed.set_author(name="{0}!! chuu!!".format(message.author.name), icon_url=message.author.avatar_url)   
     embed.set_image(url=random.choice(gif))       
     await message.reply(embed=embed, mention_author=False)
-  if message.content.startswith('~lick'):
+  if message.content.startswith('~lick @'):
     gif = ["https://i.imgur.com/VGHwWUa.gif", "https://i.imgur.com/yi7CU5t.gif", "https://i.imgur.com/LHrs2i5.gif"]
-    embed=discord.Embed(color=discord.Color.blue()) 
+    embed=discord.Embed(color=discord.Color.blue())
+    embed.set_author(name="{0}!! lzzzz!!".format(message.author.name), icon_url=message.author.avatar_url)    
     embed.set_image(url=random.choice(gif))       
     await message.reply(embed=embed, mention_author=False) 
-  if message.content.startswith('~bite'):
+  if message.content.startswith('~bite @'):
     gif = ["https://i.imgur.com/oEBOetR.gif", "https://i.imgur.com/OgzfiuM.gif", "https://i.imgur.com/8qvlj0M.gif"]
     embed=discord.Embed(color=discord.Color.blue()) 
+    embed.set_author(name="{0}!! nom!!".format(message.author.name), icon_url=message.author.avatar_url)   
     embed.set_image(url=random.choice(gif))       
     await message.reply(embed=embed, mention_author=False)
-  if message.content.startswith('~slap'):
+  if message.content.startswith('~slap @'):
     gif = ["https://i.imgur.com/af7n02p.gif", "https://i.imgur.com/UZRKtQ0.gif", "https://i.imgur.com/CWdDw6x.gif"]
     embed=discord.Embed(color=discord.Color.blue()) 
+    embed.set_author(name="{0}!! whip!!".format(message.author.name), icon_url=message.author.avatar_url)   
     embed.set_image(url=random.choice(gif))       
     await message.reply(embed=embed, mention_author=False)   
-  if message.content.startswith('~kill'):
+  if message.content.startswith('~kill @'):
     gif = ["https://i.imgur.com/nNgJdci.gif", "https://i.imgur.com/JUJcXN6.gif", "https://i.imgur.com/gE0AE8V.gif"]
     embed=discord.Embed(color=discord.Color.blue()) 
+    embed.set_author(name="{0}!! wasted!!".format(message.author.name), icon_url=message.author.avatar_url)   
     embed.set_image(url=random.choice(gif))       
     await message.reply(embed=embed, mention_author=False)                          
 
