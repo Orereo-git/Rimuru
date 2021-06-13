@@ -1,7 +1,7 @@
 # Rimuru 👾
 [♡](https://top.gg/bot/841573836445188136)
 
-## ChangeLog 💬:
+## ChangeLog 🆕:
 
 ### 1.0.5
 
