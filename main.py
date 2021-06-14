@@ -69,6 +69,14 @@ async def on_message(message):
     messages = ["nuu.. dont go <:ShizueEmbarrassedTears:850973942650765332>", "ahh.. come back soon <:ShizueEmbarrassedTears:850973942650765332>", "bye bye <:ShizueEmbarrassedTears:850973942650765332>", "byee <:ShizueEmbarrassedTears:850973942650765332>"]
     await message.reply(random.choice(messages), mention_author=False)     
 
+##Rimuru
+  if "Rimuru" in message.content:
+    await message.add_reaction('👀')
+  if "rimuru" in message.content:
+    await message.add_reaction('👀') 
+  if "RIMURU" in message.content:
+    await message.add_reaction('👀')           
+
 ##fun
 #~todo
   if message.content.startswith('~todo'): 
@@ -128,7 +136,7 @@ async def on_message(message):
       await message.add_reaction('✅')       
     if vc is None:
       await message.add_reaction('❌')   
-      await message.reply('b..bbaka!! You have to be in a voice channel first', mention_author=False)                   
+      await message.reply('b..bbaka!! You have to be in a voice channel first!!', mention_author=False)                   
     guild = message.guild
     voice_client: discord.VoiceClient = discord.utils.get(client.voice_clients, guild=guild)    
     audio_source = discord.FFmpegPCMAudio('https://mp3.fastupload.co/data/1622193194/rimuru.mp3')
@@ -261,19 +269,19 @@ async def on_message(message):
 
 ##bar
   if message.content.startswith('~beer'):
-    messages = [":beer: here you go!! ~<:ShizueEmbarrassedTears:850973942650765332>", ":beer: here ~<:ShizueEmbarrassedTears:850973942650765332>", ":beer: ~ah.. Treyni sure makes the best beer aa.. <:ShizueEmbarrassedTears:850973942650765332>"]
+    messages = [":beer: here you go!! ~<:ShizueEmbarrassedTears:850973942650765332>", ":beer: here ~<:ShizueEmbarrassedTears:850973942650765332>"]
     await message.reply(random.choice(messages), mention_author=False)                        
   if message.content.startswith('~wine'):
-    messages = [":wine_glass: here you go!! ~<:ShizueEmbarrassedTears:850973942650765332>", ":wine_glass: here ~<:ShizueEmbarrassedTears:850973942650765332>", ":wine_glass: ~ah.. Treyni sure makes the best wine aa.. <:ShizueEmbarrassedTears:850973942650765332>"]
+    messages = [":wine_glass: here you go!! ~<:ShizueEmbarrassedTears:850973942650765332>", ":wine_glass: here ~<:ShizueEmbarrassedTears:850973942650765332>"]
     await message.reply(random.choice(messages), mention_author=False)
   if message.content.startswith('~whisky'):
     messages = [":tumbler_glass: here you go!! ~<:ShizueEmbarrassedTears:850973942650765332>", ":tumbler_glass: here ~<:ShizueEmbarrassedTears:850973942650765332>"]
     await message.reply(random.choice(messages), mention_author=False) 
   if message.content.startswith('~cocktail'):
-    messages = [":cocktail: here you go!! ~<:ShizueEmbarrassedTears:850973942650765332>", ":cocktail: here ~<:ShizueEmbarrassedTears:850973942650765332>", ":cocktail: ~ah.. Treyni sure makes the best cocktail aa.. <:ShizueEmbarrassedTears:850973942650765332>"]
+    messages = [":cocktail: here you go!! ~<:ShizueEmbarrassedTears:850973942650765332>", ":cocktail: here ~<:ShizueEmbarrassedTears:850973942650765332>"]
     await message.reply(random.choice(messages), mention_author=False) 
   if message.content.startswith('~juice'):
-    messages = [":tropical_drink: here you go!! ~<:ShizueEmbarrassedTears:850973942650765332>", ":tropical_drink: here ~<:ShizueEmbarrassedTears:850973942650765332>", ":tropical_drink: ~ah.. Treyni sure makes the best juice aa.. <:ShizueEmbarrassedTears:850973942650765332>"]
+    messages = [":tropical_drink: here you go!! ~<:ShizueEmbarrassedTears:850973942650765332>", ":tropical_drink: here ~<:ShizueEmbarrassedTears:850973942650765332>"]
     await message.reply(random.choice(messages), mention_author=False) 
   if message.content.startswith('~coffee'):
     messages = [":coffee: here you go!! ~<:ShizueEmbarrassedTears:850973942650765332>", ":coffee: here ~<:ShizueEmbarrassedTears:850973942650765332>"]
