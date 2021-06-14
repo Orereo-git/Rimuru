@@ -3,6 +3,16 @@
 
 ## ChangeLog 🆕:
 
+### 1.1.1
+
+`added hard drive`
+
+`added ~hard drive?`
+
+`updated ~neko`
+
+`updated ~bunny`
+
 ### 1.0.5
 
 `added ~slots`
