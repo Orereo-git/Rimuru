@@ -68,39 +68,6 @@ async def on_message(message):
   if message.content.startswith('~bye'):
     messages = ["nuu.. dont go <:ShizueEmbarrassedTears:850973942650765332>", "ahh.. come back soon <:ShizueEmbarrassedTears:850973942650765332>", "bye bye <:ShizueEmbarrassedTears:850973942650765332>", "byee <:ShizueEmbarrassedTears:850973942650765332>"]
     await message.reply(random.choice(messages), mention_author=False)     
-#eevelutions      
-  if "jolteon" in message.content:
-    msg = 'vaporeon >>>>'.format(message)
-    await message.reply(msg, mention_author=False)
-  if "flareon" in message.content:  
-    msg = 'vaporeon >>>>'.format(message)
-    await message.reply(msg, mention_author=False)
-  if "espeon" in message.content:  
-    msg = 'vaporeon >>>>'.format(message)
-    await message.reply(msg, mention_author=False)
-  if "umbreon" in message.content:  
-    msg = 'vaporeon >>>>'.format(message)
-    await message.reply(msg, mention_author=False)
-  if "leafeon" in message.content:  
-    msg = 'vaporeon >>>>'.format(message)
-    await message.reply(msg, mention_author=False)
-  if "glaceon" in message.content:  
-    msg = 'vaporeon >>>>'.format(message)
-    await message.reply(msg, mention_author=False)
-  if "sylveon" in message.content:  
-    msg = 'vaporeon >>>>'.format(message)
-    await message.reply(msg, mention_author=False)
-#vaporeon
-  if "vaporeon" in message.content:    
-    embed=discord.Embed(title="💙", color=discord.Color.blue())  
-    await message.reply(embed=embed, mention_author=False)            
-#hearts   
-    with open('user_hearts.json', 'r') as f:
-      user_hearts = json.load(f)
-    await update_data(user_hearts, message.author)
-    await add_hearts(user_hearts, message.author, 1)
-    with open('user_hearts.json', 'w') as f:
-      json.dump(user_hearts, f)
 
 ##fun
 #~todo
