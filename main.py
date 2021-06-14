@@ -152,7 +152,7 @@ async def on_message(message):
     messages = ["i..i.. like Rimuru-sama <:ShizueEmbarrassedTears:850973942650765332> ~aa"]
     await message.reply(random.choice(messages), mention_author=False)        
 
-#~actions
+##actions
   if message.content.startswith('~cuddle'):
     gif = ["https://i.imgur.com/zEpEFdR.gif", "https://i.imgur.com/0vMxXPD.gif", "https://i.imgur.com/BBltNs5.gif", "https://i.imgur.com/AbwGSGe.mp4"]
     embed=discord.Embed(color=discord.Color.blue()) 
@@ -294,30 +294,31 @@ async def on_message(message):
     await message.reply(random.choice(messages), mention_author=False) 
 
 ##festival games    
+#~fortune
   if message.content.startswith('~fortune'):
     messages = [":tanabata_tree: great blessing (大吉, dai-kichi)", ":tanabata_tree: middle blessing (中吉, chū-kichi)", ":tanabata_tree: small blessing (小吉, shō-kichi)", ":tanabata_tree: blessing (吉, kichi)", ":tanabata_tree: half-blessing (半吉, han-kichi)", ":tanabata_tree: future blessing (末吉, sue-kichi)", ":tanabata_tree: future small blessing (末小吉, sue-shō-kichi)", ":ghost: curse (凶, kyō)", ":ghost: small curse (小凶, shō-kyō)", ":ghost: half-curse (半凶, han-kyō)", ":ghost: future curse (末凶, sue-kyō)", ":ghost: great curse (大凶, dai-kyō)"]
     await message.reply(random.choice(messages), mention_author=False)
+
+#~slots
   if message.content.startswith('~slots'):
     msg = [" :tangerine: " , " :apple: ", " :watermelon: ", " <:ShizueEmbarrassedTears:850973942650765332> "]
     embed=discord.Embed(title="🎰 Slot Machine 🎰", description=" <:ShizueEmbarrassedTears:850973942650765332> <:ShizueEmbarrassedTears:850973942650765332> <:ShizueEmbarrassedTears:850973942650765332> <:ShizueEmbarrassedTears:850973942650765332> <:ShizueEmbarrassedTears:850973942650765332> <:ShizueEmbarrassedTears:850973942650765332> ", color=discord.Color.blue())  
     embed1=discord.Embed(title="🎰 Slot Machine 🎰", description=random.choice(msg) + random.choice(msg) + random.choice(msg) + random.choice(msg) + random.choice(msg) + random.choice(msg), color=discord.Color.blue())
     embed2=discord.Embed(title="🎰 Slot Machine 🎰", description=random.choice(msg) + random.choice(msg) + random.choice(msg) + random.choice(msg) + random.choice(msg) + random.choice(msg), color=discord.Color.blue())
     embed_end=discord.Embed(title="🎰 Slot Machine 🎰", description=random.choice(msg) + random.choice(msg) + random.choice(msg) + random.choice(msg) + random.choice(msg) + random.choice(msg), color=discord.Color.blue()) 
-    embed_end.set_footer(text="aww.. better luck next time!!") 
+    embed_end.set_footer(text="aww~ better luck next time!!") 
     em = await message.reply(embed=embed, mention_author=False)   
+    await asyncio.sleep(1)
+    await em.edit(embed=embed1, mention_author=False)
+    await asyncio.sleep(0.5)
+    await em.edit(embed=embed2, mention_author=False) 
     await asyncio.sleep(0.5)
     await em.edit(embed=embed1, mention_author=False)
-    await asyncio.sleep(0.2)
-    await em.edit(embed=embed2, mention_author=False) 
-    await asyncio.sleep(0.2)
-    await em.edit(embed=embed1, mention_author=False)
-    await asyncio.sleep(0.2)
+    await asyncio.sleep(0.5)
     await em.edit(embed=embed2, mention_author=False)
-    await asyncio.sleep(0.2)
-    await em.edit(embed=embed1, mention_author=False)
-    await asyncio.sleep(0.2)      
-    msg = 'aw!! <:ShizueEmbarrassedTears:850973942650765332>'
-    await message.channel.send(msg)    
+    await asyncio.sleep(0.5)
+    await em.edit(embed=embed_end, mention_author=False)
+   
 
 #~help
   if message.content.startswith('~help'): 
