@@ -6,8 +6,6 @@ import discord
 #sauce
 from sauce import neko
 from sauce import bunny
-#to keep Rimuru awake
-from keep_awake import keep_awake
 
 client = discord.Client() 
 
@@ -31,7 +29,7 @@ async def on_message(message):
     return
 
 ##Interactions
-  if message.content.startswith('~Yo'):
+  if message.content.startswith('~yo'):
     messages = ["Yo <:ShizueEmbarrassedTears:850973942650765332>", "Yoo <:ShizueEmbarrassedTears:850973942650765332>"]
     await message.reply(random.choice(messages), mention_author=False)
   if message.content.startswith('~hi'):
@@ -261,63 +259,63 @@ async def on_message(message):
 
 ##restaurant
   if message.content.startswith('~pizza'):
-    messages = [":pizza: here you go <:ShizueEmbarrassedTears:850973942650765332>", ":pizza: here <:ShizueEmbarrassedTears:850973942650765332>"] 
+    messages = [":pizza: here you go!! ~<:ShizueEmbarrassedTears:850973942650765332>", ":pizza: here ~<:ShizueEmbarrassedTears:850973942650765332>"] 
     await message.reply(random.choice(messages), mention_author=False) 
   if message.content.startswith('~taco'):
-    messages = [":taco: here you go <:ShizueEmbarrassedTears:850973942650765332>", ":taco: here <:ShizueEmbarrassedTears:850973942650765332>"]
+    messages = [":taco: here you go!! ~<:ShizueEmbarrassedTears:850973942650765332>", ":taco: here ~<:ShizueEmbarrassedTears:850973942650765332>"]
     await message.reply(random.choice(messages), mention_author=False)  
   if message.content.startswith('~burrito'):
-    messages = [":burrito: here you go <:ShizueEmbarrassedTears:850973942650765332>", ":burrito: here <:ShizueEmbarrassedTears:850973942650765332>"]
+    messages = [":burrito: here you go!! ~<:ShizueEmbarrassedTears:850973942650765332>", ":burrito: here ~<:ShizueEmbarrassedTears:850973942650765332>"]
     await message.reply(random.choice(messages), mention_author=False)          
   if message.content.startswith('~hotdog'):
-    messages = [":hotdog: here you go <:ShizueEmbarrassedTears:850973942650765332>", ":hotdog: here <:ShizueEmbarrassedTears:850973942650765332>"]
+    messages = [":hotdog: here you go!! ~<:ShizueEmbarrassedTears:850973942650765332>", ":hotdog: here ~<:ShizueEmbarrassedTears:850973942650765332>"]
     await message.reply(random.choice(messages), mention_author=False)    
   if message.content.startswith('~hamburger'):
-    messages = [":hamburger: here you go <:ShizueEmbarrassedTears:850973942650765332>", ":hamburger: here <:ShizueEmbarrassedTears:850973942650765332>"]
+    messages = [":hamburger: here you go!! ~<:ShizueEmbarrassedTears:850973942650765332>", ":hamburger: here ~<:ShizueEmbarrassedTears:850973942650765332>"]
     await message.reply(random.choice(messages), mention_author=False)  
   if message.content.startswith('~sandwich'):
-    messages = [":sandwich: here you go <:ShizueEmbarrassedTears:850973942650765332>", ":sandwich: here <:ShizueEmbarrassedTears:850973942650765332>"] 
+    messages = [":sandwich: here you go!! ~<:ShizueEmbarrassedTears:850973942650765332>", ":sandwich: here ~<:ShizueEmbarrassedTears:850973942650765332>"] 
     await message.reply(random.choice(messages), mention_author=False)      
   if message.content.startswith('~fries'):
-    messages = [":fries: here you go <:ShizueEmbarrassedTears:850973942650765332>", ":fries: here <:ShizueEmbarrassedTears:850973942650765332>"] 
+    messages = [":fries: here you go!! ~<:ShizueEmbarrassedTears:850973942650765332>", ":fries: here ~<:ShizueEmbarrassedTears:850973942650765332>"] 
     await message.reply(random.choice(messages), mention_author=False) 
   if message.content.startswith('~popcorn'):
-    messages = [":popcorn: here you go <:ShizueEmbarrassedTears:850973942650765332>", ":popcorn: here <:ShizueEmbarrassedTears:850973942650765332>"] 
+    messages = [":popcorn: here you go!! ~<:ShizueEmbarrassedTears:850973942650765332>", ":popcorn: here ~<:ShizueEmbarrassedTears:850973942650765332>"] 
     await message.reply(random.choice(messages), mention_author=False)     
   if message.content.startswith('~doughnut'):
-    messages = [":doughnut: here you go <:ShizueEmbarrassedTears:850973942650765332>", ":doughnut: here <:ShizueEmbarrassedTears:850973942650765332>"] 
+    messages = [":doughnut: here you go!! ~<:ShizueEmbarrassedTears:850973942650765332>", ":doughnut: here ~<:ShizueEmbarrassedTears:850973942650765332>"] 
     await message.reply(random.choice(messages), mention_author=False)  
   if message.content.startswith('~cupcake'):
-    messages = [":cupcake: here you go <:ShizueEmbarrassedTears:850973942650765332>", ":cupcake: here <:ShizueEmbarrassedTears:850973942650765332>"] 
+    messages = [":cupcake: here you go!! ~<:ShizueEmbarrassedTears:850973942650765332>", ":cupcake: here ~<:ShizueEmbarrassedTears:850973942650765332>"] 
     await message.reply(random.choice(messages), mention_author=False) 
   if message.content.startswith('~cake'):
-    messages = [":cake: here you go <:ShizueEmbarrassedTears:850973942650765332>", ":cake: here <:ShizueEmbarrassedTears:850973942650765332>"] 
+    messages = [":cake: here you go!! ~<:ShizueEmbarrassedTears:850973942650765332>", ":cake: here ~<:ShizueEmbarrassedTears:850973942650765332>"] 
     await message.reply(random.choice(messages), mention_author=False)         
 
 ##bar
   if message.content.startswith('~beer'):
-    messages = [":beer: here you go <:ShizueEmbarrassedTears:850973942650765332>", ":beer: here <:ShizueEmbarrassedTears:850973942650765332>", ":beer: ~aaaa.. Treyni sure makes the best beer <:ShizueEmbarrassedTears:850973942650765332>"]
+    messages = [":beer: here you go!! ~<:ShizueEmbarrassedTears:850973942650765332>", ":beer: here ~<:ShizueEmbarrassedTears:850973942650765332>", ":beer: ~aaaa.. Treyni sure makes the best beer ~<:ShizueEmbarrassedTears:850973942650765332>"]
     await message.reply(random.choice(messages), mention_author=False)                        
   if message.content.startswith('~wine'):
-    messages = [":wine_glass: here you go <:ShizueEmbarrassedTears:850973942650765332>", ":wine_glass: here <:ShizueEmbarrassedTears:850973942650765332>", ":wine_glass: ~aaaa.. Treyni sure makes the best wine <:ShizueEmbarrassedTears:850973942650765332>"]
+    messages = [":wine_glass: here you go!! ~<:ShizueEmbarrassedTears:850973942650765332>", ":wine_glass: here ~<:ShizueEmbarrassedTears:850973942650765332>", ":wine_glass: ~aaaa.. Treyni sure makes the best wine ~<:ShizueEmbarrassedTears:850973942650765332>"]
     await message.reply(random.choice(messages), mention_author=False)
   if message.content.startswith('~whisky'):
-    messages = [":tumbler_glass: here you go <:ShizueEmbarrassedTears:850973942650765332>", ":tumbler_glass: here <:ShizueEmbarrassedTears:850973942650765332>", ":tumbler_glass: ~aaaa.. Treyni sure makes the best whisky <:ShizueEmbarrassedTears:850973942650765332>"]
+    messages = [":tumbler_glass: here you go!! ~<:ShizueEmbarrassedTears:850973942650765332>", ":tumbler_glass: here ~<:ShizueEmbarrassedTears:850973942650765332>", ":tumbler_glass: ~aaaa.. Treyni sure makes the best whisky ~<:ShizueEmbarrassedTears:850973942650765332>"]
     await message.reply(random.choice(messages), mention_author=False) 
   if message.content.startswith('~cocktail'):
-    messages = [":cocktail: here you go <:ShizueEmbarrassedTears:850973942650765332>", ":cocktail: here <:ShizueEmbarrassedTears:850973942650765332>", ":cocktail: ~aaaa.. Treyni sure makes the best cocktail <:ShizueEmbarrassedTears:850973942650765332>"]
+    messages = [":cocktail: here you go!! ~<:ShizueEmbarrassedTears:850973942650765332>", ":cocktail: here ~<:ShizueEmbarrassedTears:850973942650765332>", ":cocktail: ~aaaa.. Treyni sure makes the best cocktail ~<:ShizueEmbarrassedTears:850973942650765332>"]
     await message.reply(random.choice(messages), mention_author=False) 
   if message.content.startswith('~juice'):
-    messages = [":tropical_drink: here you go <:ShizueEmbarrassedTears:850973942650765332>", ":tropical_drink: here <:ShizueEmbarrassedTears:850973942650765332>", ":tropical_drink: ~aaaa.. Treyni sure makes the best juice <:ShizueEmbarrassedTears:850973942650765332>"]
+    messages = [":tropical_drink: here you go!! ~<:ShizueEmbarrassedTears:850973942650765332>", ":tropical_drink: here ~<:ShizueEmbarrassedTears:850973942650765332>", ":tropical_drink: ~aaaa.. Treyni sure makes the best juice ~<:ShizueEmbarrassedTears:850973942650765332>"]
     await message.reply(random.choice(messages), mention_author=False) 
   if message.content.startswith('~coffee'):
-    messages = [":coffee: here you go <:ShizueEmbarrassedTears:850973942650765332>", ":coffee: here <:ShizueEmbarrassedTears:850973942650765332>"]
+    messages = [":coffee: here you go!! ~<:ShizueEmbarrassedTears:850973942650765332>", ":coffee: here ~<:ShizueEmbarrassedTears:850973942650765332>"]
     await message.reply(random.choice(messages), mention_author=False)     
   if message.content.startswith('~milk'):
-    messages = [":milk: here you go <:ShizueEmbarrassedTears:850973942650765332>", ":milk: here <:ShizueEmbarrassedTears:850973942650765332>"]
+    messages = [":milk: here you go!! ~<:ShizueEmbarrassedTears:850973942650765332>", ":milk: here ~<:ShizueEmbarrassedTears:850973942650765332>"]
     await message.reply(random.choice(messages), mention_author=False) 
   if message.content.startswith('~water'):
-    messages = [":cup_with_straw: here you go <:ShizueEmbarrassedTears:850973942650765332>", ":cup_with_straw: here <:ShizueEmbarrassedTears:850973942650765332>"]
+    messages = [":cup_with_straw: here you go!! ~<:ShizueEmbarrassedTears:850973942650765332>", ":cup_with_straw: here ~<:ShizueEmbarrassedTears:850973942650765332>"]
     await message.reply(random.choice(messages), mention_author=False) 
 
 ##festival games    
@@ -342,14 +340,14 @@ async def on_message(message):
     await em.edit(embed=embed2, mention_author=False)
     await asyncio.sleep(0.2)
     await em.edit(embed=embed1, mention_author=False)
-    await asyncio.sleep(0.5)      
-    msg = 'aw!! <:Shizuowo:851648667404337172>'
+    await asyncio.sleep(0.2)      
+    msg = 'aw!! <:ShizueEmbarrassedTears:850973942650765332>'
     await message.channel.send(msg)    
 
 #~help
   if message.content.startswith('~help'): 
     embed = discord.Embed(title=":t_rex:  Rimuru", url="https://top.gg/bot/841573836445188136/vote", color=discord.Color.blue())     
-    embed.add_field(name=":calling:  Interactions", value="`~rimuru`  `~Yo`  `~hi`  `~hello`  `~hey`  `~good morning`  `~good night`  `~bad slime`  `~good slime`  `~bye`", inline=False)
+    embed.add_field(name=":calling:  Interactions", value="`~rimuru`  `~yo`  `~hi`  `~hello`  `~hey`  `~good morning`  `~good night`  `~bad slime`  `~good slime`  `~bye`", inline=False)
     embed.add_field(name=":jigsaw:  Fun", value="`~todo`  `~tierlist`", inline=False)       
     embed.add_field(name=":earth_americas:  Profile", value="`~simp`  `~hearts`  `~avatar`", inline=False) 
     embed.add_field(name=":performing_arts:  Roleplay", value="`~nickname`  `~sing`  `~shizue`", inline=False) 
@@ -361,5 +359,4 @@ async def on_message(message):
     await message.reply(embed=embed, mention_author=False)
 
 #run
-keep_awake()
 client.run(os.getenv('TOKEN')) 
