@@ -107,7 +107,7 @@ async def on_message(message):
 ##fun
 #~todo
   if message.content.startswith('~todo'): 
-    messages = [":umbrella: mm.. make it rain <:ShizueEmbarrassedTears:850973942650765332>", ":snowman2: woo.. make a snowman <:ShizueEmbarrassedTears:850973942650765332>", ":fork_knife_plate: get something to eat <:ShizueEmbarrassedTears:850973942650765332>", ":soap: cleaning? <:ShizueEmbarrassedTears:850973942650765332>", ":beach: lets go to a beach <:ShizueEmbarrassedTears:850973942650765332>", ":bubble_tea: get something to drink <:ShizueEmbarrassedTears:850973942650765332>", ":island: lets go to some island <:ShizueEmbarrassedTears:850973942650765332>", ":video_game: wanna play some games with me <:ShizueEmbarrassedTears:850973942650765332>", ":yarn: just sleep.. <:ShizueEmbarrassedTears:850973942650765332>", ":bowling: lets go bowling <:ShizueEmbarrassedTears:850973942650765332>", ":microphone: sing something <:ShizueEmbarrassedTears:850973942650765332>", ":golf: lets go golfing <:ShizueEmbarrassedTears:850973942650765332>", ":rainbow: woo.. make a rainbow <:ShizueEmbarrassedTears:850973942650765332>", ":boxing_glove: boing!! foof..ffof.. <:ShizueEmbarrassedTears:850973942650765332>"]
+    messages = [":umbrella: mm.. make it rain!! <:ShizueEmbarrassedTears:850973942650765332>", ":snowman2: woo.. make a snowman!! <:ShizueEmbarrassedTears:850973942650765332>", ":fork_knife_plate: get something to eat!! <:ShizueEmbarrassedTears:850973942650765332>", ":soap: cleaning? <:ShizueEmbarrassedTears:850973942650765332>", ":beach: lets go to a beach!! <:ShizueEmbarrassedTears:850973942650765332>", ":bubble_tea: get something to drink!! <:ShizueEmbarrassedTears:850973942650765332>", ":island: lets go to some island!! <:ShizueEmbarrassedTears:850973942650765332>", ":video_game: wanna play some games with me!! <:ShizueEmbarrassedTears:850973942650765332>", ":yarn: just sleep.. <:ShizueEmbarrassedTears:850973942650765332>", ":bowling: lets go bowling!! <:ShizueEmbarrassedTears:850973942650765332>", ":microphone: sing something!! <:ShizueEmbarrassedTears:850973942650765332>", ":golf: lets go golfing!! <:ShizueEmbarrassedTears:850973942650765332>", ":rainbow: woo.. make a rainbow!! <:ShizueEmbarrassedTears:850973942650765332>", ":boxing_glove: boing!! foof..ffof.. <:ShizueEmbarrassedTears:850973942650765332>"]
     await message.reply(random.choice(messages), mention_author=False) 
 
 #~tierlist
@@ -152,7 +152,7 @@ async def on_message(message):
     nicknames = ["Rigurd", "Rigur", "Gobta", "Kaijin", "Garm", "Dold", "Myrd", "Benimaru", "Shuna", "Shion", "Souei", "Hakuro", "Kurobe", "Abil", "Gabil", "Soka", "Diablo"]
     await message.author.edit(nick=(random.choice(nicknames)))
     await message.add_reaction('✅')     
-    messages = ["<:ShizueEmbarrassedTears:850973942650765332> ~aa.. cute name for a cute person", "<:ShizueEmbarrassedTears:850973942650765332> ~aa.. adorable name for an adorable person"]
+    messages = ["<:ShizueEmbarrassedTears:850973942650765332>"]
     await message.reply(random.choice(messages), mention_author=False)       
 
 #~sing    
@@ -244,7 +244,7 @@ async def on_message(message):
 ##hard drive 
 #~hard drive?
   if message.content.startswith('~hard drive?'):
-    msg = "nu.. h-how!? i thought Tamura destroyed it <:ShizueEmbarrassedTears:850973942650765332>"
+    msg = "h-how!? i thought Tamura destroyed it!! <:ShizueEmbarrassedTears:850973942650765332>"
     await message.reply((msg), mention_author=False)
 
 #~neko
