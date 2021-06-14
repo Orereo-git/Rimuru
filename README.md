@@ -3,6 +3,10 @@
 
 ## ChangeLog 🆕:
 
+### 1.1.2
+
+`updated ~todo`
+
 ### 1.1.1
 
 `added hard drive`
