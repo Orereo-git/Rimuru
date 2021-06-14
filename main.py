@@ -6,6 +6,8 @@ import discord
 #sauce
 from sauce import neko
 from sauce import bunny
+#to keep Rimuru awake
+from keep_awake import keep_awake
 
 client = discord.Client() 
 
@@ -86,7 +88,7 @@ async def on_message(message):
 #~tierlist
   if message.content.startswith('~tierlist'):
     embed=discord.Embed(color=discord.Color.blue()) 
-    embed.set_image(url="https://i.imgur.com/TM1Gd68.png")     
+    embed.set_image(url="https://i.imgur.com/kHH1AKB.png")     
     await message.reply(embed=embed, mention_author=False) 
 
 ##profile
@@ -335,4 +337,5 @@ async def on_message(message):
     await message.reply(embed=embed, mention_author=False)
 
 #run
+keep_awake()
 client.run(os.getenv('TOKEN')) 
