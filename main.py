@@ -71,14 +71,6 @@ async def on_message(message):
     messages = ["nuu.. dont go <:ShizueEmbarrassedTears:850973942650765332>", "ahh.. come back soon <:ShizueEmbarrassedTears:850973942650765332>", "bye bye <:ShizueEmbarrassedTears:850973942650765332>", "byee <:ShizueEmbarrassedTears:850973942650765332>"]
     await message.reply(random.choice(messages), mention_author=False)     
 
-##Rimuru
-  if "Rimuru" in message.content:
-    await message.add_reaction('👀')
-  if "rimuru" in message.content:
-    await message.add_reaction('👀') 
-  if "RIMURU" in message.content:
-    await message.add_reaction('👀')           
-
 ##fun
 #~todo
   if message.content.startswith('~todo'): 
@@ -168,7 +160,7 @@ async def on_message(message):
     embed.set_image(url=random.choice(gif))       
     await message.reply(embed=embed, mention_author=False)
   if message.content.startswith('~pat'):
-    gif = ["https://i.imgur.com/jalh0TO.gif", "https://i.imgur.com/5WQiUFH.gif", "https://i.imgur.com/waDgdYE.gif", "https://i.imgur.com/y8hzJj3.gif"]
+    gif = ["https://i.imgur.com/jalh0TO.gif", "https://i.imgur.com/jyGKbIt.gif", "https://i.imgur.com/waDgdYE.gif", "https://i.imgur.com/y8hzJj3.gif", "https://i.imgur.com/WnWbaBI.gif", "https://i.imgur.com/MzaOifc.gif", "https://i.imgur.com/twu1Elb.gif", "https://i.imgur.com/XShvBry.gif", "https://i.imgur.com/DwcgM7X.gif", "https://i.imgur.com/wXfqvwZ.gif", "https://i.imgur.com/M6whfdx.gif"]
     embed=discord.Embed(color=discord.Color.blue()) 
     embed.set_author(name="{0}!! pat..pat!!".format(message.author.name), icon_url=message.author.avatar_url)   
     embed.set_image(url=random.choice(gif))       
@@ -180,13 +172,13 @@ async def on_message(message):
     embed.set_image(url=random.choice(gif))       
     await message.reply(embed=embed, mention_author=False)
   if message.content.startswith('~lick'):
-    gif = ["https://i.imgur.com/VGHwWUa.gif", "https://i.imgur.com/yi7CU5t.gif", "https://i.imgur.com/LHrs2i5.gif"]
+    gif = ["https://i.imgur.com/VGHwWUa.gif", "https://i.imgur.com/yi7CU5t.gif", "https://i.imgur.com/LHrs2i5.gif", "https://i.imgur.com/J3mRLc8.gif", "https://i.imgur.com/eE9BLra.gif", "https://i.imgur.com/nZYYcmr.gif", "https://i.imgur.com/MDsvf8w.gif", "https://i.imgur.com/P2zPziT.gif"]
     embed=discord.Embed(color=discord.Color.blue())
     embed.set_author(name="{0}!! lzzzz!!".format(message.author.name), icon_url=message.author.avatar_url)    
     embed.set_image(url=random.choice(gif))       
     await message.reply(embed=embed, mention_author=False) 
   if message.content.startswith('~bite'):
-    gif = ["https://i.imgur.com/oEBOetR.gif", "https://i.imgur.com/OgzfiuM.gif", "https://i.imgur.com/8qvlj0M.gif", "https://i.imgur.com/MUgRpL5.gif"]
+    gif = ["https://i.imgur.com/oEBOetR.gif", "https://i.imgur.com/OgzfiuM.gif", "https://i.imgur.com/8qvlj0M.gif", "https://i.imgur.com/MUgRpL5.gif", "https://i.imgur.com/PHqBMPG.mp4"]
     embed=discord.Embed(color=discord.Color.blue()) 
     embed.set_author(name="{0}!! nom!!".format(message.author.name), icon_url=message.author.avatar_url)   
     embed.set_image(url=random.choice(gif))       
@@ -204,13 +196,13 @@ async def on_message(message):
     embed.set_image(url=random.choice(gif))       
     await message.reply(embed=embed, mention_author=False) 
   if message.content.startswith('~punch'):
-    gif = ["https://i.imgur.com/AVnDEnx.gif", "https://i.imgur.com/A1uSB0q.gif", "https://i.imgur.com/xcGvJfh.gif", "https://i.imgur.com/Btlt4WS.gif"]
+    gif = ["https://i.imgur.com/AVnDEnx.gif", "https://i.imgur.com/A1uSB0q.gif", "https://i.imgur.com/xcGvJfh.gif", "https://i.imgur.com/aI3vBjX.gif", "https://i.imgur.com/sV44BxK.gif", "https://i.imgur.com/valk8VY.gif", "https://i.imgur.com/ALR0hTq.gif"]
     embed=discord.Embed(color=discord.Color.blue()) 
     embed.set_author(name="{0}!! whoom!!".format(message.author.name), icon_url=message.author.avatar_url)   
     embed.set_image(url=random.choice(gif))       
     await message.reply(embed=embed, mention_author=False)        
   if message.content.startswith('~kill'):
-    gif = ["https://i.imgur.com/nNgJdci.gif", "https://i.imgur.com/JUJcXN6.gif", "https://i.imgur.com/gE0AE8V.gif", "https://i.imgur.com/bO1rQa2.gif"]
+    gif = ["https://i.imgur.com/JUJcXN6.gif", "https://i.imgur.com/gE0AE8V.gif", "https://i.imgur.com/nNgJdci.gif", "https://i.imgur.com/XhOC90e.gif", "https://i.imgur.com/BwhkFBj.gif", "https://i.imgur.com/LBfxEry.gif"]
     embed=discord.Embed(color=discord.Color.blue()) 
     embed.set_author(name="{0}!! wasted!!".format(message.author.name), icon_url=message.author.avatar_url)   
     embed.set_image(url=random.choice(gif))       
@@ -219,7 +211,7 @@ async def on_message(message):
 ##hard drive 
 #~hard drive?
   if message.content.startswith('~hard drive?'):
-    msg = "h-how!? i thought Tamura destroyed it!! <:ShizueEmbarrassedTears:850973942650765332>"
+    msg = "h-how!? i thought tamura destroyed it!! <:ShizueEmbarrassedTears:850973942650765332>"
     await message.reply((msg), mention_author=False)
 
 #~neko
@@ -271,28 +263,28 @@ async def on_message(message):
 
 ##bar
   if message.content.startswith('~beer'):
-    messages = [":beer: here you go!! ~<:ShizueEmbarrassedTears:850973942650765332>", ":beer: here ~<:ShizueEmbarrassedTears:850973942650765332>"]
+    messages = [":beer: here you go!! <:ShizueEmbarrassedTears:850973942650765332>", ":beer: here ~<:ShizueEmbarrassedTears:850973942650765332>"]
     await message.reply(random.choice(messages), mention_author=False)                        
   if message.content.startswith('~wine'):
-    messages = [":wine_glass: here you go!! ~<:ShizueEmbarrassedTears:850973942650765332>", ":wine_glass: here ~<:ShizueEmbarrassedTears:850973942650765332>"]
+    messages = [":wine_glass: here you go!! <:ShizueEmbarrassedTears:850973942650765332>", ":wine_glass: here ~<:ShizueEmbarrassedTears:850973942650765332>"]
     await message.reply(random.choice(messages), mention_author=False)
   if message.content.startswith('~whisky'):
-    messages = [":tumbler_glass: here you go!! ~<:ShizueEmbarrassedTears:850973942650765332>", ":tumbler_glass: here ~<:ShizueEmbarrassedTears:850973942650765332>"]
+    messages = [":tumbler_glass: here you go!! <:ShizueEmbarrassedTears:850973942650765332>", ":tumbler_glass: here ~<:ShizueEmbarrassedTears:850973942650765332>"]
     await message.reply(random.choice(messages), mention_author=False) 
   if message.content.startswith('~cocktail'):
-    messages = [":cocktail: here you go!! ~<:ShizueEmbarrassedTears:850973942650765332>", ":cocktail: here ~<:ShizueEmbarrassedTears:850973942650765332>"]
+    messages = [":cocktail: here you go!! <:ShizueEmbarrassedTears:850973942650765332>", ":cocktail: here ~<:ShizueEmbarrassedTears:850973942650765332>"]
     await message.reply(random.choice(messages), mention_author=False) 
   if message.content.startswith('~juice'):
-    messages = [":tropical_drink: here you go!! ~<:ShizueEmbarrassedTears:850973942650765332>", ":tropical_drink: here ~<:ShizueEmbarrassedTears:850973942650765332>"]
+    messages = [":tropical_drink: here you go!! <:ShizueEmbarrassedTears:850973942650765332>", ":tropical_drink: here ~<:ShizueEmbarrassedTears:850973942650765332>"]
     await message.reply(random.choice(messages), mention_author=False) 
   if message.content.startswith('~coffee'):
-    messages = [":coffee: here you go!! ~<:ShizueEmbarrassedTears:850973942650765332>", ":coffee: here ~<:ShizueEmbarrassedTears:850973942650765332>"]
+    messages = [":coffee: here you go!! <:ShizueEmbarrassedTears:850973942650765332>", ":coffee: here ~<:ShizueEmbarrassedTears:850973942650765332>"]
     await message.reply(random.choice(messages), mention_author=False)     
   if message.content.startswith('~milk'):
-    messages = [":milk: here you go!! ~<:ShizueEmbarrassedTears:850973942650765332>", ":milk: here ~<:ShizueEmbarrassedTears:850973942650765332>"]
+    messages = [":milk: here you go!! <:ShizueEmbarrassedTears:850973942650765332>", ":milk: here ~<:ShizueEmbarrassedTears:850973942650765332>"]
     await message.reply(random.choice(messages), mention_author=False) 
   if message.content.startswith('~water'):
-    messages = [":cup_with_straw: here you go!! ~<:ShizueEmbarrassedTears:850973942650765332>", ":cup_with_straw: here ~<:ShizueEmbarrassedTears:850973942650765332>"]
+    messages = [":cup_with_straw: here you go!! <:ShizueEmbarrassedTears:850973942650765332>", ":cup_with_straw: here ~<:ShizueEmbarrassedTears:850973942650765332>"]
     await message.reply(random.choice(messages), mention_author=False) 
 
 ##festival games    
