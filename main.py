@@ -149,73 +149,73 @@ async def shizue(ctx):
 
 ##actions
 @bot.command()
-async def cuddle(ctx): 
+async def cuddle(ctx, otaku: discord.Member): 
   gif = ["https://i.imgur.com/zEpEFdR.gif", "https://i.imgur.com/0vMxXPD.gif", "https://i.imgur.com/BBltNs5.gif", "https://i.imgur.com/AbwGSGe.mp4"]
   embed=discord.Embed(color=discord.Color.blue()) 
-  embed.set_author(name="{0}!! aww!!".format(ctx.author.name), icon_url=ctx.author.avatar_url)  
+  embed.set_author(name="{0} cuddles {1}!! aww!!".format(ctx.message.author.name, otaku.name), icon_url=ctx.author.avatar_url)  
   embed.set_image(url=random.choice(gif))       
   await ctx.reply(embed=embed, mention_author=False)   
 @bot.command()
-async def hug(ctx): 
+async def hug(ctx, otaku: discord.Member): 
   gif = ["https://i.imgur.com/BLWNnFl.gif", "https://i.imgur.com/ZNexQYs.gif", "https://i.imgur.com/AmW4JXv.gif", "https://i.imgur.com/jPI7d39.gif"]
   embed=discord.Embed(color=discord.Color.blue()) 
-  embed.set_author(name="{0}!! huggy!!".format(ctx.author.name), icon_url=ctx.author.avatar_url)      
+  embed.set_author(name="{0} huggs {1}!! aa!!".format(ctx.message.author.name, otaku.name), icon_url=ctx.author.avatar_url)      
   embed.set_image(url=random.choice(gif))       
   await ctx.reply(embed=embed, mention_author=False)
 @bot.command()
-async def pat(ctx): 
+async def pat(ctx, otaku: discord.Member): 
   gif = ["https://i.imgur.com/jalh0TO.gif", "https://i.imgur.com/jyGKbIt.gif", "https://i.imgur.com/waDgdYE.gif", "https://i.imgur.com/y8hzJj3.gif", "https://i.imgur.com/WnWbaBI.gif", "https://i.imgur.com/MzaOifc.gif", "https://i.imgur.com/twu1Elb.gif", "https://i.imgur.com/XShvBry.gif", "https://i.imgur.com/DwcgM7X.gif", "https://i.imgur.com/wXfqvwZ.gif", "https://i.imgur.com/M6whfdx.gif"]
   embed=discord.Embed(color=discord.Color.blue()) 
-  embed.set_author(name="{0}!! pat..pat!!".format(ctx.author.name), icon_url=ctx.author.avatar_url)   
+  embed.set_author(name="{0} pats {1}!! pat..pat!!".format(ctx.message.author.name, otaku.name), icon_url=ctx.author.avatar_url)   
   embed.set_image(url=random.choice(gif))       
   await ctx.reply(embed=embed, mention_author=False)
 @bot.command()
-async def kiss(ctx): 
+async def kiss(ctx, otaku: discord.Member): 
   gif = ["https://i.imgur.com/GDti9sg.gif", "https://i.imgur.com/pFboGNv.gif", "https://i.imgur.com/tTNi2ny.gif", "https://i.imgur.com/FQB8F7f.gif", "https://i.imgur.com/CCOE8cJ.gif"]
   embed=discord.Embed(color=discord.Color.blue()) 
-  embed.set_author(name="{0}!! chuu!!".format(ctx.author.name), icon_url=ctx.author.avatar_url)   
+  embed.set_author(name="{0} kisses {1}!! chuu!!".format(ctx.message.author.name, otaku.name), icon_url=ctx.author.avatar_url)   
   embed.set_image(url=random.choice(gif))       
   await ctx.reply(embed=embed, mention_author=False)
 @bot.command()
-async def lick(ctx): 
+async def lick(ctx, otaku: discord.Member): 
   gif = ["https://i.imgur.com/VGHwWUa.gif", "https://i.imgur.com/yi7CU5t.gif", "https://i.imgur.com/LHrs2i5.gif", "https://i.imgur.com/J3mRLc8.gif", "https://i.imgur.com/eE9BLra.gif", "https://i.imgur.com/nZYYcmr.gif", "https://i.imgur.com/MDsvf8w.gif", "https://i.imgur.com/P2zPziT.gif"]
   embed=discord.Embed(color=discord.Color.blue())
-  embed.set_author(name="{0}!! lzzzz!!".format(ctx.author.name), icon_url=ctx.author.avatar_url)    
+  embed.set_author(name="{0} licks {1}!! lzzz!!".format(ctx.message.author.name, otaku.name), icon_url=ctx.author.avatar_url)    
   embed.set_image(url=random.choice(gif))       
   await ctx.reply(embed=embed, mention_author=False) 
 @bot.command()
-async def bite(ctx): 
+async def bite(ctx, otaku: discord.Member): 
   gif = ["https://i.imgur.com/oEBOetR.gif", "https://i.imgur.com/OgzfiuM.gif", "https://i.imgur.com/8qvlj0M.gif", "https://i.imgur.com/MUgRpL5.gif", "https://i.imgur.com/PHqBMPG.mp4"]
   embed=discord.Embed(color=discord.Color.blue()) 
-  embed.set_author(name="{0}!! nom!!".format(ctx.author.name), icon_url=ctx.author.avatar_url)   
+  embed.set_author(name="{0} bites {1}!! nom..nom!!".format(ctx.message.author.name, otaku.name), icon_url=ctx.author.avatar_url)   
   embed.set_image(url=random.choice(gif))       
   await ctx.reply(embed=embed, mention_author=False)
 @bot.command()
-async def poke(ctx):
+async def poke(ctx, otaku: discord.Member):
   gif = ["https://i.imgur.com/X7pNyfw.gif", "https://i.imgur.com/KTL5UbY.gif", "https://i.imgur.com/FvBgoh6.gif", "https://i.imgur.com/BdxvlrD.gif", "https://i.imgur.com/PS31oUs.gif", "https://i.imgur.com/dmAjEZF.gif"]
   embed=discord.Embed(color=discord.Color.blue()) 
-  embed.set_author(name="{0}!! poke..poke~!!".format(ctx.author.name), icon_url=ctx.author.avatar_url)   
+  embed.set_author(name="{0} pokes {1}!! poke..poke!!".format(ctx.message.author.name, otaku.name), icon_url=ctx.author.avatar_url)   
   embed.set_image(url=random.choice(gif))       
   await ctx.reply(embed=embed, mention_author=False)
 @bot.command()
-async def slap(ctx): 
+async def slap(ctx, otaku: discord.Member): 
   gif = ["https://i.imgur.com/af7n02p.gif", "https://i.imgur.com/UZRKtQ0.gif", "https://i.imgur.com/CWdDw6x.gif", "https://i.imgur.com/uvIDSxi.gif", "https://i.imgur.com/vUTJUWG.gif"]
   embed=discord.Embed(color=discord.Color.blue()) 
-  embed.set_author(name="{0}!! whip!!".format(ctx.author.name), icon_url=ctx.author.avatar_url)   
+  embed.set_author(name="{0} slaps {1}!! whip!!".format(ctx.message.author.name, otaku.name), icon_url=ctx.author.avatar_url)   
   embed.set_image(url=random.choice(gif))       
   await ctx.reply(embed=embed, mention_author=False) 
 @bot.command()
-async def punch(ctx): 
+async def punch(ctx, otaku: discord.Member): 
   gif = ["https://i.imgur.com/AVnDEnx.gif", "https://i.imgur.com/A1uSB0q.gif", "https://i.imgur.com/xcGvJfh.gif", "https://i.imgur.com/aI3vBjX.gif", "https://i.imgur.com/sV44BxK.gif", "https://i.imgur.com/valk8VY.gif", "https://i.imgur.com/ALR0hTq.gif"]
   embed=discord.Embed(color=discord.Color.blue()) 
-  embed.set_author(name="{0}!! whoom!!".format(ctx.author.name), icon_url=ctx.author.avatar_url)   
+  embed.set_author(name="{0} punches {1}!! whoom!!".format(ctx.message.author.name, otaku.name), icon_url=ctx.author.avatar_url)   
   embed.set_image(url=random.choice(gif))       
   await ctx.reply(embed=embed, mention_author=False)        
 @bot.command()
-async def kill(ctx): 
+async def kill(ctx, otaku: discord.Member): 
   gif = ["https://i.imgur.com/JUJcXN6.gif", "https://i.imgur.com/gE0AE8V.gif", "https://i.imgur.com/nNgJdci.gif", "https://i.imgur.com/XhOC90e.gif", "https://i.imgur.com/BwhkFBj.gif", "https://i.imgur.com/LBfxEry.gif"]
   embed=discord.Embed(color=discord.Color.blue()) 
-  embed.set_author(name="{0}!! wasted!!".format(ctx.author.name), icon_url=ctx.author.avatar_url)   
+  embed.set_author(name="{0} kills {1}!! wasted!!".format(ctx.message.author.name, otaku.name), icon_url=ctx.author.avatar_url)   
   embed.set_image(url=random.choice(gif))       
   await ctx.reply(embed=embed, mention_author=False)    
 
