@@ -12,12 +12,20 @@ from keep_awake import keep_awake
 client = discord.Client() 
 
 #update and add hearts in user_hearts.json
-async def update_data(user_hearts, user):
+async def update_hearts(user_hearts, user):
   if not f'{user.id}' in user_hearts:
     user_hearts[f'{user.id}'] = {}
     user_hearts[f'{user.id}']['hearts'] = 0
 async def add_hearts(user_hearts, user, hearts):
   user_hearts[f'{user.id}']['hearts'] += hearts   
+
+#update and add curses in user_curses.json
+async def update_curses(user_curses, user):
+  if not f'{user.id}' in user_curses:
+    user_curses[f'{user.id}'] = {}
+    user_curses[f'{user.id}']['curses'] = 0
+async def add_curses(user_curses, user, curses):
+  user_curses[f'{user.id}']['curses'] += curses   
 
 #console msg
 @client.event
@@ -28,7 +36,7 @@ async def on_ready():
 @client.event
 async def on_message(message):
   if message.author == client.user:
-    return
+    return 
 
 ##Interactions
   if message.content.startswith('~yo'):
@@ -91,7 +99,7 @@ async def on_message(message):
 #hearts   
     with open('user_hearts.json', 'r') as f:
       user_hearts = json.load(f)
-    await update_data(user_hearts, message.author)
+    await update_hearts(user_hearts, message.author)
     await add_hearts(user_hearts, message.author, 1)
     with open('user_hearts.json', 'w') as f:
       json.dump(user_hearts, f)      
@@ -101,11 +109,27 @@ async def on_message(message):
    with open('user_hearts.json', 'r') as f:
     user_hearts = json.load(f)
     authorID = message.author.id     
+    hearts = user_hearts[str(authorID)]['hearts']  
+    embed = discord.Embed(color=discord.Color.blue())
+    embed.set_author(name=message.author.name, icon_url=message.author.avatar_url)  
+    embed.add_field(name="hearts earned <:ShizueEmbarrassedTears:850973942650765332> :", value= hearts, inline=True) 
+    await message.reply(embed=embed, mention_author=False) 
+
+#~profile
+  if message.content.startswith('~profile'): 
+   with open('user_hearts.json', 'r') as f:
+    user_hearts = json.load(f)
+    authorID = message.author.id     
     hearts = user_hearts[str(authorID)]['hearts']
+   with open('user_curses.json', 'r') as f:
+    user_curses = json.load(f)
+    authorID = message.author.id     
+    curses = user_curses[str(authorID)]['curses']    
     embed = discord.Embed(color=discord.Color.blue())
     embed.set_author(name=message.author.name, icon_url=message.author.avatar_url)  
     embed.add_field(name="hearts earned <:ShizueEmbarrassedTears:850973942650765332> :", value= hearts, inline=True)
-    await message.reply(embed=embed, mention_author=False)  
+    embed.add_field(name=":ghost: :", value=curses, inline=False)    
+    await message.reply(embed=embed, mention_author=False)       
 
 #~avatar    
   if message.content.startswith('~avatar'): 
@@ -291,42 +315,87 @@ async def on_message(message):
 #~fortune
   if message.content.startswith('~fortune'):
     messages = [":tanabata_tree: great blessing (大吉, dai-kichi)", ":tanabata_tree: middle blessing (中吉, chū-kichi)", ":tanabata_tree: small blessing (小吉, shō-kichi)", ":tanabata_tree: blessing (吉, kichi)", ":tanabata_tree: half-blessing (半吉, han-kichi)", ":tanabata_tree: future blessing (末吉, sue-kichi)", ":tanabata_tree: future small blessing (末小吉, sue-shō-kichi)", ":ghost: curse (凶, kyō)", ":ghost: small curse (小凶, shō-kyō)", ":ghost: half-curse (半凶, han-kyō)", ":ghost: future curse (末凶, sue-kyō)", ":ghost: great curse (大凶, dai-kyō)"]
+    #curses
+    with open('user_curses.json', 'r') as f:
+      user_curses = json.load(f)
+    await update_curses(user_curses, message.author)
+    await add_curses(user_curses, message.author, 1)
+    with open('user_curses.json', 'w') as f:
+      json.dump(user_curses, f)
     await message.reply(random.choice(messages), mention_author=False)
 
 #~slots
   if message.content.startswith('~slots'):
     msg = [" :tangerine: " , " :apple: ", " :watermelon: ", " <:ShizueEmbarrassedTears:850973942650765332> "]
-    embed=discord.Embed(title="🎰 Slot Machine 🎰", description=" <:ShizueEmbarrassedTears:850973942650765332> <:ShizueEmbarrassedTears:850973942650765332> <:ShizueEmbarrassedTears:850973942650765332> <:ShizueEmbarrassedTears:850973942650765332> <:ShizueEmbarrassedTears:850973942650765332> <:ShizueEmbarrassedTears:850973942650765332> ", color=discord.Color.blue())  
+    embed=discord.Embed(title="🎰 Slot Machine 🎰", description=" <:ShizueEmbarrassedTears:850973942650765332> <:ShizueEmbarrassedTears:850973942650765332> <:ShizueEmbarrassedTears:850973942650765332> <:ShizueEmbarrassedTears:850973942650765332> <:ShizueEmbarrassedTears:850973942650765332> <:ShizueEmbarrassedTears:850973942650765332> ", color=discord.Color.blue())
+    embed0=discord.Embed(title="🎰 Slot Machine 🎰", description=random.choice(msg) + random.choice(msg) + random.choice(msg) + random.choice(msg) + random.choice(msg) + random.choice(msg), color=discord.Color.blue())
     embed1=discord.Embed(title="🎰 Slot Machine 🎰", description=random.choice(msg) + random.choice(msg) + random.choice(msg) + random.choice(msg) + random.choice(msg) + random.choice(msg), color=discord.Color.blue())
-    embed2=discord.Embed(title="🎰 Slot Machine 🎰", description=random.choice(msg) + random.choice(msg) + random.choice(msg) + random.choice(msg) + random.choice(msg) + random.choice(msg), color=discord.Color.blue())
-    embed_end=discord.Embed(title="🎰 Slot Machine 🎰", description=random.choice(msg) + random.choice(msg) + random.choice(msg) + random.choice(msg) + random.choice(msg) + random.choice(msg), color=discord.Color.blue()) 
-    embed_end.set_footer(text="aww~ better luck next time!!") 
-    em = await message.reply(embed=embed, mention_author=False)   
-    await asyncio.sleep(1)
-    await em.edit(embed=embed1, mention_author=False)
-    await asyncio.sleep(0.5)
-    await em.edit(embed=embed2, mention_author=False) 
-    await asyncio.sleep(0.5)
-    await em.edit(embed=embed1, mention_author=False)
-    await asyncio.sleep(0.5)
-    await em.edit(embed=embed2, mention_author=False)
-    await asyncio.sleep(0.5)
-    await em.edit(embed=embed_end, mention_author=False)
-   
+    embed1.set_footer(text="aww~ better luck next time!!")      
+    embed2=discord.Embed(title="🎰 Slot Machine 🎰", description=" <:ShizueEmbarrassedTears:850973942650765332> <:ShizueEmbarrassedTears:850973942650765332> <:ShizueEmbarrassedTears:850973942650765332> <:ShizueEmbarrassedTears:850973942650765332> <:ShizueEmbarrassedTears:850973942650765332> <:ShizueEmbarrassedTears:850973942650765332> ", color=discord.Color.blue())
+    embed2.set_footer(text="YaY~ You won!!") 
+    ems =  [embed1, embed1, embed2, embed1, embed1]                      
+    em = await message.reply(embed=embed, mention_author=False) 
+    await asyncio.sleep(1) 
+    await em.edit(embed=embed0, mention_author=False)          
+    await em.edit(embed=(random.choice(ems)), mention_author=False)            
 
-#~help
+##~help
   if message.content.startswith('~help'): 
     embed = discord.Embed(title=":t_rex:  Rimuru", url="https://top.gg/bot/841573836445188136/vote", color=discord.Color.blue())     
     embed.add_field(name=":calling:  Interactions", value="`~rimuru`  `~yo`  `~hi`  `~hello`  `~hey`  `~good morning`  `~good night`  `~bad slime`  `~good slime`  `~bye`", inline=False)
     embed.add_field(name=":jigsaw:  Fun", value="`~todo`  `~tierlist`", inline=False)       
-    embed.add_field(name=":earth_americas:  Profile", value="`~simp`  `~hearts`  `~avatar`", inline=False) 
+    embed.add_field(name=":earth_americas:  Profile", value="`~simp`  `~hearts`  `~profile`  `~avatar`", inline=False) 
     embed.add_field(name=":performing_arts:  Roleplay", value="`~nickname`  `~sing`  `~shizue`", inline=False) 
     embed.add_field(name=":adhesive_bandage:  Hard Drive", value="`~hard drive?`  `~neko`  `~bunny`", inline=False)     
     embed.add_field(name=":jack_o_lantern:  Actions", value="`~cuddle`  `~hug`  `~pat`  `~kiss`  `~lick`  `~bite`  `~poke`  `~slap`  `~punch`  `~kill`", inline=False)   
     embed.add_field(name=":fork_and_knife:  Restaurant", value="`~pizza`  `~taco`  `~burrito`  `~hotdog`  `~hamburger`  `~sandwich`  `~fries`  `~popcorn`  `~doughnut`  `~cupcake`  `~cake`", inline=False)    
     embed.add_field(name=":beers:  Bar", value="`~water`  `~milk`  `~coffee`  `~juice`  `~cocktail`  `~whisky`  `~wine`  `~beer`", inline=False)
     embed.add_field(name=":crystal_ball:  Festival Games", value="`~fortune`  `~slots`", inline=False)                         
-    await message.reply(embed=embed, mention_author=False)
+    await message.reply(embed=embed, mention_author=False)  
+
+#~gobuta
+  if message.content.startswith('~gobuta'):
+    embed=discord.Embed(color=discord.Color.blue())
+    embed.set_author(name="{0}!! wants to hit gobuta!!".format(message.author.name), icon_url=message.author.avatar_url)  
+    embed.add_field(name="<:GobutaGlassesCool:851641124686528524>", value="\u200b", inline=True)
+    embed.add_field(name="\u200b", value="\u200b", inline=False) 
+    embed.add_field(name="\u200b", value="\u200b", inline=False) 
+    embed.set_footer(text="React below to hit!!") 
+    embed1=discord.Embed(color=discord.Color.blue())
+    embed1.set_author(name="{0}!! wants to hit gobuta!!".format(message.author.name), icon_url=message.author.avatar_url)  
+    embed1.add_field(name="<:GobutaGlassesCool:851641124686528524>", value="\u200b", inline=True)
+    embed1.add_field(name="\u200b", value="\u200b", inline=False)  
+    embed1.add_field(name="\u200b", value=":soccer:", inline=False) 
+    embed1.set_footer(text="hm~ did you even touch it!!")  
+    embed2=discord.Embed(color=discord.Color.blue())
+    embed2.set_author(name="{0}!! wants to hit gobuta!!".format(message.author.name), icon_url=message.author.avatar_url)  
+    embed2.add_field(name="<:GobutaGlassesCool:851641124686528524>", value="\u200b", inline=True)
+    embed2.add_field(name="\u200b", value="\u200b", inline=False)
+    embed2.add_field(name=":soccer:", value=":soccer:", inline=False) 
+    embed2.set_footer(text="waa~ You suck!!")  
+    embed3=discord.Embed(color=discord.Color.blue())
+    embed3.set_author(name="{0}!! wants to hit gobuta!!".format(message.author.name), icon_url=message.author.avatar_url)  
+    embed3.add_field(name="<:GobutaGlassesCool:851641124686528524>", value="\u200b", inline=True) 
+    embed3.add_field(name="\u200b", value=":soccer:", inline=False) 
+    embed3.add_field(name=":soccer:", value=":soccer:", inline=False)
+    embed3.set_footer(text="aa~ You missed!!")  
+    embed4=discord.Embed(color=discord.Color.blue())
+    embed4.set_author(name="{0}!! wants to hit gobuta!!".format(message.author.name), icon_url=message.author.avatar_url)  
+    embed4.add_field(name="<:GobutaGlassesCool:851641124686528524>", value="\u200b", inline=True)
+    embed4.add_field(name=":soccer:", value=":soccer:", inline=False)
+    embed4.add_field(name=":soccer:", value=":soccer:", inline=False) 
+    embed4.set_footer(text="ee~ just a little more!!")   
+    embed5=discord.Embed(color=discord.Color.blue())
+    embed5.set_author(name="{0}!! wants to hit gobuta!!".format(message.author.name), icon_url=message.author.avatar_url)  
+    embed5.add_field(name="<:GobutaGlassesCool:851641124686528524>", value=":soccer:", inline=True)
+    embed5.add_field(name=":soccer:", value=":soccer:", inline=False)
+    embed5.add_field(name=":soccer:", value=":soccer:", inline=False) 
+    embed5.set_footer(text="wowo~ a clear hit!!")                                          
+    em = await message.reply(embed=embed, mention_author=False)
+    await em.add_reaction('⚽')
+    ems = [embed1, embed2, embed3, embed4, embed5] 
+    await asyncio.sleep(2)   
+    await em.edit(embed=(random.choice(ems)), mention_author=False)   
 
 #run
 keep_awake()
