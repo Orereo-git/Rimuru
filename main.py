@@ -1,7 +1,9 @@
 import os
 import json
-import random
 import asyncio
+import random
+from random import randint
+#discord
 import discord
 from discord.ext import commands
 #keep awake
@@ -17,6 +19,12 @@ async def update_hearts(user_hearts, user):
     user_hearts[f'{user.id}']['hearts'] = 0
 async def add_hearts(user_hearts, user, hearts):
   user_hearts[f'{user.id}']['hearts'] += hearts   
+
+#dummy thicc maths for sauce
+def randomN(n):
+  range_start = 10**(n-1)
+  range_end = (10**n)-1
+  return randint(range_start, range_end)
 
 ##Events
 @bot.event
@@ -310,6 +318,11 @@ async def bunny(ctx):
   embed.set_image(url=random.choice(bunny))  
   await ctx.reply(embed=embed, mention_author=False) 
 
+#sauce
+@bot.command()
+async def sauce(ctx):
+  await ctx.reply(randomN(6), mention_author=False)   
+
 ##restaurant
 @bot.command()
 async def pizza(ctx):
@@ -413,13 +426,12 @@ async def fortune(ctx):
 async def slots(ctx):
   msg = [" :tangerine: " , " :apple: ", " :watermelon: ", " <:ShizueEmbarrassedTears:850973942650765332> "]
   embed=discord.Embed(title="🎰 Slot Machine 🎰", description=" <:ShizueEmbarrassedTears:850973942650765332> <:ShizueEmbarrassedTears:850973942650765332> <:ShizueEmbarrassedTears:850973942650765332> <:ShizueEmbarrassedTears:850973942650765332> <:ShizueEmbarrassedTears:850973942650765332> <:ShizueEmbarrassedTears:850973942650765332> ", color=discord.Color.blue())
-  embed.set_author(name="Gobuta", icon_url=ctx.author.avatar_url) 
-  embed.set_footer(text="React below!!")
+  embed.set_author(name="Roll 6 Shizue!!", icon_url="https://i.imgur.com/IehVlWn.png") 
   embed1=discord.Embed(title="🎰 Slot Machine 🎰", description=random.choice(msg) + random.choice(msg) + random.choice(msg) + random.choice(msg) + random.choice(msg) + random.choice(msg), color=discord.Color.blue())
-  embed1.set_author(name="Gobuta", icon_url=ctx.author.avatar_url)  
+  embed1.set_author(name="Roll 6 Shizue!!", icon_url="https://i.imgur.com/IehVlWn.png") 
   embed1.set_footer(text="aww~ better luck next time!!")      
   embed2=discord.Embed(title="🎰 Slot Machine 🎰", description=" <:ShizueEmbarrassedTears:850973942650765332> <:ShizueEmbarrassedTears:850973942650765332> <:ShizueEmbarrassedTears:850973942650765332> <:ShizueEmbarrassedTears:850973942650765332> <:ShizueEmbarrassedTears:850973942650765332> <:ShizueEmbarrassedTears:850973942650765332> ", color=discord.Color.blue())
-  embed2.set_author(name="Gobuta", icon_url=ctx.author.avatar_url) 
+  embed2.set_author(name="Roll 6 Shizue!!", icon_url="https://i.imgur.com/IehVlWn.png") 
   embed2.set_footer(text="YaY~ You won!!") 
   ems =  [embed1, embed1, embed2, embed1, embed1]                      
   em = await ctx.reply(embed=embed, mention_author=False)
@@ -432,39 +444,39 @@ async def slots(ctx):
 
 #soccer
 @bot.command()
-async def soccer(ctx):
+async def throwball(ctx):
   embed=discord.Embed(color=discord.Color.blue())
-  embed.set_author(name="Gobuta", icon_url=ctx.author.avatar_url)   
+  embed.set_author(name="hit Gobuta!!", icon_url="https://i.imgur.com/KBMesb1.png")    
   embed.add_field(name="<:GobutaGlassesCool:851641124686528524>", value="\u200b", inline=True)
   embed.add_field(name="\u200b", value="\u200b", inline=False) 
   embed.add_field(name="\u200b", value="\u200b", inline=False) 
   embed.set_footer(text="React below to hit!!") 
   embed1=discord.Embed(color=discord.Color.blue())
-  embed1.set_author(name="Gobuta", icon_url=ctx.author.avatar_url)    
+  embed1.set_author(name="hit Gobuta!", icon_url="https://i.imgur.com/KBMesb1.png")      
   embed1.add_field(name="<:GobutaGlassesCool:851641124686528524>", value="\u200b", inline=True)
   embed1.add_field(name="\u200b", value="\u200b", inline=False)  
   embed1.add_field(name="\u200b", value=":soccer:", inline=False) 
   embed1.set_footer(text="hm~ You suck!!")  
   embed2=discord.Embed(color=discord.Color.blue())
-  embed2.set_author(name="Gobuta", icon_url=ctx.author.avatar_url)   
+  embed2.set_author(name="hit Gobuta!", icon_url="https://i.imgur.com/KBMesb1.png")     
   embed2.add_field(name="<:GobutaGlassesCool:851641124686528524>", value="\u200b", inline=True)
   embed2.add_field(name="\u200b", value="\u200b", inline=False)
   embed2.add_field(name=":soccer:", value=":soccer:", inline=False) 
   embed2.set_footer(text="waa~ not even close!!")  
   embed3=discord.Embed(color=discord.Color.blue())
-  embed3.set_author(name="Gobuta", icon_url=ctx.author.avatar_url)     
+  embed3.set_author(name="hit Gobuta!", icon_url="https://i.imgur.com/KBMesb1.png")     
   embed3.add_field(name="<:GobutaGlassesCool:851641124686528524>", value="\u200b", inline=True) 
   embed3.add_field(name="\u200b", value=":soccer:", inline=False) 
   embed3.add_field(name=":soccer:", value=":soccer:", inline=False)
   embed3.set_footer(text="aa~ You missed!!")  
   embed4=discord.Embed(color=discord.Color.blue())
-  embed4.set_author(name="Gobuta", icon_url=ctx.author.avatar_url)  
+  embed4.set_author(name="hit Gobuta!", icon_url="https://i.imgur.com/KBMesb1.png")  
   embed4.add_field(name="<:GobutaGlassesCool:851641124686528524>", value="\u200b", inline=True)
   embed4.add_field(name=":soccer:", value=":soccer:", inline=False)
   embed4.add_field(name=":soccer:", value=":soccer:", inline=False) 
   embed4.set_footer(text="eh~ just a little more!!")   
   embed5=discord.Embed(color=discord.Color.blue())
-  embed5.set_author(name="Gobuta", icon_url=ctx.author.avatar_url)  
+  embed5.set_author(name="hit Gobuta!", icon_url="https://i.imgur.com/KBMesb1.png")   
   embed5.add_field(name="<:GobutaGlassesCool:851641124686528524>", value=":soccer:", inline=True)
   embed5.add_field(name=":soccer:", value=":soccer:", inline=False)
   embed5.add_field(name=":soccer:", value=":soccer:", inline=False) 
@@ -486,11 +498,11 @@ async def help(ctx):
   embed.add_field(name=":jigsaw:  Fun", value="`todo`  `tierlist`", inline=False)       
   embed.add_field(name=":earth_americas:  Profile", value="`simp`  `hearts`  `avatar`", inline=False) 
   embed.add_field(name=":performing_arts:  Roleplay", value="`nickname`  `sing`  `shizue`", inline=False) 
-  embed.add_field(name=":adhesive_bandage:  Hard Drive", value="`harddrive`  `neko`  `bunny`", inline=False)     
+  embed.add_field(name=":adhesive_bandage:  Hard Drive", value="`harddrive`  `neko`  `bunny`  `sauce`", inline=False)     
   embed.add_field(name=":jack_o_lantern:  Actions", value="`cuddle`  `hug`  `pat`  `kiss`  `lick`  `bite`  `poke`  `slap`  `punch`  `kill`", inline=False)   
   embed.add_field(name=":fork_and_knife:  Restaurant", value="`pizza`  `taco`  `burrito`  `hotdog`  `hamburger`  `sandwich`  `fries`  `popcorn`  `doughnut`  `cupcake`  `cake`", inline=False)    
   embed.add_field(name=":beers:  Bar", value="`water`  `milk`  `coffee`  `juice`  `cocktail`  `whisky`  `wine`  `beer`", inline=False)
-  embed.add_field(name=":crystal_ball:  Festival Games", value="`fortune`  `slots`  `throw`", inline=False) 
+  embed.add_field(name=":crystal_ball:  Festival Games", value="`fortune`  `slots`  `throwball`", inline=False) 
   embed.add_field(name=":construction:  Diablo", value="`~`", inline=False)                          
   await ctx.reply(embed=embed, mention_author=False) 
 
