@@ -92,7 +92,8 @@ async def tierlist(ctx):
 #simp
 @bot.command()
 async def simp(ctx):   
-  embed=discord.Embed(title="💙", color=discord.Color.blue()) 
+  boo = ["💙", "💜", "💚", "❤️", "🧡"]
+  embed=discord.Embed(title=random.choice(boo), color=discord.Color.blue()) 
   await ctx.reply(embed=embed, mention_author=False) 
 #hearts   
   with open('user_hearts.json', 'r') as f:
@@ -322,7 +323,13 @@ async def sauce(ctx):
   number = randomN(6)
   embed=discord.Embed(color=discord.Color.blue()) 
   embed.set_footer(text=number)
-  await ctx.reply(embed=embed, mention_author=False) 
+  hm = await ctx.reply(embed=embed, mention_author=False)
+  await asyncio.sleep(3) 
+  embed1=discord.Embed(color=discord.Color.blue()) 
+  embed1.set_footer(text="shh..")
+  await hm.edit(embed=embed1, mention_author=False)
+  
+
 
 ##restaurant
 @bot.command()
