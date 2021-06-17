@@ -416,14 +416,16 @@ async def fortune(ctx):
 @bot.command()
 async def slots(ctx):
   msg = [" :tangerine: " , " :apple: ", " :watermelon: ", " <:ShizueEmbarrassedTears:850973942650765332> "]
-  embed=discord.Embed(title="🎰 Slot Machine 🎰", description=" <:ShizueEmbarrassedTears:850973942650765332> <:ShizueEmbarrassedTears:850973942650765332> <:ShizueEmbarrassedTears:850973942650765332> <:ShizueEmbarrassedTears:850973942650765332> <:ShizueEmbarrassedTears:850973942650765332> <:ShizueEmbarrassedTears:850973942650765332> ", color=discord.Color.blue())
+  embed=discord.Embed(description=" <:ShizueEmbarrassedTears:850973942650765332> <:ShizueEmbarrassedTears:850973942650765332> <:ShizueEmbarrassedTears:850973942650765332> <:ShizueEmbarrassedTears:850973942650765332> <:ShizueEmbarrassedTears:850973942650765332> <:ShizueEmbarrassedTears:850973942650765332> ", color=discord.Color.blue())
   embed.set_author(name="Roll 6 Shizue!!", icon_url="https://i.imgur.com/IehVlWn.png") 
-  embed0=discord.Embed(title="🎰 Slot Machine 🎰", description=random.choice(msg) + random.choice(msg) + random.choice(msg) + random.choice(msg) + random.choice(msg) + random.choice(msg), color=discord.Color.blue()) 
+  embedd=discord.Embed(description=random.choice(msg) + random.choice(msg) + random.choice(msg) + random.choice(msg) + random.choice(msg) + random.choice(msg), color=discord.Color.blue()) 
+  embedd.set_author(name="Roll 6 Shizue!!", icon_url="https://i.imgur.com/IehVlWn.png")  
+  embed0=discord.Embed(description=random.choice(msg) + random.choice(msg) + random.choice(msg) + random.choice(msg) + random.choice(msg) + random.choice(msg), color=discord.Color.blue()) 
   embed0.set_author(name="Roll 6 Shizue!!", icon_url="https://i.imgur.com/IehVlWn.png")  
-  embed1=discord.Embed(title="🎰 Slot Machine 🎰", description=random.choice(msg) + random.choice(msg) + random.choice(msg) + random.choice(msg) + random.choice(msg) + random.choice(msg), color=discord.Color.blue())
+  embed1=discord.Embed(description=random.choice(msg) + random.choice(msg) + random.choice(msg) + random.choice(msg) + random.choice(msg) + random.choice(msg), color=discord.Color.blue())
   embed1.set_author(name="Roll 6 Shizue!!", icon_url="https://i.imgur.com/IehVlWn.png") 
   embed1.set_footer(text="aww~ better luck next time!!")      
-  embed2=discord.Embed(title="🎰 Slot Machine 🎰", description=" <:ShizueEmbarrassedTears:850973942650765332> <:ShizueEmbarrassedTears:850973942650765332> <:ShizueEmbarrassedTears:850973942650765332> <:ShizueEmbarrassedTears:850973942650765332> <:ShizueEmbarrassedTears:850973942650765332> <:ShizueEmbarrassedTears:850973942650765332> ", color=discord.Color.blue())
+  embed2=discord.Embed(description=" <:ShizueEmbarrassedTears:850973942650765332> <:ShizueEmbarrassedTears:850973942650765332> <:ShizueEmbarrassedTears:850973942650765332> <:ShizueEmbarrassedTears:850973942650765332> <:ShizueEmbarrassedTears:850973942650765332> <:ShizueEmbarrassedTears:850973942650765332> ", color=discord.Color.blue())
   embed2.set_author(name="Roll 6 Shizue!!", icon_url="https://i.imgur.com/IehVlWn.png") 
   embed2.set_footer(text="YaY~ You won!!") 
   ems =  [embed1, embed1, embed2, embed1, embed1]                      
@@ -432,6 +434,10 @@ async def slots(ctx):
   def check(reaction, user):
     return user == ctx.author and str(reaction.emoji) == '🎰'
   await bot.wait_for('reaction_add', timeout=60.0, check=check)  
+  await em.edit(embed=embed0, mention_author=False)         
+  await asyncio.sleep(0.5)  
+  await em.edit(embed=embedd, mention_author=False)  
+  await asyncio.sleep(0.5)
   await em.edit(embed=embed0, mention_author=False)         
   await asyncio.sleep(0.5)   
   await em.edit(embed=(random.choice(ems)), mention_author=False)                  
