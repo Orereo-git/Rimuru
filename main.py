@@ -119,7 +119,7 @@ async def hearts(ctx):
 async def avatar(ctx, user: discord.Member=None):
   if not user:
     embed = discord.Embed(color=discord.Color.blue())
-    embed.set_image(url=ctx.message.author.avatar_url)
+    embed.set_image(url=ctx.message.author.avatar_url) 
     await ctx.reply(embed=embed, mention_author=False)
   else:
     embed = discord.Embed(color=discord.Color.blue())
@@ -132,9 +132,7 @@ async def avatar(ctx, user: discord.Member=None):
 async def nickname(ctx):    
   nicknames = ["Acheron", "Adbeel", "Azazel", "Belial", "Buer", "Charon", "Dagon", "Damien", "Eligor", "Forneus", "Gresill", "Helel", "Iblis", "Lestat", "Leviatha", "Lucifer", "Malacoda", "Naberius", "Orobas", "Radna", "Samael", "Sedit", "Seth", "Ubel", "Zagan", "Achlys", "Akeldama", "Carmen", "Carmilla", "Claudia", "Enyo", "Gello", "Hel", "Lilin", "Mare", "Mircalla", "Pandora", "Puck", "Selene"]
   await ctx.author.edit(nick=(random.choice(nicknames)))
-  await ctx.message.add_reaction('✅')     
-  messages = ["<:ShizueEmbarrassedTears:850973942650765332>"]
-  await ctx.reply(random.choice(messages), mention_author=False)       
+  await ctx.message.add_reaction('✅')          
 
 #sing  
 @bot.command()
@@ -145,7 +143,7 @@ async def sing(ctx):
     await ctx.message.add_reaction('✅')        
   if vc is None:
     await ctx.message.add_reaction('❌')   
-    await ctx.reply('b..bbaka!! You have to be in a voice channel first!!', mention_author=False)                   
+    await ctx.send('b..bbaka!! You have to be in a voice channel first!!', mention_author=False)                   
   guild = ctx.guild
   voice_client: discord.VoiceClient = discord.utils.get(bot.voice_clients, guild=guild)    
   audio_source = discord.FFmpegPCMAudio('https://mp3.fastupload.co/data/1622193194/rimuru.mp3')
@@ -169,13 +167,13 @@ async def cuddle(ctx, otaku: discord.Member=None):
     await ctx.message.add_reaction('❌') 
     embed = discord.Embed(color=discord.Color.blue())
     embed.add_field(name="Error", value="tag @someone", inline=False)           
-    await ctx.reply(embed=embed, mention_author=False)
+    await ctx.send(embed=embed, mention_author=False)
   else:
     gif = ["https://i.imgur.com/zEpEFdR.gif", "https://i.imgur.com/0vMxXPD.gif", "https://i.imgur.com/BBltNs5.gif", "https://i.imgur.com/AbwGSGe.mp4"]
     embed=discord.Embed(color=discord.Color.blue()) 
     embed.set_author(name="{0} cuddles {1}!! aww!!".format(ctx.message.author.name, otaku.name), icon_url=ctx.author.avatar_url)  
     embed.set_image(url=random.choice(gif))       
-    await ctx.reply(embed=embed, mention_author=False) 
+    await ctx.send(embed=embed, mention_author=False) 
   
 @bot.command(pass_context=True)
 async def hug(ctx, otaku: discord.Member=None): 
@@ -183,117 +181,117 @@ async def hug(ctx, otaku: discord.Member=None):
     await ctx.message.add_reaction('❌') 
     embed = discord.Embed(color=discord.Color.blue())
     embed.add_field(name="Error", value="tag @someone", inline=False)           
-    await ctx.reply(embed=embed, mention_author=False)
+    await ctx.send(embed=embed, mention_author=False)
   else:  
     gif = ["https://i.imgur.com/BLWNnFl.gif", "https://i.imgur.com/ZNexQYs.gif", "https://i.imgur.com/AmW4JXv.gif", "https://i.imgur.com/jPI7d39.gif"]
     embed=discord.Embed(color=discord.Color.blue()) 
     embed.set_author(name="{0} huggs {1}!! aa!!".format(ctx.message.author.name, otaku.name), icon_url=ctx.author.avatar_url)      
     embed.set_image(url=random.choice(gif))       
-    await ctx.reply(embed=embed, mention_author=False)
+    await ctx.send(embed=embed, mention_author=False)
 @bot.command(pass_context=True)
 async def pat(ctx, otaku: discord.Member=None): 
   if not otaku:
     await ctx.message.add_reaction('❌') 
     embed = discord.Embed(color=discord.Color.blue())
     embed.add_field(name="Error", value="tag @someone", inline=False)           
-    await ctx.reply(embed=embed, mention_author=False)
+    await ctx.send(embed=embed, mention_author=False)
   else:  
     gif = ["https://i.imgur.com/jalh0TO.gif", "https://i.imgur.com/jyGKbIt.gif", "https://i.imgur.com/waDgdYE.gif", "https://i.imgur.com/y8hzJj3.gif", "https://i.imgur.com/WnWbaBI.gif", "https://i.imgur.com/MzaOifc.gif", "https://i.imgur.com/twu1Elb.gif", "https://i.imgur.com/XShvBry.gif", "https://i.imgur.com/DwcgM7X.gif", "https://i.imgur.com/wXfqvwZ.gif", "https://i.imgur.com/M6whfdx.gif"]
     embed=discord.Embed(color=discord.Color.blue()) 
     embed.set_author(name="{0} pats {1}!! pat..pat!!".format(ctx.message.author.name, otaku.name), icon_url=ctx.author.avatar_url)   
     embed.set_image(url=random.choice(gif))       
-    await ctx.reply(embed=embed, mention_author=False)
+    await ctx.send(embed=embed, mention_author=False)
 @bot.command(pass_context=True)
 async def kiss(ctx, otaku: discord.Member=None): 
   if not otaku:
     await ctx.message.add_reaction('❌') 
     embed = discord.Embed(color=discord.Color.blue())
     embed.add_field(name="Error", value="tag @someone", inline=False)           
-    await ctx.reply(embed=embed, mention_author=False)
+    await ctx.send(embed=embed, mention_author=False)
   else:  
     gif = ["https://i.imgur.com/GDti9sg.gif", "https://i.imgur.com/pFboGNv.gif", "https://i.imgur.com/tTNi2ny.gif", "https://i.imgur.com/FQB8F7f.gif", "https://i.imgur.com/CCOE8cJ.gif"]
     embed=discord.Embed(color=discord.Color.blue()) 
     embed.set_author(name="{0} kisses {1}!! chuu!!".format(ctx.message.author.name, otaku.name), icon_url=ctx.author.avatar_url)   
     embed.set_image(url=random.choice(gif))       
-    await ctx.reply(embed=embed, mention_author=False)
+    await ctx.send(embed=embed, mention_author=False)
 @bot.command(pass_context=True)
 async def lick(ctx, otaku: discord.Member=None):
   if not otaku:
     await ctx.message.add_reaction('❌') 
     embed = discord.Embed(color=discord.Color.blue())
     embed.add_field(name="Error", value="tag @someone", inline=False)           
-    await ctx.reply(embed=embed, mention_author=False)
+    await ctx.send(embed=embed, mention_author=False)
   else:   
     gif = ["https://i.imgur.com/VGHwWUa.gif", "https://i.imgur.com/yi7CU5t.gif", "https://i.imgur.com/LHrs2i5.gif", "https://i.imgur.com/J3mRLc8.gif", "https://i.imgur.com/eE9BLra.gif", "https://i.imgur.com/nZYYcmr.gif", "https://i.imgur.com/MDsvf8w.gif", "https://i.imgur.com/P2zPziT.gif"]
     embed=discord.Embed(color=discord.Color.blue())
     embed.set_author(name="{0} licks {1}!! lzzz!!".format(ctx.message.author.name, otaku.name), icon_url=ctx.author.avatar_url)    
     embed.set_image(url=random.choice(gif))       
-    await ctx.reply(embed=embed, mention_author=False) 
+    await ctx.send(embed=embed, mention_author=False) 
 @bot.command(pass_context=True)
 async def bite(ctx, otaku: discord.Member=None):
   if not otaku:
     await ctx.message.add_reaction('❌') 
     embed = discord.Embed(color=discord.Color.blue())
     embed.add_field(name="Error", value="tag @someone", inline=False)           
-    await ctx.reply(embed=embed, mention_author=False)
+    await ctx.send(embed=embed, mention_author=False)
   else:   
     gif = ["https://i.imgur.com/oEBOetR.gif", "https://i.imgur.com/OgzfiuM.gif", "https://i.imgur.com/8qvlj0M.gif", "https://i.imgur.com/MUgRpL5.gif", "https://i.imgur.com/PHqBMPG.mp4"]
     embed=discord.Embed(color=discord.Color.blue()) 
     embed.set_author(name="{0} bites {1}!! nom..nom!!".format(ctx.message.author.name, otaku.name), icon_url=ctx.author.avatar_url)   
     embed.set_image(url=random.choice(gif))       
-    await ctx.reply(embed=embed, mention_author=False)
+    await ctx.send(embed=embed, mention_author=False)
 @bot.command(pass_context=True)
 async def poke(ctx, otaku: discord.Member=None):
   if not otaku:
     await ctx.message.add_reaction('❌') 
     embed = discord.Embed(color=discord.Color.blue())
     embed.add_field(name="Error", value="tag @someone", inline=False)           
-    await ctx.reply(embed=embed, mention_author=False)
+    await ctx.send(embed=embed, mention_author=False)
   else:  
     gif = ["https://i.imgur.com/X7pNyfw.gif", "https://i.imgur.com/KTL5UbY.gif", "https://i.imgur.com/FvBgoh6.gif", "https://i.imgur.com/BdxvlrD.gif", "https://i.imgur.com/PS31oUs.gif", "https://i.imgur.com/dmAjEZF.gif"]
     embed=discord.Embed(color=discord.Color.blue()) 
     embed.set_author(name="{0} pokes {1}!! poke..poke!!".format(ctx.message.author.name, otaku.name), icon_url=ctx.author.avatar_url)   
     embed.set_image(url=random.choice(gif))       
-    await ctx.reply(embed=embed, mention_author=False)
+    await ctx.send(embed=embed, mention_author=False)
 @bot.command(pass_context=True)
 async def slap(ctx, otaku: discord.Member=None): 
   if not otaku:
     await ctx.message.add_reaction('❌') 
     embed = discord.Embed(color=discord.Color.blue())
     embed.add_field(name="Error", value="tag @someone", inline=False)           
-    await ctx.reply(embed=embed, mention_author=False)
+    await ctx.send(embed=embed, mention_author=False)
   else:  
     gif = ["https://i.imgur.com/af7n02p.gif", "https://i.imgur.com/UZRKtQ0.gif", "https://i.imgur.com/CWdDw6x.gif", "https://i.imgur.com/uvIDSxi.gif", "https://i.imgur.com/vUTJUWG.gif"]
     embed=discord.Embed(color=discord.Color.blue()) 
     embed.set_author(name="{0} slaps {1}!! whip!!".format(ctx.message.author.name, otaku.name), icon_url=ctx.author.avatar_url)   
     embed.set_image(url=random.choice(gif))       
-    await ctx.reply(embed=embed, mention_author=False) 
+    await ctx.send(embed=embed, mention_author=False) 
 @bot.command(pass_context=True)
 async def punch(ctx, otaku: discord.Member=None):
   if not otaku:
     await ctx.message.add_reaction('❌') 
     embed = discord.Embed(color=discord.Color.blue())
     embed.add_field(name="Error", value="tag @someone", inline=False)           
-    await ctx.reply(embed=embed, mention_author=False)
+    await ctx.send(embed=embed, mention_author=False)
   else:   
     gif = ["https://i.imgur.com/AVnDEnx.gif", "https://i.imgur.com/A1uSB0q.gif", "https://i.imgur.com/xcGvJfh.gif", "https://i.imgur.com/aI3vBjX.gif", "https://i.imgur.com/sV44BxK.gif", "https://i.imgur.com/valk8VY.gif", "https://i.imgur.com/ALR0hTq.gif"]
     embed=discord.Embed(color=discord.Color.blue()) 
     embed.set_author(name="{0} punches {1}!! whoom!!".format(ctx.message.author.name, otaku.name), icon_url=ctx.author.avatar_url)   
     embed.set_image(url=random.choice(gif))       
-    await ctx.reply(embed=embed, mention_author=False)        
+    await ctx.send(embed=embed, mention_author=False)        
 @bot.command(pass_context=True)
 async def kill(ctx, otaku: discord.Member=None): 
   if not otaku:
     await ctx.message.add_reaction('❌') 
     embed = discord.Embed(color=discord.Color.blue())
     embed.add_field(name="Error", value="tag @someone", inline=False)           
-    await ctx.reply(embed=embed, mention_author=False)
+    await ctx.send(embed=embed, mention_author=False)
   else:  
     gif = ["https://i.imgur.com/JUJcXN6.gif", "https://i.imgur.com/gE0AE8V.gif", "https://i.imgur.com/nNgJdci.gif", "https://i.imgur.com/XhOC90e.gif", "https://i.imgur.com/BwhkFBj.gif", "https://i.imgur.com/LBfxEry.gif"]
     embed=discord.Embed(color=discord.Color.blue()) 
     embed.set_author(name="{0} kills {1}!! wasted!!".format(ctx.message.author.name, otaku.name), icon_url=ctx.author.avatar_url)   
     embed.set_image(url=random.choice(gif))       
-    await ctx.reply(embed=embed, mention_author=False)    
+    await ctx.send(embed=embed, mention_author=False)    
 
 ##hard drive 
 #harddrive
@@ -321,7 +319,9 @@ async def bunny(ctx):
 #sauce
 @bot.command()
 async def sauce(ctx):
-  await ctx.reply(randomN(6), mention_author=False)   
+  number = randomN(6)
+  embed=discord.Embed(title=number, color=discord.Color.blue()) 
+  await ctx.reply(embed=embed, mention_author=False) 
 
 ##restaurant
 @bot.command()
@@ -407,26 +407,17 @@ async def water(ctx):
 #fortune
 @bot.command()
 async def fortune(ctx):
-  messages = [":tanabata_tree: great blessing (大吉, dai-kichi)", ":tanabata_tree: middle blessing (中吉, chū-kichi)", ":tanabata_tree: small blessing (小吉, shō-kichi)", ":tanabata_tree: blessing (吉, kichi)", ":tanabata_tree: half-blessing (半吉, han-kichi)", ":tanabata_tree: future blessing (末吉, sue-kichi)", ":tanabata_tree: future small blessing (末小吉, sue-shō-kichi)", ":ghost: curse (凶, kyō)", ":ghost: small curse (小凶, shō-kyō)", ":ghost: half-curse (半凶, han-kyō)", ":ghost: future curse (末凶, sue-kyō)", ":ghost: great curse (大凶, dai-kyō)"]
-  embed=discord.Embed(color=discord.Color.blue())
-  embed.set_footer(text="React below!!")
-  embed.set_author(name="Gobuta", icon_url=ctx.author.avatar_url)   
-  embed0=discord.Embed(color=discord.Color.blue())
-  embed0.add_field(name="Fortune", value=random.choice(messages), inline=False) 
-  embed0.set_author(name="Gobuta", icon_url=ctx.author.avatar_url)  
-  em = await ctx.reply(embed=embed, mention_author=False)
-  await em.add_reaction('🎋') 
-  def check(reaction, user):
-    return user == ctx.author and str(reaction.emoji) == '🎋'
-  await bot.wait_for('reaction_add', timeout=60.0, check=check)  
-  await em.edit(embed=embed0, mention_author=False)         
-
+  messages = [":tanabata_tree: great blessing (大吉, dai-kichi)", ":tanabata_tree: middle blessing (中吉, chū-kichi)", ":tanabata_tree: small blessing (小吉, shō-kichi)", ":tanabata_tree: blessing (吉, kichi)", ":tanabata_tree: half-blessing (半吉, han-kichi)", ":tanabata_tree: future blessing (末吉, sue-kichi)", ":tanabata_tree: future small blessing (末小吉, sue-shō-kichi)", ":ghost: curse (凶, kyō)", ":ghost: small curse (小凶, shō-kyō)", ":ghost: half-curse (半凶, han-kyō)", ":ghost: future curse (末凶, sue-kyō)", ":ghost: great curse (大凶, dai-kyō)"] 
+  await ctx.reply(random.choice(messages), mention_author=False)   
+       
 #slots
 @bot.command()
 async def slots(ctx):
   msg = [" :tangerine: " , " :apple: ", " :watermelon: ", " <:ShizueEmbarrassedTears:850973942650765332> "]
   embed=discord.Embed(title="🎰 Slot Machine 🎰", description=" <:ShizueEmbarrassedTears:850973942650765332> <:ShizueEmbarrassedTears:850973942650765332> <:ShizueEmbarrassedTears:850973942650765332> <:ShizueEmbarrassedTears:850973942650765332> <:ShizueEmbarrassedTears:850973942650765332> <:ShizueEmbarrassedTears:850973942650765332> ", color=discord.Color.blue())
   embed.set_author(name="Roll 6 Shizue!!", icon_url="https://i.imgur.com/IehVlWn.png") 
+  embed0=discord.Embed(title="🎰 Slot Machine 🎰", description=random.choice(msg) + random.choice(msg) + random.choice(msg) + random.choice(msg) + random.choice(msg) + random.choice(msg), color=discord.Color.blue()) 
+  embed0.set_author(name="Roll 6 Shizue!!", icon_url="https://i.imgur.com/IehVlWn.png")  
   embed1=discord.Embed(title="🎰 Slot Machine 🎰", description=random.choice(msg) + random.choice(msg) + random.choice(msg) + random.choice(msg) + random.choice(msg) + random.choice(msg), color=discord.Color.blue())
   embed1.set_author(name="Roll 6 Shizue!!", icon_url="https://i.imgur.com/IehVlWn.png") 
   embed1.set_footer(text="aww~ better luck next time!!")      
@@ -439,10 +430,11 @@ async def slots(ctx):
   def check(reaction, user):
     return user == ctx.author and str(reaction.emoji) == '🎰'
   await bot.wait_for('reaction_add', timeout=60.0, check=check)  
-  await em.edit(embed=(random.choice(ems)), mention_author=False)         
-  await em.edit(embed=(random.choice(ems)), mention_author=False)            
+  await em.edit(embed=embed0, mention_author=False)         
+  await asyncio.sleep(0.5)   
+  await em.edit(embed=(random.choice(ems)), mention_author=False)                  
 
-#soccer
+#throwball
 @bot.command()
 async def throwball(ctx):
   embed=discord.Embed(color=discord.Color.blue())
@@ -477,7 +469,7 @@ async def throwball(ctx):
   embed4.set_footer(text="eh~ just a little more!!")   
   embed5=discord.Embed(color=discord.Color.blue())
   embed5.set_author(name="hit Gobuta!", icon_url="https://i.imgur.com/KBMesb1.png")   
-  embed5.add_field(name="<:GobutaGlassesCool:851641124686528524>", value=":soccer:", inline=True)
+  embed5.add_field(name=":wind_blowing_face:", value=":soccer:", inline=True)
   embed5.add_field(name=":soccer:", value=":soccer:", inline=False)
   embed5.add_field(name=":soccer:", value=":soccer:", inline=False) 
   embed5.set_footer(text="wowo~ a clear hit!!")   
