@@ -2,7 +2,6 @@ import os
 import json
 import random
 import asyncio
-import datetime
 import discord
 from discord.ext import commands
 #keep awake
@@ -24,16 +23,6 @@ async def add_hearts(user_hearts, user, hearts):
 async def on_ready():
   await bot.change_presence(activity=discord.Game(name="~help"))
   print('Ready')
-
-##ping
-@bot.command(pass_context=True)
-async def ping(ctx):
-  now = datetime.datetime.utcnow()
-  delta = ctx.message.timestamp
-  pingtime = now-delta
-  embed = discord.Embed(title="{} ms!!".format(pingtime), color=discord.Color.blue())
-  embed.set_author(name="Requested by " + str(ctx.message.author), icon_url=ctx.message.author.avatar_url)
-  await ctx.reply(embed=embed)  
 
 ##Interactions
 @bot.command()
@@ -78,13 +67,13 @@ async def bye(ctx):
   await ctx.reply(random.choice(messages), mention_author=False)      
 
 ##fun
-#~todo
+#todo
 @bot.command()
 async def todo(ctx):
   messages = [":umbrella: mm.. make it rain!! <:ShizueEmbarrassedTears:850973942650765332>", ":snowman2: woo.. make a snowman!! <:ShizueEmbarrassedTears:850973942650765332>", ":fork_knife_plate: get something to eat!! <:ShizueEmbarrassedTears:850973942650765332>", ":soap: cleaning? <:ShizueEmbarrassedTears:850973942650765332>", ":beach: lets go to a beach!! <:ShizueEmbarrassedTears:850973942650765332>", ":bubble_tea: get something to drink!! <:ShizueEmbarrassedTears:850973942650765332>", ":island: lets go to some island!! <:ShizueEmbarrassedTears:850973942650765332>", ":video_game: wanna play some games with me!! <:ShizueEmbarrassedTears:850973942650765332>", ":yarn: just sleep.. <:ShizueEmbarrassedTears:850973942650765332>", ":bowling: lets go bowling!! <:ShizueEmbarrassedTears:850973942650765332>", ":microphone: sing something!! <:ShizueEmbarrassedTears:850973942650765332>", ":golf: lets go golfing!! <:ShizueEmbarrassedTears:850973942650765332>", ":rainbow: woo.. make a rainbow!! <:ShizueEmbarrassedTears:850973942650765332>", ":boxing_glove: boing!! foof..ffof.. <:ShizueEmbarrassedTears:850973942650765332>"]
   await ctx.reply(random.choice(messages), mention_author=False) 
 
-#~tierlist
+#tierlist
 @bot.command()
 async def tierlist(ctx):
   embed=discord.Embed(color=discord.Color.blue()) 
@@ -92,7 +81,7 @@ async def tierlist(ctx):
   await ctx.reply(embed=embed, mention_author=False) 
 
 ##profile
-#~simp
+#simp
 @bot.command()
 async def simp(ctx):   
   embed=discord.Embed(title="💙", color=discord.Color.blue()) 
@@ -105,7 +94,7 @@ async def simp(ctx):
   with open('user_hearts.json', 'w') as f:
     json.dump(user_hearts, f)      
 
-#~hearts
+#hearts
 @bot.command()
 async def hearts(ctx):   
   with open('user_hearts.json', 'r') as f:
@@ -117,7 +106,7 @@ async def hearts(ctx):
     embed.add_field(name="hearts earned <:ShizueEmbarrassedTears:850973942650765332> :", value= hearts, inline=True) 
     await ctx.reply(embed=embed, mention_author=False) 
 
-#~avatar    
+#avatar    
 @bot.command(pass_context=True)
 async def avatar(ctx, user: discord.Member=None):
   if not user:
@@ -130,7 +119,7 @@ async def avatar(ctx, user: discord.Member=None):
     await ctx.reply(embed=embed, mention_author=False)
 
 ##roleplay
-#~nickname
+#nickname
 @bot.command()
 async def nickname(ctx):    
   nicknames = ["Acheron", "Adbeel", "Azazel", "Belial", "Buer", "Charon", "Dagon", "Damien", "Eligor", "Forneus", "Gresill", "Helel", "Iblis", "Lestat", "Leviatha", "Lucifer", "Malacoda", "Naberius", "Orobas", "Radna", "Samael", "Sedit", "Seth", "Ubel", "Zagan", "Achlys", "Akeldama", "Carmen", "Carmilla", "Claudia", "Enyo", "Gello", "Hel", "Lilin", "Mare", "Mircalla", "Pandora", "Puck", "Selene"]
@@ -139,7 +128,7 @@ async def nickname(ctx):
   messages = ["<:ShizueEmbarrassedTears:850973942650765332>"]
   await ctx.reply(random.choice(messages), mention_author=False)       
 
-#~sing  
+#sing  
 @bot.command()
 async def sing(ctx):    
   vc = ctx.author.voice   
@@ -159,7 +148,7 @@ async def sing(ctx):
   await asyncio.sleep(90)                                       
   await voice_client.disconnect()   
 
-#~shizue
+#shizue
 @bot.command()
 async def shizue(ctx): 
   messages = ["i..i.. like Rimuru-sama <:ShizueEmbarrassedTears:850973942650765332> ~aa"]
@@ -299,13 +288,13 @@ async def kill(ctx, otaku: discord.Member=None):
     await ctx.reply(embed=embed, mention_author=False)    
 
 ##hard drive 
-#~hard drive?
+#harddrive
 @bot.command()
 async def harddrive(ctx): 
   msg = "h-how!? i thought tamura destroyed it!! <:ShizueEmbarrassedTears:850973942650765332>"
   await ctx.reply((msg), mention_author=False)
 
-#~neko
+#neko
 @bot.command()
 async def neko(ctx): 
   neko = ["https://i.imgur.com/gYmWit8.jpg", "https://i.imgur.com/YODUPBx.png", "https://i.imgur.com/WEIzYqj.jpg", "https://i.imgur.com/muHjCd2.jpg", "https://i.imgur.com/xlLFGuw.jpg", "https://i.imgur.com/yb9dteM.png", "https://i.imgur.com/l185fRO.jpg", "https://i.imgur.com/fX6fN8m.jpg", "https://i.imgur.com/fitUjO8.jpg", "https://i.imgur.com/lwQQsHZ.jpg", "https://i.imgur.com/HGHxQU7.jpg", "https://i.imgur.com/I1Crh5n.jpg", "https://i.imgur.com/UTV94q8.jpg", "https://i.imgur.com/CcAV0Z1.jpg", "https://i.imgur.com/6duC1GW.jpg", "https://i.imgur.com/lELf8LB.jpg", "https://i.imgur.com/AO5alF0.jpg", "https://i.imgur.com/FP6GRBn.png", "https://i.imgur.com/3NdDaUp.jpg", "https://i.imgur.com/VPmTxCi.jpg", "https://i.imgur.com/2kDKsVP.jpg", "https://i.imgur.com/erF8QdO.jpg", "https://i.imgur.com/w7L5rxI.jpg", "https://i.imgur.com/KEWo1nb.png"]
@@ -313,7 +302,7 @@ async def neko(ctx):
   embed.set_image(url=random.choice(neko)) 
   await ctx.reply(embed=embed, mention_author=False) 
 
-#~bunny
+#bunny
 @bot.command()
 async def bunny(ctx): 
   bunny = ["https://i.imgur.com/3Xx1NfG.jpg", "https://i.imgur.com/2A8svw1.jpg", "https://i.imgur.com/LRIyDDa.jpg", "https://i.imgur.com/pryD7oj.jpg", "https://i.imgur.com/eqeXcFa.jpg", "https://i.imgur.com/UckaWyt.jpg", "https://i.imgur.com/mb21UaR.jpg", "https://i.imgur.com/MPNzrXn.jpg", "https://i.imgur.com/bbsbu5V.jpg", "https://i.imgur.com/ApDP1KE.png", "https://i.imgur.com/Si1mJcb.png", "https://i.imgur.com/afG01qp.jpg", "https://i.imgur.com/ZUrdICw.jpg", "https://i.imgur.com/g7SxAzR.jpg", "https://i.imgur.com/uqVOeJk.jpg", "https://i.imgur.com/hcxhZtL.jpg", "https://i.imgur.com/vygVrUt.jpg"]
@@ -402,13 +391,13 @@ async def water(ctx):
   await ctx.reply(random.choice(messages), mention_author=False) 
 
 ##festival games    
-#~fortune
+#fortune
 @bot.command()
 async def fortune(ctx):
   messages = [":tanabata_tree: great blessing (大吉, dai-kichi)", ":tanabata_tree: middle blessing (中吉, chū-kichi)", ":tanabata_tree: small blessing (小吉, shō-kichi)", ":tanabata_tree: blessing (吉, kichi)", ":tanabata_tree: half-blessing (半吉, han-kichi)", ":tanabata_tree: future blessing (末吉, sue-kichi)", ":tanabata_tree: future small blessing (末小吉, sue-shō-kichi)", ":ghost: curse (凶, kyō)", ":ghost: small curse (小凶, shō-kyō)", ":ghost: half-curse (半凶, han-kyō)", ":ghost: future curse (末凶, sue-kyō)", ":ghost: great curse (大凶, dai-kyō)"]
   await ctx.reply(random.choice(messages), mention_author=False) 
 
-#~slots
+#slots
 @bot.command()
 async def slots(ctx):
   msg = [" :tangerine: " , " :apple: ", " :watermelon: ", " <:ShizueEmbarrassedTears:850973942650765332> "]
@@ -420,10 +409,14 @@ async def slots(ctx):
   embed2.set_footer(text="YaY~ You won!!") 
   ems =  [embed1, embed1, embed2, embed1, embed1]                      
   em = await ctx.reply(embed=embed, mention_author=False)
-  await bot.wait_for("reaction_add")         
+  await em.add_reaction('🎰') 
+  def check(reaction, user):
+    return user == ctx.author and str(reaction.emoji) == '🎰'
+  await bot.wait_for('reaction_add', timeout=60.0, check=check)  
+  await em.edit(embed=(random.choice(ems)), mention_author=False)         
   await em.edit(embed=(random.choice(ems)), mention_author=False)            
 
-#~gobuta
+#soccer
 @bot.command()
 async def soccer(ctx):
   embed=discord.Embed(color=discord.Color.blue())
@@ -462,17 +455,20 @@ async def soccer(ctx):
   embed5.add_field(name=":soccer:", value=":soccer:", inline=False)
   embed5.add_field(name=":soccer:", value=":soccer:", inline=False) 
   embed5.set_footer(text="wowo~ a clear hit!!")   
-  ems = [embed1, embed2, embed3, embed4, embed5]                                       
+  ems = [embed1, embed2, embed3, embed4, embed5]                                     
   em = await ctx.reply(embed=embed, mention_author=False) 
-  await bot.wait_for('reaction_add', timeout=60.0)
+  await em.add_reaction('⚽') 
+  def check(reaction, user):
+    return user == ctx.author and str(reaction.emoji) == '⚽'
+  await bot.wait_for('reaction_add', timeout=60.0, check=check)  
   await em.edit(embed=(random.choice(ems)), mention_author=False)  
 
-##~help
+##help
 @bot.command()
 async def help(ctx): 
   embed = discord.Embed(title=":t_rex:  Rimuru", url="https://top.gg/bot/841573836445188136/vote", color=discord.Color.blue())     
   embed.add_field(name=":calling:  Interactions", value="`rimuru`  `yo`  `hi`  `hello`  `hey`  `goodmorning`  `goodnight`  `badslime`  `goodslime`  `bye`", inline=False)
-  embed.add_field(name=":jigsaw:  Fun", value="`~todo`  `~tierlist`", inline=False)       
+  embed.add_field(name=":jigsaw:  Fun", value="`todo`  `tierlist`", inline=False)       
   embed.add_field(name=":earth_americas:  Profile", value="`simp`  `hearts`  `avatar`", inline=False) 
   embed.add_field(name=":performing_arts:  Roleplay", value="`nickname`  `sing`  `shizue`", inline=False) 
   embed.add_field(name=":adhesive_bandage:  Hard Drive", value="`harddrive`  `neko`  `bunny`", inline=False)     
@@ -480,7 +476,7 @@ async def help(ctx):
   embed.add_field(name=":fork_and_knife:  Restaurant", value="`pizza`  `taco`  `burrito`  `hotdog`  `hamburger`  `sandwich`  `fries`  `popcorn`  `doughnut`  `cupcake`  `cake`", inline=False)    
   embed.add_field(name=":beers:  Bar", value="`water`  `milk`  `coffee`  `juice`  `cocktail`  `whisky`  `wine`  `beer`", inline=False)
   embed.add_field(name=":crystal_ball:  Festival Games", value="`fortune`  `slots`  `throw`", inline=False) 
-  embed.add_field(name=":construction: Diablo", value="`ping`", inline=False)                          
+  embed.add_field(name=":construction:  Diablo", value="`~`", inline=False)                          
   await ctx.reply(embed=embed, mention_author=False) 
 
 ##run
