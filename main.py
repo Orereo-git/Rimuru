@@ -142,15 +142,15 @@ async def sing(ctx):
     await vc.channel.connect() 
     await ctx.message.add_reaction('✅')        
   if vc is None:
-    await ctx.message.add_reaction('❌')   
-    await ctx.send('b..bbaka!! You have to be in a voice channel first!!', mention_author=False)                   
+    await ctx.message.add_reaction('❌')  
+    embed=discord.Embed(color=discord.Color.blue()) 
+    embed.set_footer(text="You have to be in a voice channel first!!")
+    await ctx.send(embed=embed, mention_author=False)                   
   guild = ctx.guild
   voice_client: discord.VoiceClient = discord.utils.get(bot.voice_clients, guild=guild)    
   audio_source = discord.FFmpegPCMAudio('https://mp3.fastupload.co/data/1622193194/rimuru.mp3')
   if not voice_client.is_playing():
-    voice_client.play(audio_source, after=None)
-  messages = ["woooo..", "woo.. woo..", "wowowo..", "wowo..", "wowoo..", "woowo..", "woowoo.."]
-  await ctx.reply(random.choice(messages), mention_author=False)          
+    voice_client.play(audio_source, after=None)    
   await asyncio.sleep(90)                                       
   await voice_client.disconnect()   
 
@@ -166,7 +166,7 @@ async def cuddle(ctx, otaku: discord.Member=None):
   if not otaku:
     await ctx.message.add_reaction('❌') 
     embed = discord.Embed(color=discord.Color.blue())
-    embed.add_field(name="Error", value="tag @someone", inline=False)           
+    embed.set_footer(text="tag @someone")         
     await ctx.send(embed=embed, mention_author=False)
   else:
     gif = ["https://i.imgur.com/zEpEFdR.gif", "https://i.imgur.com/0vMxXPD.gif", "https://i.imgur.com/BBltNs5.gif", "https://i.imgur.com/AbwGSGe.mp4"]
@@ -180,7 +180,7 @@ async def hug(ctx, otaku: discord.Member=None):
   if not otaku:
     await ctx.message.add_reaction('❌') 
     embed = discord.Embed(color=discord.Color.blue())
-    embed.add_field(name="Error", value="tag @someone", inline=False)           
+    embed.set_footer(text="tag @someone")           
     await ctx.send(embed=embed, mention_author=False)
   else:  
     gif = ["https://i.imgur.com/BLWNnFl.gif", "https://i.imgur.com/ZNexQYs.gif", "https://i.imgur.com/AmW4JXv.gif", "https://i.imgur.com/jPI7d39.gif"]
@@ -193,7 +193,7 @@ async def pat(ctx, otaku: discord.Member=None):
   if not otaku:
     await ctx.message.add_reaction('❌') 
     embed = discord.Embed(color=discord.Color.blue())
-    embed.add_field(name="Error", value="tag @someone", inline=False)           
+    embed.set_footer(text="tag @someone")            
     await ctx.send(embed=embed, mention_author=False)
   else:  
     gif = ["https://i.imgur.com/jalh0TO.gif", "https://i.imgur.com/jyGKbIt.gif", "https://i.imgur.com/waDgdYE.gif", "https://i.imgur.com/y8hzJj3.gif", "https://i.imgur.com/WnWbaBI.gif", "https://i.imgur.com/MzaOifc.gif", "https://i.imgur.com/twu1Elb.gif", "https://i.imgur.com/XShvBry.gif", "https://i.imgur.com/DwcgM7X.gif", "https://i.imgur.com/wXfqvwZ.gif", "https://i.imgur.com/M6whfdx.gif"]
@@ -206,7 +206,7 @@ async def kiss(ctx, otaku: discord.Member=None):
   if not otaku:
     await ctx.message.add_reaction('❌') 
     embed = discord.Embed(color=discord.Color.blue())
-    embed.add_field(name="Error", value="tag @someone", inline=False)           
+    embed.set_footer(text="tag @someone")           
     await ctx.send(embed=embed, mention_author=False)
   else:  
     gif = ["https://i.imgur.com/GDti9sg.gif", "https://i.imgur.com/pFboGNv.gif", "https://i.imgur.com/tTNi2ny.gif", "https://i.imgur.com/FQB8F7f.gif", "https://i.imgur.com/CCOE8cJ.gif"]
@@ -219,7 +219,7 @@ async def lick(ctx, otaku: discord.Member=None):
   if not otaku:
     await ctx.message.add_reaction('❌') 
     embed = discord.Embed(color=discord.Color.blue())
-    embed.add_field(name="Error", value="tag @someone", inline=False)           
+    embed.set_footer(text="tag @someone")             
     await ctx.send(embed=embed, mention_author=False)
   else:   
     gif = ["https://i.imgur.com/VGHwWUa.gif", "https://i.imgur.com/yi7CU5t.gif", "https://i.imgur.com/LHrs2i5.gif", "https://i.imgur.com/J3mRLc8.gif", "https://i.imgur.com/eE9BLra.gif", "https://i.imgur.com/nZYYcmr.gif", "https://i.imgur.com/MDsvf8w.gif", "https://i.imgur.com/P2zPziT.gif"]
@@ -232,7 +232,7 @@ async def bite(ctx, otaku: discord.Member=None):
   if not otaku:
     await ctx.message.add_reaction('❌') 
     embed = discord.Embed(color=discord.Color.blue())
-    embed.add_field(name="Error", value="tag @someone", inline=False)           
+    embed.set_footer(text="tag @someone")            
     await ctx.send(embed=embed, mention_author=False)
   else:   
     gif = ["https://i.imgur.com/oEBOetR.gif", "https://i.imgur.com/OgzfiuM.gif", "https://i.imgur.com/8qvlj0M.gif", "https://i.imgur.com/MUgRpL5.gif", "https://i.imgur.com/PHqBMPG.mp4"]
@@ -245,7 +245,7 @@ async def poke(ctx, otaku: discord.Member=None):
   if not otaku:
     await ctx.message.add_reaction('❌') 
     embed = discord.Embed(color=discord.Color.blue())
-    embed.add_field(name="Error", value="tag @someone", inline=False)           
+    embed.set_footer(text="tag @someone")          
     await ctx.send(embed=embed, mention_author=False)
   else:  
     gif = ["https://i.imgur.com/X7pNyfw.gif", "https://i.imgur.com/KTL5UbY.gif", "https://i.imgur.com/FvBgoh6.gif", "https://i.imgur.com/BdxvlrD.gif", "https://i.imgur.com/PS31oUs.gif", "https://i.imgur.com/dmAjEZF.gif"]
@@ -258,7 +258,7 @@ async def slap(ctx, otaku: discord.Member=None):
   if not otaku:
     await ctx.message.add_reaction('❌') 
     embed = discord.Embed(color=discord.Color.blue())
-    embed.add_field(name="Error", value="tag @someone", inline=False)           
+    embed.set_footer(text="tag @someone")           
     await ctx.send(embed=embed, mention_author=False)
   else:  
     gif = ["https://i.imgur.com/af7n02p.gif", "https://i.imgur.com/UZRKtQ0.gif", "https://i.imgur.com/CWdDw6x.gif", "https://i.imgur.com/uvIDSxi.gif", "https://i.imgur.com/vUTJUWG.gif"]
@@ -271,7 +271,7 @@ async def punch(ctx, otaku: discord.Member=None):
   if not otaku:
     await ctx.message.add_reaction('❌') 
     embed = discord.Embed(color=discord.Color.blue())
-    embed.add_field(name="Error", value="tag @someone", inline=False)           
+    embed.set_footer(text="tag @someone")           
     await ctx.send(embed=embed, mention_author=False)
   else:   
     gif = ["https://i.imgur.com/AVnDEnx.gif", "https://i.imgur.com/A1uSB0q.gif", "https://i.imgur.com/xcGvJfh.gif", "https://i.imgur.com/aI3vBjX.gif", "https://i.imgur.com/sV44BxK.gif", "https://i.imgur.com/valk8VY.gif", "https://i.imgur.com/ALR0hTq.gif"]
@@ -284,7 +284,7 @@ async def kill(ctx, otaku: discord.Member=None):
   if not otaku:
     await ctx.message.add_reaction('❌') 
     embed = discord.Embed(color=discord.Color.blue())
-    embed.add_field(name="Error", value="tag @someone", inline=False)           
+    embed.set_footer(text="tag @someone")            
     await ctx.send(embed=embed, mention_author=False)
   else:  
     gif = ["https://i.imgur.com/JUJcXN6.gif", "https://i.imgur.com/gE0AE8V.gif", "https://i.imgur.com/nNgJdci.gif", "https://i.imgur.com/XhOC90e.gif", "https://i.imgur.com/BwhkFBj.gif", "https://i.imgur.com/LBfxEry.gif"]
@@ -320,7 +320,8 @@ async def bunny(ctx):
 @bot.command()
 async def sauce(ctx):
   number = randomN(6)
-  embed=discord.Embed(title=number, color=discord.Color.blue()) 
+  embed=discord.Embed(color=discord.Color.blue()) 
+  embed.set_footer(text=number)
   await ctx.reply(embed=embed, mention_author=False) 
 
 ##restaurant
