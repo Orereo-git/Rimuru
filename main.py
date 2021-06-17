@@ -295,12 +295,6 @@ async def kill(ctx, otaku: discord.Member=None):
     await ctx.send(embed=embed, mention_author=False)    
 
 ##hard drive 
-#harddrive
-@bot.command()
-async def harddrive(ctx): 
-  msg = "h-how!? i thought tamura destroyed it!! <:ShizueEmbarrassedTears:850973942650765332>"
-  await ctx.reply((msg), mention_author=False)
-
 #neko
 @bot.command()
 async def neko(ctx): 
@@ -498,7 +492,7 @@ async def help(ctx):
   embed.add_field(name=":jigsaw:  Fun", value="`todo`  `tierlist`", inline=False)       
   embed.add_field(name=":earth_americas:  Profile", value="`simp`  `hearts`  `avatar`", inline=False) 
   embed.add_field(name=":performing_arts:  Roleplay", value="`nickname`  `sing`  `shizue`", inline=False) 
-  embed.add_field(name=":adhesive_bandage:  Hard Drive", value="`harddrive`  `neko`  `bunny`  `sauce`", inline=False)     
+  embed.add_field(name=":adhesive_bandage:  Hard Drive", value="`neko`  `bunny`  `sauce`", inline=False)     
   embed.add_field(name=":jack_o_lantern:  Actions", value="`cuddle`  `hug`  `pat`  `kiss`  `lick`  `bite`  `poke`  `slap`  `punch`  `kill`", inline=False)   
   embed.add_field(name=":fork_and_knife:  Restaurant", value="`pizza`  `taco`  `burrito`  `hotdog`  `hamburger`  `sandwich`  `fries`  `popcorn`  `doughnut`  `cupcake`  `cake`", inline=False)    
   embed.add_field(name=":beers:  Bar", value="`water`  `milk`  `coffee`  `juice`  `cocktail`  `whisky`  `wine`  `beer`", inline=False)
