@@ -2,6 +2,7 @@ import os
 import json
 import random
 import asyncio
+import datetime
 import discord
 from discord.ext import commands
 #keep awake
@@ -23,6 +24,16 @@ async def add_hearts(user_hearts, user, hearts):
 async def on_ready():
   await bot.change_presence(activity=discord.Game(name="~help"))
   print('Ready')
+
+##ping
+@bot.command(pass_context=True)
+async def ping(ctx):
+  now = datetime.datetime.utcnow()
+  delta = ctx.message.timestamp
+  pingtime = now-delta
+  embed = discord.Embed(title="{} ms!!".format(pingtime), color=discord.Color.blue())
+  embed.set_author(name="Requested by " + str(ctx.message.author), icon_url=ctx.message.author.avatar_url)
+  await ctx.reply(embed=embed)  
 
 ##Interactions
 @bot.command()
@@ -108,18 +119,15 @@ async def hearts(ctx):
 
 #~avatar    
 @bot.command()
-async def avatar(ctx, *, otaku: discord.Member): 
-  embed = discord.Embed(color=discord.Color.blue())
-  embed.set_image(url=otaku.avatar_url)         
-  await ctx.reply(embed=embed, mention_author=False)
-
-
-#~icon    
-@bot.command()
-async def servericon(ctx): 
-  embed = discord.Embed(color=discord.Color.blue())
-  embed.set_image(url=ctx.guild.icon_url)         
-  await ctx.reply(embed=embed, mention_author=False)    
+async def avatar(ctx, otaku: discord.Member): 
+  if not otaku:
+    embed = discord.Embed(color=discord.Color.blue())
+    embed.set_image(url=ctx.message.author.avatar_url)
+    await ctx.reply(embed=embed)
+  else:
+    embed = discord.Embed(color=discord.Color.blue())
+    embed.set_image(url=otaku.avatar_url)         
+    await ctx.reply(embed=embed, mention_author=False)
 
 ##roleplay
 #~nickname
@@ -332,7 +340,6 @@ async def water(ctx):
   messages = [":cup_with_straw: here you go!! <:ShizueEmbarrassedTears:850973942650765332>", ":cup_with_straw: here ~<:ShizueEmbarrassedTears:850973942650765332>"]
   await ctx.reply(random.choice(messages), mention_author=False) 
 
-
 ##festival games    
 #~fortune
 @bot.command()
@@ -411,10 +418,11 @@ async def help(ctx):
   embed.add_field(name=":jack_o_lantern:  Actions", value="`cuddle`  `hug`  `pat`  `kiss`  `lick`  `bite`  `poke`  `slap`  `punch`  `kill`", inline=False)   
   embed.add_field(name=":fork_and_knife:  Restaurant", value="`pizza`  `taco`  `burrito`  `hotdog`  `hamburger`  `sandwich`  `fries`  `popcorn`  `doughnut`  `cupcake`  `cake`", inline=False)    
   embed.add_field(name=":beers:  Bar", value="`water`  `milk`  `coffee`  `juice`  `cocktail`  `whisky`  `wine`  `beer`", inline=False)
-  embed.add_field(name=":crystal_ball:  Festival Games", value="`fortune`  `slots`  `throw`", inline=False)                         
+  embed.add_field(name=":crystal_ball:  Festival Games", value="`fortune`  `slots`  `throw`", inline=False) 
+  embed.add_field(name=":construction: Diablo", value="`ping`", inline=False)                          
   await ctx.reply(embed=embed, mention_author=False) 
 
-##errors
+##error@otaku
 @bot.event
 async def on_message_error(ctx, error):
   if isinstance(error, discord.ext.commands.MissingRequiredArgument):
