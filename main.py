@@ -4,6 +4,8 @@ import random
 import asyncio
 import discord
 from discord.ext import commands
+#keep awake
+from keep_awake import keep_awake
 
 bot = commands.Bot(command_prefix='~')
 bot.remove_command('help')
@@ -106,10 +108,18 @@ async def hearts(ctx):
 
 #~avatar    
 @bot.command()
-async def avatar(ctx): 
+async def avatar(ctx, *, otaku: discord.Member): 
   embed = discord.Embed(color=discord.Color.blue())
-  embed.set_image(url=ctx.author.avatar_url)         
-  await ctx.reply(embed=embed, mention_author=False)  
+  embed.set_image(url=otaku.avatar_url)         
+  await ctx.reply(embed=embed, mention_author=False)
+
+
+#~icon    
+@bot.command()
+async def servericon(ctx): 
+  embed = discord.Embed(color=discord.Color.blue())
+  embed.set_image(url=ctx.guild.icon_url)         
+  await ctx.reply(embed=embed, mention_author=False)    
 
 ##roleplay
 #~nickname
@@ -403,8 +413,15 @@ async def help(ctx):
   embed.add_field(name=":beers:  Bar", value="`water`  `milk`  `coffee`  `juice`  `cocktail`  `whisky`  `wine`  `beer`", inline=False)
   embed.add_field(name=":crystal_ball:  Festival Games", value="`fortune`  `slots`  `throw`", inline=False)                         
   await ctx.reply(embed=embed, mention_author=False) 
-  msg = "**Rework complete!!** *sorry for the delay*"
-  await ctx.send((msg), mention_author=False)   
+
+##errors
+@bot.event
+async def on_message_error(ctx, error):
+  if isinstance(error, discord.ext.commands.MissingRequiredArgument):
+    embed = discord.Embed(color=discord.Color.blue())
+    embed.add_field(name="Error", value="Try mentioning @someone", inline=False)           
+    await ctx.reply(embed=embed, mention_author=False)
 
 ##run
+keep_awake()
 bot.run(os.getenv('TOKEN'))        
