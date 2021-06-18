@@ -349,7 +349,7 @@ async def hamburger(ctx):
 async def sandwitch(ctx):
   gif= ["https://i.imgur.com/GLWvMQ7.gif", "https://i.imgur.com/htjnT7s.gif", "https://i.imgur.com/Wi52BOb.mp4", "https://i.imgur.com/Tq4egqt.gif"]
   embed=discord.Embed(color=discord.Color.blue()) 
-  embed.set_author(name="{0} noms a sandwich 🥪!!".format(ctx.message.author.name), icon_url=ctx.message.author.avatar_url)     
+  embed.set_author(name="{0} noms a sandwich!! 🥪".format(ctx.message.author.name), icon_url=ctx.message.author.avatar_url)     
   embed.set_image(url=random.choice(gif))  
   await ctx.reply(embed=embed, mention_author=False)  
 @bot.command()
@@ -363,7 +363,7 @@ async def fries(ctx):
 async def popcorn(ctx):
   gif= ["https://i.imgur.com/6A0VZHq.gif", "https://i.imgur.com/lBBcid6.gif", "https://i.imgur.com/8myIZ9N.gif"]
   embed=discord.Embed(color=discord.Color.blue())
-  embed.set_author(name="{0} noms a popcorn 🍿!!".format(ctx.message.author.name), icon_url=ctx.message.author.avatar_url)      
+  embed.set_author(name="{0} noms a popcorn!! 🍿".format(ctx.message.author.name), icon_url=ctx.message.author.avatar_url)      
   embed.set_image(url=random.choice(gif))  
   await ctx.reply(embed=embed, mention_author=False)     
 @bot.command()
@@ -414,7 +414,7 @@ async def juice(ctx):
 async def coffee(ctx):
   gif= ["https://i.imgur.com/YpVz8CH.gif", "https://i.imgur.com/bfitiyN.gif", "https://i.imgur.com/b7E5RZw.gif"]
   embed=discord.Embed(color=discord.Color.blue()) 
-  embed.set_author(name="{0} sips coffee ☕!!".format(ctx.message.author.name), icon_url=ctx.message.author.avatar_url)     
+  embed.set_author(name="{0} sips coffee!! ☕".format(ctx.message.author.name), icon_url=ctx.message.author.avatar_url)     
   embed.set_image(url=random.choice(gif))  
   await ctx.reply(embed=embed, mention_author=False)      
 @bot.command()
