@@ -32,6 +32,12 @@ async def on_ready():
   await bot.change_presence(activity=discord.Game(name="~help"))
   print('Ready')
 
+##creater
+@bot.command()
+async def creater(ctx):
+  messages = ["`Rim#0003`"]
+  await ctx.reply(random.choice(messages), mention_author=False)
+
 ##Interactions
 @bot.command()
 async def yo(ctx):
@@ -144,8 +150,7 @@ async def sing(ctx):
     await ctx.message.add_reaction('✅')        
   if vc is None:
     await ctx.message.add_reaction('❌')  
-    embed=discord.Embed(color=discord.Color.blue()) 
-    embed.set_footer(text="You have to be in a voice channel first!!")
+    embed=discord.Embed(description="You have to be in a voice channel first!!", color=discord.Color.blue()) 
     await ctx.send(embed=embed, mention_author=False)                   
   guild = ctx.guild
   voice_client: discord.VoiceClient = discord.utils.get(bot.voice_clients, guild=guild)    
@@ -166,11 +171,10 @@ async def shizue(ctx):
 async def cuddle(ctx, otaku: discord.Member=None): 
   if not otaku:
     await ctx.message.add_reaction('❌') 
-    embed = discord.Embed(color=discord.Color.blue())
-    embed.set_footer(text="tag @someone")         
+    embed = discord.Embed(description="tag @someone", color=discord.Color.blue())      
     await ctx.send(embed=embed, mention_author=False)
   else:
-    gif = ["https://i.imgur.com/zEpEFdR.gif", "https://i.imgur.com/0vMxXPD.gif", "https://i.imgur.com/BBltNs5.gif", "https://i.imgur.com/AbwGSGe.mp4"]
+    gif = ["https://i.imgur.com/zEpEFdR.gif", "https://i.imgur.com/0vMxXPD.gif", "https://i.imgur.com/BBltNs5.gif", "https://i.imgur.com/AbwGSGe.gif"]
     embed=discord.Embed(color=discord.Color.blue()) 
     embed.set_author(name="{0} cuddles {1}!! aww!!".format(ctx.message.author.name, otaku.name), icon_url=ctx.author.avatar_url)  
     embed.set_image(url=random.choice(gif))       
@@ -180,8 +184,7 @@ async def cuddle(ctx, otaku: discord.Member=None):
 async def hug(ctx, otaku: discord.Member=None): 
   if not otaku:
     await ctx.message.add_reaction('❌') 
-    embed = discord.Embed(color=discord.Color.blue())
-    embed.set_footer(text="tag @someone")           
+    embed = discord.Embed(description="tag @someone", color=discord.Color.blue())          
     await ctx.send(embed=embed, mention_author=False)
   else:  
     gif = ["https://i.imgur.com/BLWNnFl.gif", "https://i.imgur.com/ZNexQYs.gif", "https://i.imgur.com/AmW4JXv.gif", "https://i.imgur.com/jPI7d39.gif"]
@@ -193,8 +196,7 @@ async def hug(ctx, otaku: discord.Member=None):
 async def pat(ctx, otaku: discord.Member=None): 
   if not otaku:
     await ctx.message.add_reaction('❌') 
-    embed = discord.Embed(color=discord.Color.blue())
-    embed.set_footer(text="tag @someone")            
+    embed = discord.Embed(description="tag @someone", color=discord.Color.blue())          
     await ctx.send(embed=embed, mention_author=False)
   else:  
     gif = ["https://i.imgur.com/jalh0TO.gif", "https://i.imgur.com/jyGKbIt.gif", "https://i.imgur.com/waDgdYE.gif", "https://i.imgur.com/y8hzJj3.gif", "https://i.imgur.com/WnWbaBI.gif", "https://i.imgur.com/MzaOifc.gif", "https://i.imgur.com/twu1Elb.gif", "https://i.imgur.com/XShvBry.gif", "https://i.imgur.com/DwcgM7X.gif", "https://i.imgur.com/wXfqvwZ.gif", "https://i.imgur.com/M6whfdx.gif"]
@@ -206,8 +208,7 @@ async def pat(ctx, otaku: discord.Member=None):
 async def kiss(ctx, otaku: discord.Member=None): 
   if not otaku:
     await ctx.message.add_reaction('❌') 
-    embed = discord.Embed(color=discord.Color.blue())
-    embed.set_footer(text="tag @someone")           
+    embed = discord.Embed(description="tag @someone", color=discord.Color.blue())         
     await ctx.send(embed=embed, mention_author=False)
   else:  
     gif = ["https://i.imgur.com/GDti9sg.gif", "https://i.imgur.com/pFboGNv.gif", "https://i.imgur.com/tTNi2ny.gif", "https://i.imgur.com/FQB8F7f.gif", "https://i.imgur.com/CCOE8cJ.gif"]
@@ -219,8 +220,7 @@ async def kiss(ctx, otaku: discord.Member=None):
 async def lick(ctx, otaku: discord.Member=None):
   if not otaku:
     await ctx.message.add_reaction('❌') 
-    embed = discord.Embed(color=discord.Color.blue())
-    embed.set_footer(text="tag @someone")             
+    embed = discord.Embed(description="tag @someone", color=discord.Color.blue())         
     await ctx.send(embed=embed, mention_author=False)
   else:   
     gif = ["https://i.imgur.com/VGHwWUa.gif", "https://i.imgur.com/yi7CU5t.gif", "https://i.imgur.com/LHrs2i5.gif", "https://i.imgur.com/J3mRLc8.gif", "https://i.imgur.com/eE9BLra.gif", "https://i.imgur.com/nZYYcmr.gif", "https://i.imgur.com/MDsvf8w.gif", "https://i.imgur.com/P2zPziT.gif"]
@@ -232,8 +232,7 @@ async def lick(ctx, otaku: discord.Member=None):
 async def bite(ctx, otaku: discord.Member=None):
   if not otaku:
     await ctx.message.add_reaction('❌') 
-    embed = discord.Embed(color=discord.Color.blue())
-    embed.set_footer(text="tag @someone")            
+    embed = discord.Embed(description="tag @someone", color=discord.Color.blue())         
     await ctx.send(embed=embed, mention_author=False)
   else:   
     gif = ["https://i.imgur.com/oEBOetR.gif", "https://i.imgur.com/OgzfiuM.gif", "https://i.imgur.com/8qvlj0M.gif", "https://i.imgur.com/MUgRpL5.gif", "https://i.imgur.com/PHqBMPG.mp4"]
@@ -245,8 +244,7 @@ async def bite(ctx, otaku: discord.Member=None):
 async def poke(ctx, otaku: discord.Member=None):
   if not otaku:
     await ctx.message.add_reaction('❌') 
-    embed = discord.Embed(color=discord.Color.blue())
-    embed.set_footer(text="tag @someone")          
+    embed = discord.Embed(description="tag @someone", color=discord.Color.blue())         
     await ctx.send(embed=embed, mention_author=False)
   else:  
     gif = ["https://i.imgur.com/X7pNyfw.gif", "https://i.imgur.com/KTL5UbY.gif", "https://i.imgur.com/FvBgoh6.gif", "https://i.imgur.com/BdxvlrD.gif", "https://i.imgur.com/PS31oUs.gif", "https://i.imgur.com/dmAjEZF.gif"]
@@ -258,8 +256,7 @@ async def poke(ctx, otaku: discord.Member=None):
 async def slap(ctx, otaku: discord.Member=None): 
   if not otaku:
     await ctx.message.add_reaction('❌') 
-    embed = discord.Embed(color=discord.Color.blue())
-    embed.set_footer(text="tag @someone")           
+    embed = discord.Embed(description="tag @someone", color=discord.Color.blue())        
     await ctx.send(embed=embed, mention_author=False)
   else:  
     gif = ["https://i.imgur.com/af7n02p.gif", "https://i.imgur.com/UZRKtQ0.gif", "https://i.imgur.com/CWdDw6x.gif", "https://i.imgur.com/uvIDSxi.gif", "https://i.imgur.com/vUTJUWG.gif"]
@@ -271,8 +268,7 @@ async def slap(ctx, otaku: discord.Member=None):
 async def punch(ctx, otaku: discord.Member=None):
   if not otaku:
     await ctx.message.add_reaction('❌') 
-    embed = discord.Embed(color=discord.Color.blue())
-    embed.set_footer(text="tag @someone")           
+    embed = discord.Embed(description="tag @someone", color=discord.Color.blue())         
     await ctx.send(embed=embed, mention_author=False)
   else:   
     gif = ["https://i.imgur.com/AVnDEnx.gif", "https://i.imgur.com/A1uSB0q.gif", "https://i.imgur.com/xcGvJfh.gif", "https://i.imgur.com/aI3vBjX.gif", "https://i.imgur.com/sV44BxK.gif", "https://i.imgur.com/valk8VY.gif", "https://i.imgur.com/ALR0hTq.gif"]
@@ -284,11 +280,10 @@ async def punch(ctx, otaku: discord.Member=None):
 async def kill(ctx, otaku: discord.Member=None): 
   if not otaku:
     await ctx.message.add_reaction('❌') 
-    embed = discord.Embed(color=discord.Color.blue())
-    embed.set_footer(text="tag @someone")            
+    embed = discord.Embed(description="tag @someone", color=discord.Color.blue())          
     await ctx.send(embed=embed, mention_author=False)
   else:  
-    gif = ["https://i.imgur.com/JUJcXN6.gif", "https://i.imgur.com/gE0AE8V.gif", "https://i.imgur.com/nNgJdci.gif", "https://i.imgur.com/XhOC90e.gif", "https://i.imgur.com/BwhkFBj.gif", "https://i.imgur.com/LBfxEry.gif"]
+    gif = ["https://i.imgur.com/JUJcXN6.gif", "https://i.imgur.com/x7CVt5X.gif", "https://i.imgur.com/nNgJdci.gif", "https://i.imgur.com/eN5Pb2x.gif", "https://i.imgur.com/BwhkFBj.gif", "https://i.imgur.com/LBfxEry.gif", "https://i.imgur.com/XJmObBf.gif", "https://i.imgur.com/VUdvFGF.gif", "https://i.imgur.com/DP7h49u.gif"]
     embed=discord.Embed(color=discord.Color.blue()) 
     embed.set_author(name="{0} kills {1}!! wasted!!".format(ctx.message.author.name, otaku.name), icon_url=ctx.author.avatar_url)   
     embed.set_image(url=random.choice(gif))       
@@ -298,7 +293,7 @@ async def kill(ctx, otaku: discord.Member=None):
 #neko
 @bot.command()
 async def neko(ctx): 
-  neko = ["https://i.imgur.com/gYmWit8.jpg", "https://i.imgur.com/YODUPBx.png", "https://i.imgur.com/WEIzYqj.jpg", "https://i.imgur.com/muHjCd2.jpg", "https://i.imgur.com/xlLFGuw.jpg", "https://i.imgur.com/yb9dteM.png", "https://i.imgur.com/l185fRO.jpg", "https://i.imgur.com/fX6fN8m.jpg", "https://i.imgur.com/fitUjO8.jpg", "https://i.imgur.com/lwQQsHZ.jpg", "https://i.imgur.com/HGHxQU7.jpg", "https://i.imgur.com/I1Crh5n.jpg", "https://i.imgur.com/UTV94q8.jpg", "https://i.imgur.com/CcAV0Z1.jpg", "https://i.imgur.com/6duC1GW.jpg", "https://i.imgur.com/lELf8LB.jpg", "https://i.imgur.com/AO5alF0.jpg", "https://i.imgur.com/FP6GRBn.png", "https://i.imgur.com/3NdDaUp.jpg", "https://i.imgur.com/VPmTxCi.jpg", "https://i.imgur.com/2kDKsVP.jpg", "https://i.imgur.com/erF8QdO.jpg", "https://i.imgur.com/w7L5rxI.jpg", "https://i.imgur.com/KEWo1nb.png"]
+  neko = ["https://i.imgur.com/gYmWit8.jpg", "https://i.imgur.com/YODUPBx.png", "https://i.imgur.com/WEIzYqj.jpg", "https://i.imgur.com/muHjCd2.jpg", "https://i.imgur.com/xlLFGuw.jpg", "https://i.imgur.com/yb9dteM.png", "https://i.imgur.com/l185fRO.jpg", "https://i.imgur.com/fX6fN8m.jpg", "https://i.imgur.com/fitUjO8.jpg", "https://i.imgur.com/lwQQsHZ.jpg", "https://i.imgur.com/HGHxQU7.jpg", "https://i.imgur.com/I1Crh5n.jpg", "https://i.imgur.com/UTV94q8.jpg", "https://i.imgur.com/CcAV0Z1.jpg", "https://i.imgur.com/6duC1GW.jpg", "https://i.imgur.com/lELf8LB.jpg", "https://i.imgur.com/AO5alF0.jpg", "https://i.imgur.com/FP6GRBn.png", "https://i.imgur.com/3NdDaUp.jpg", "https://i.imgur.com/VPmTxCi.jpg", "https://i.imgur.com/2kDKsVP.jpg", "https://i.imgur.com/erF8QdO.jpg", "https://i.imgur.com/w7L5rxI.jpg", "https://i.imgur.com/KEWo1nb.png", ""]
   embed=discord.Embed(color=discord.Color.blue()) 
   embed.set_image(url=random.choice(neko)) 
   await ctx.reply(embed=embed, mention_author=False) 
@@ -315,95 +310,127 @@ async def bunny(ctx):
 @bot.command()
 async def sauce(ctx):
   number = randomN(6)
-  embed=discord.Embed(color=discord.Color.blue()) 
-  embed.set_footer(text=number)
-  hm = await ctx.reply(embed=embed, mention_author=False)
-  await asyncio.sleep(3) 
-  embed1=discord.Embed(color=discord.Color.blue()) 
-  embed1.set_footer(text="shh..")
-  await hm.edit(embed=embed1, mention_author=False)
+  embed=discord.Embed(description=number, color=discord.Color.blue()) 
+  em= await ctx.reply(embed=embed, mention_author=False)
+  await asyncio.sleep(4) 
+  await em.delete()
+  await ctx.reply("<:AquaThumbsup:855300510345330719>", mention_author=False)
   
-
-
 ##restaurant
 @bot.command()
 async def pizza(ctx):
-  messages = [":pizza: here you go!! <:ShizueEmbarrassedTears:850973942650765332>", ":pizza: here ~<:ShizueEmbarrassedTears:850973942650765332>"] 
-  await ctx.reply(random.choice(messages), mention_author=False) 
+  gif= ["https://i.imgur.com/JTbKdiS.gif", "https://i.imgur.com/GSZtfEq.gif", "https://i.imgur.com/u9YJuZn.gif", "https://i.imgur.com/o6ePExQ.gif"]
+  embed=discord.Embed(color=discord.Color.blue()) 
+  embed.set_author(name="{0} noms a pizza!!".format(ctx.message.author.name), icon_url=ctx.message.author.avatar_url)     
+  embed.set_image(url=random.choice(gif))  
+  await ctx.reply(embed=embed, mention_author=False) 
 @bot.command()
 async def taco(ctx):
-  messages = [":taco: here you go!! <:ShizueEmbarrassedTears:850973942650765332>", ":taco: here ~<:ShizueEmbarrassedTears:850973942650765332>"]
-  await ctx.reply(random.choice(messages), mention_author=False)  
-@bot.command()
-async def burrito(ctx):
-  messages = [":burrito: here you go!! <:ShizueEmbarrassedTears:850973942650765332>", ":burrito: here ~<:ShizueEmbarrassedTears:850973942650765332>"]
-  await ctx.reply(random.choice(messages), mention_author=False)          
+  gif= ["https://i.imgur.com/dzICh3g.gif"]
+  embed=discord.Embed(color=discord.Color.blue()) 
+  embed.set_author(name="{0} noms a taco!!".format(ctx.message.author.name), icon_url=ctx.message.author.avatar_url)       
+  embed.set_image(url=random.choice(gif))  
+  await ctx.reply(embed=embed, mention_author=False)           
 @bot.command()
 async def hotdog(ctx):
-  messages = [":hotdog: here you go!! <:ShizueEmbarrassedTears:850973942650765332>", ":hotdog: here ~<:ShizueEmbarrassedTears:850973942650765332>"]
-  await ctx.reply(random.choice(messages), mention_author=False)    
+  gif= ["https://i.imgur.com/DziE0MZ.png", "https://i.imgur.com/paAhqyy.png", "https://i.imgur.com/TUbQQDh.jpg"]
+  embed=discord.Embed(color=discord.Color.blue()) 
+  embed.set_author(name="{0} noms a hotdog!!".format(ctx.message.author.name), icon_url=ctx.message.author.avatar_url)       
+  embed.set_image(url=random.choice(gif))  
+  await ctx.reply(embed=embed, mention_author=False)    
 @bot.command()
 async def hamburger(ctx):
-  messages = [":hamburger: here you go!! <:ShizueEmbarrassedTears:850973942650765332>", ":hamburger: here ~<:ShizueEmbarrassedTears:850973942650765332>"]
-  await ctx.reply(random.choice(messages), mention_author=False)  
+  gif= ["https://i.imgur.com/VbwcLZ4.gif", "https://i.imgur.com/pPJu9Ct.gif", "https://i.imgur.com/t9J3BWH.gif", "https://i.imgur.com/xRaOHH0.gif", "https://i.imgur.com/4v0VRRp.gif", "https://i.imgur.com/CMtIZs9.gif"]
+  embed=discord.Embed(color=discord.Color.blue()) 
+  embed.set_author(name="{0} noms a hamburger!!".format(ctx.message.author.name), icon_url=ctx.message.author.avatar_url)     
+  embed.set_image(url=random.choice(gif))  
+  await ctx.reply(embed=embed, mention_author=False)  
 @bot.command()
 async def sandwitch(ctx):
-  messages = [":sandwich: here you go!! <:ShizueEmbarrassedTears:850973942650765332>", ":sandwich: here ~<:ShizueEmbarrassedTears:850973942650765332>"] 
-  await ctx.reply(random.choice(messages), mention_author=False)      
+  gif= ["https://i.imgur.com/GLWvMQ7.gif", "https://i.imgur.com/htjnT7s.gif", "https://i.imgur.com/Wi52BOb.mp4", "https://i.imgur.com/Tq4egqt.gif"]
+  embed=discord.Embed(color=discord.Color.blue()) 
+  embed.set_author(name="{0} noms a sandwich!!".format(ctx.message.author.name), icon_url=ctx.message.author.avatar_url)     
+  embed.set_image(url=random.choice(gif))  
+  await ctx.reply(embed=embed, mention_author=False)  
 @bot.command()
 async def fries(ctx):
-  messages = [":fries: here you go!! <:ShizueEmbarrassedTears:850973942650765332>", ":fries: here ~<:ShizueEmbarrassedTears:850973942650765332>"] 
-  await ctx.reply(random.choice(messages), mention_author=False) 
+  gif= ["https://i.imgur.com/43Oz4bP.gif", "https://i.imgur.com/Hy24Mbw.gif", "https://i.imgur.com/KeHVDH1.gif"]
+  embed=discord.Embed(color=discord.Color.blue()) 
+  embed.set_author(name="{0} noms a fries!!".format(ctx.message.author.name), icon_url=ctx.message.author.avatar_url)     
+  embed.set_image(url=random.choice(gif))  
+  await ctx.reply(embed=embed, mention_author=False)  
 @bot.command()
 async def popcorn(ctx):
-  messages = [":popcorn: here you go!! <:ShizueEmbarrassedTears:850973942650765332>", ":popcorn: here ~<:ShizueEmbarrassedTears:850973942650765332>"] 
-  await ctx.reply(random.choice(messages), mention_author=False)     
+  gif= ["https://i.imgur.com/6A0VZHq.gif", "https://i.imgur.com/lBBcid6.gif", "https://i.imgur.com/8myIZ9N.gif"]
+  embed=discord.Embed(color=discord.Color.blue())
+  embed.set_author(name="{0} noms a popcorn!!".format(ctx.message.author.name), icon_url=ctx.message.author.avatar_url)      
+  embed.set_image(url=random.choice(gif))  
+  await ctx.reply(embed=embed, mention_author=False)     
 @bot.command()
 async def doughnut(ctx):
-  messages = [":doughnut: here you go!! <:ShizueEmbarrassedTears:850973942650765332>", ":doughnut: here ~<:ShizueEmbarrassedTears:850973942650765332>"] 
-  await ctx.reply(random.choice(messages), mention_author=False)  
+  gif= ["https://i.imgur.com/QaModRS.gif", "https://i.imgur.com/MUPZjhO.gif", "https://i.imgur.com/cvcPfo4.gif", "https://i.imgur.com/JUh24u4.gif", "https://i.imgur.com/S82madx.gif"]
+  embed=discord.Embed(color=discord.Color.blue()) 
+  embed.set_author(name="{0} noms a doughnut!!".format(ctx.message.author.name), icon_url=ctx.message.author.avatar_url)     
+  embed.set_image(url=random.choice(gif))  
+  await ctx.reply(embed=embed, mention_author=False)   
 @bot.command()
 async def cupcake(ctx):
-  messages = [":cupcake: here you go!! <:ShizueEmbarrassedTears:850973942650765332>", ":cupcake: here ~<:ShizueEmbarrassedTears:850973942650765332>"] 
-  await ctx.reply(random.choice(messages), mention_author=False) 
+  gif= ["https://i.imgur.com/PmAOEYK.gif", "https://i.imgur.com/3ewilnf.gif", "https://i.imgur.com/e4BRkXO.gif"]
+  embed=discord.Embed(color=discord.Color.blue()) 
+  embed.set_author(name="{0} noms a cupcake!!".format(ctx.message.author.name), icon_url=ctx.message.author.avatar_url)     
+  embed.set_image(url=random.choice(gif))  
+  await ctx.reply(embed=embed, mention_author=False)   
 @bot.command()
 async def cake(ctx):
-  messages = [":cake: here you go!! <:ShizueEmbarrassedTears:850973942650765332>", ":cake: here ~<:ShizueEmbarrassedTears:850973942650765332>"] 
-  await ctx.reply(random.choice(messages), mention_author=False)         
+  gif= ["https://i.imgur.com/H26HjFP.gif", "https://i.imgur.com/SQ5Vu2b.gif", "https://i.imgur.com/fxXRZV9.gif", "https://i.imgur.com/1LjyV1C.gif"]
+  embed=discord.Embed(color=discord.Color.blue()) 
+  embed.set_author(name="{0} noms a cake!!".format(ctx.message.author.name), icon_url=ctx.message.author.avatar_url)     
+  embed.set_image(url=random.choice(gif))  
+  await ctx.reply(embed=embed, mention_author=False)          
 
 ##bar
 @bot.command()
 async def beer(ctx):
-  messages = [":beer: here you go!! <:ShizueEmbarrassedTears:850973942650765332>", ":beer: here ~<:ShizueEmbarrassedTears:850973942650765332>"]
-  await ctx.reply(random.choice(messages), mention_author=False)                        
+  gif= ["https://i.imgur.com/lKdN8Mu.gif"]
+  embed=discord.Embed(color=discord.Color.blue()) 
+  embed.set_author(name="{0} sips beer!!".format(ctx.message.author.name), icon_url="https://i.imgur.com/UUkieR5.png")     
+  embed.set_image(url=random.choice(gif))  
+  await ctx.reply(embed=embed, mention_author=False)                          
 @bot.command()
 async def wine(ctx):
-  messages = [":wine_glass: here you go!! <:ShizueEmbarrassedTears:850973942650765332>", ":wine_glass: here ~<:ShizueEmbarrassedTears:850973942650765332>"]
-  await ctx.reply(random.choice(messages), mention_author=False)
-@bot.command()
-async def whisky(ctx):
-  messages = [":tumbler_glass: here you go!! <:ShizueEmbarrassedTears:850973942650765332>", ":tumbler_glass: here ~<:ShizueEmbarrassedTears:850973942650765332>"]
-  await ctx.reply(random.choice(messages), mention_author=False) 
-@bot.command()
-async def cocktail(ctx):
-  messages = [":cocktail: here you go!! <:ShizueEmbarrassedTears:850973942650765332>", ":cocktail: here ~<:ShizueEmbarrassedTears:850973942650765332>"]
-  await ctx.reply(random.choice(messages), mention_author=False) 
+  gif= ["https://i.imgur.com/BiaVOM6.gif", "https://i.imgur.com/ufls5Qk.gif"]
+  embed=discord.Embed(color=discord.Color.blue()) 
+  embed.set_author(name="{0} sips wine!!".format(ctx.message.author.name), icon_url="https://i.imgur.com/CciW8aJ.png")     
+  embed.set_image(url=random.choice(gif))  
+  await ctx.reply(embed=embed, mention_author=False)  
 @bot.command()
 async def juice(ctx):
-  messages = [":tropical_drink: here you go!! <:ShizueEmbarrassedTears:850973942650765332>", ":tropical_drink: here ~<:ShizueEmbarrassedTears:850973942650765332>"]
-  await ctx.reply(random.choice(messages), mention_author=False) 
+  gif= ["https://i.imgur.com/DudlCsV.gif"]
+  embed=discord.Embed(color=discord.Color.blue()) 
+  embed.set_author(name="{0} sips juice!!".format(ctx.message.author.name), icon_url="https://i.imgur.com/EfhqoA3.png")     
+  embed.set_image(url=random.choice(gif))  
+  await ctx.reply(embed=embed, mention_author=False)  
 @bot.command()
 async def coffee(ctx):
-  messages = [":coffee: here you go!! <:ShizueEmbarrassedTears:850973942650765332>", ":coffee: here ~<:ShizueEmbarrassedTears:850973942650765332>"]
-  await ctx.reply(random.choice(messages), mention_author=False)     
+  gif= ["https://i.imgur.com/YpVz8CH.gif", "https://i.imgur.com/bfitiyN.gif", "https://i.imgur.com/b7E5RZw.gif"]
+  embed=discord.Embed(color=discord.Color.blue()) 
+  embed.set_author(name="{0} sips coffee!!".format(ctx.message.author.name), icon_url="https://i.imgur.com/GJCdazy.png")     
+  embed.set_image(url=random.choice(gif))  
+  await ctx.reply(embed=embed, mention_author=False)      
 @bot.command()
 async def milk(ctx):
-  messages = [":milk: here you go!! <:ShizueEmbarrassedTears:850973942650765332>", ":milk: here ~<:ShizueEmbarrassedTears:850973942650765332>"]
-  await ctx.reply(random.choice(messages), mention_author=False) 
+  gif= ["https://i.imgur.com/9rPwykB.gif"]
+  embed=discord.Embed(color=discord.Color.blue()) 
+  embed.set_author(name="{0} sips milk!!".format(ctx.message.author.name), icon_url="https://i.imgur.com/xv8l4Lm.png")     
+  embed.set_image(url=random.choice(gif))  
+  await ctx.reply(embed=embed, mention_author=False)  
 @bot.command()
 async def water(ctx):
-  messages = [":cup_with_straw: here you go!! <:ShizueEmbarrassedTears:850973942650765332>", ":cup_with_straw: here ~<:ShizueEmbarrassedTears:850973942650765332>"]
-  await ctx.reply(random.choice(messages), mention_author=False) 
+  gif= ["https://i.imgur.com/K5wRRkx.gif"]
+  embed=discord.Embed(color=discord.Color.blue()) 
+  embed.set_author(name="{0} sips water!!".format(ctx.message.author.name), icon_url="https://i.imgur.com/O3ChbhM.png")     
+  embed.set_image(url=random.choice(gif))  
+  await ctx.reply(embed=embed, mention_author=False)  
 
 ##festival games    
 #fortune
@@ -500,8 +527,8 @@ async def help(ctx):
   embed.add_field(name=":performing_arts:  Roleplay", value="`nickname`  `sing`  `shizue`", inline=False) 
   embed.add_field(name=":adhesive_bandage:  Hard Drive", value="`neko`  `bunny`  `sauce`", inline=False)     
   embed.add_field(name=":jack_o_lantern:  Actions", value="`cuddle`  `hug`  `pat`  `kiss`  `lick`  `bite`  `poke`  `slap`  `punch`  `kill`", inline=False)   
-  embed.add_field(name=":fork_and_knife:  Restaurant", value="`pizza`  `taco`  `burrito`  `hotdog`  `hamburger`  `sandwich`  `fries`  `popcorn`  `doughnut`  `cupcake`  `cake`", inline=False)    
-  embed.add_field(name=":beers:  Bar", value="`water`  `milk`  `coffee`  `juice`  `cocktail`  `whisky`  `wine`  `beer`", inline=False)
+  embed.add_field(name=":fork_and_knife:  Restaurant", value="`pizza`  `taco`  `hotdog`  `hamburger`  `sandwich`  `fries`  `popcorn`  `doughnut`  `cupcake`  `cake`", inline=False)    
+  embed.add_field(name=":beers:  Bar", value="`water`  `milk`  `coffee`  `juice`  `wine`  `beer`", inline=False)
   embed.add_field(name=":crystal_ball:  Festival Games", value="`fortune`  `slots`  `throwball`", inline=False) 
   embed.add_field(name=":construction:  Diablo", value="`~`", inline=False)                          
   await ctx.reply(embed=embed, mention_author=False) 
