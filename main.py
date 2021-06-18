@@ -321,56 +321,56 @@ async def sauce(ctx):
 async def pizza(ctx):
   gif= ["https://i.imgur.com/JTbKdiS.gif", "https://i.imgur.com/GSZtfEq.gif", "https://i.imgur.com/u9YJuZn.gif", "https://i.imgur.com/o6ePExQ.gif"]
   embed=discord.Embed(color=discord.Color.blue()) 
-  embed.set_author(name="{0} noms a pizza!! 🍕".format(ctx.message.author.name), icon_url=ctx.message.author.avatar_url)     
+  embed.set_author(name="{0} noms pizza!! 🍕".format(ctx.message.author.name), icon_url=ctx.message.author.avatar_url)     
   embed.set_image(url=random.choice(gif))  
   await ctx.reply(embed=embed, mention_author=False) 
 @bot.command()
 async def taco(ctx):
   gif= ["https://i.imgur.com/dzICh3g.gif"]
   embed=discord.Embed(color=discord.Color.blue()) 
-  embed.set_author(name="{0} noms a taco!! 🌮".format(ctx.message.author.name), icon_url=ctx.message.author.avatar_url)       
+  embed.set_author(name="{0} noms taco!! 🌮".format(ctx.message.author.name), icon_url=ctx.message.author.avatar_url)       
   embed.set_image(url=random.choice(gif))  
   await ctx.reply(embed=embed, mention_author=False)           
 @bot.command()
 async def hotdog(ctx):
   gif= ["https://i.imgur.com/DziE0MZ.png", "https://i.imgur.com/paAhqyy.png", "https://i.imgur.com/TUbQQDh.jpg"]
   embed=discord.Embed(color=discord.Color.blue()) 
-  embed.set_author(name="{0} noms a hotdog!! 🌭".format(ctx.message.author.name), icon_url=ctx.message.author.avatar_url)       
+  embed.set_author(name="{0} noms hotdog!! 🌭".format(ctx.message.author.name), icon_url=ctx.message.author.avatar_url)       
   embed.set_image(url=random.choice(gif))  
   await ctx.reply(embed=embed, mention_author=False)    
 @bot.command()
 async def hamburger(ctx):
   gif= ["https://i.imgur.com/VbwcLZ4.gif", "https://i.imgur.com/pPJu9Ct.gif", "https://i.imgur.com/t9J3BWH.gif", "https://i.imgur.com/xRaOHH0.gif", "https://i.imgur.com/4v0VRRp.gif", "https://i.imgur.com/CMtIZs9.gif"]
   embed=discord.Embed(color=discord.Color.blue()) 
-  embed.set_author(name="{0} noms a hamburger!! 🍔".format(ctx.message.author.name), icon_url=ctx.message.author.avatar_url)     
+  embed.set_author(name="{0} noms hamburger!! 🍔".format(ctx.message.author.name), icon_url=ctx.message.author.avatar_url)     
   embed.set_image(url=random.choice(gif))  
   await ctx.reply(embed=embed, mention_author=False)  
 @bot.command()
 async def sandwitch(ctx):
   gif= ["https://i.imgur.com/GLWvMQ7.gif", "https://i.imgur.com/htjnT7s.gif", "https://i.imgur.com/Wi52BOb.mp4", "https://i.imgur.com/Tq4egqt.gif"]
   embed=discord.Embed(color=discord.Color.blue()) 
-  embed.set_author(name="{0} noms a sandwich!! 🥪".format(ctx.message.author.name), icon_url=ctx.message.author.avatar_url)     
+  embed.set_author(name="{0} noms sandwich!! 🥪".format(ctx.message.author.name), icon_url=ctx.message.author.avatar_url)     
   embed.set_image(url=random.choice(gif))  
   await ctx.reply(embed=embed, mention_author=False)  
 @bot.command()
 async def fries(ctx):
   gif= ["https://i.imgur.com/43Oz4bP.gif", "https://i.imgur.com/Hy24Mbw.gif", "https://i.imgur.com/KeHVDH1.gif"]
   embed=discord.Embed(color=discord.Color.blue()) 
-  embed.set_author(name="{0} noms a fries!! 🍟".format(ctx.message.author.name), icon_url=ctx.message.author.avatar_url)     
+  embed.set_author(name="{0} noms fries!! 🍟".format(ctx.message.author.name), icon_url=ctx.message.author.avatar_url)     
   embed.set_image(url=random.choice(gif))  
   await ctx.reply(embed=embed, mention_author=False)  
 @bot.command()
 async def popcorn(ctx):
   gif= ["https://i.imgur.com/6A0VZHq.gif", "https://i.imgur.com/lBBcid6.gif", "https://i.imgur.com/8myIZ9N.gif"]
   embed=discord.Embed(color=discord.Color.blue())
-  embed.set_author(name="{0} noms a popcorn!! 🍿".format(ctx.message.author.name), icon_url=ctx.message.author.avatar_url)      
+  embed.set_author(name="{0} noms popcorn!! 🍿".format(ctx.message.author.name), icon_url=ctx.message.author.avatar_url)      
   embed.set_image(url=random.choice(gif))  
   await ctx.reply(embed=embed, mention_author=False)     
 @bot.command()
 async def doughnut(ctx):
   gif= ["https://i.imgur.com/QaModRS.gif", "https://i.imgur.com/MUPZjhO.gif", "https://i.imgur.com/cvcPfo4.gif", "https://i.imgur.com/JUh24u4.gif", "https://i.imgur.com/S82madx.gif"]
   embed=discord.Embed(color=discord.Color.blue()) 
-  embed.set_author(name="{0} noms a doughnut!! 🍩".format(ctx.message.author.name), icon_url=ctx.message.author.avatar_url)     
+  embed.set_author(name="{0} noms doughnut!! 🍩".format(ctx.message.author.name), icon_url=ctx.message.author.avatar_url)     
   embed.set_image(url=random.choice(gif))  
   await ctx.reply(embed=embed, mention_author=False)   
 @bot.command()
