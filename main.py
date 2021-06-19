@@ -357,14 +357,14 @@ async def doughnut(ctx):
 async def cupcake(ctx):
   gif= ["https://i.imgur.com/h7vxIT7.gif", "https://i.imgur.com/Iicw9Kr.gif"]
   embed=discord.Embed(color=discord.Color.blue()) 
-  embed.set_author(name="{0} noms a cupcake!! 🧁".format(ctx.message.author.name), icon_url=ctx.message.author.avatar_url)     
+  embed.set_author(name="{0} noms cupcake!! 🧁".format(ctx.message.author.name), icon_url=ctx.message.author.avatar_url)     
   embed.set_image(url=random.choice(gif))  
   await ctx.reply(embed=embed, mention_author=False)   
 @bot.command()
 async def cake(ctx):
   gif= ["https://i.imgur.com/As4ee6u.gif", "https://i.imgur.com/Xw1pvrO.gif"]
   embed=discord.Embed(color=discord.Color.blue()) 
-  embed.set_author(name="{0} noms a cake!! 🍰".format(ctx.message.author.name), icon_url=ctx.message.author.avatar_url)     
+  embed.set_author(name="{0} noms cake!! 🍰".format(ctx.message.author.name), icon_url=ctx.message.author.avatar_url)     
   embed.set_image(url=random.choice(gif))  
   await ctx.reply(embed=embed, mention_author=False)          
 
