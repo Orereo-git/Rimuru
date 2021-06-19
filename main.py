@@ -23,7 +23,7 @@ async def add_hearts(user_hearts, user, hearts):
 #dummy thicc maths for sauce
 def randomN(n):
   range_start = 10**(n-1)
-  range_end = (10**n)-1
+  range_end = (8**n)-1
   return randint(range_start, range_end)
 
 ##Events
@@ -83,16 +83,16 @@ async def bye(ctx):
 ##fun
 #cookie
 @bot.command(pass_context=True)
-async def cookie(ctx, otaku: discord.Member):
-  embed=discord.Embed(color=discord.Color.blue()) 
-  embed.set_author(name="{0} gave a cookie to {1}!! nom!!nom!!".format(ctx.message.author.name, otaku.name), icon_url=ctx.author.avatar_url)      
-  embed.set_image(url="https://i.imgur.com/Xmh2XhH.gif")       
-  await ctx.send(embed=embed, mention_author=False)
-
-#weather
-@bot.command(pass_context=True)
-async def weather(ctx, *, loc):
-  await ctx.reply("https://wttr.in/{0}.png?m".format(loc))  
+async def cookie(ctx, user: discord.Member=None):
+  if not user:
+    await ctx.message.add_reaction('❌') 
+    embed = discord.Embed(description="tag @someone", color=discord.Color.blue())      
+    await ctx.send(embed=embed, mention_author=False)
+  else:  
+    embed=discord.Embed(description="**{0} noms cookie!!**".format(user.name), color=discord.Color.blue()) 
+    embed.set_author(name="nom!!nom!! 🍪", icon_url=ctx.author.avatar_url)      
+    embed.set_image(url="https://i.imgur.com/Xmh2XhH.gif")       
+    await ctx.send(embed=embed, mention_author=False)
 
 #tierlist
 @bot.command()
@@ -426,13 +426,6 @@ async def water(ctx):
   await ctx.reply(embed=embed, mention_author=False)  
 
 ##festival games    
-#fortune
-@bot.command()
-async def fortune(ctx):
-  fortunes = [":tanabata_tree: great blessing (大吉, dai-kichi)", ":tanabata_tree: middle blessing (中吉, chū-kichi)", ":tanabata_tree: small blessing (小吉, shō-kichi)", ":tanabata_tree: blessing (吉, kichi)", ":tanabata_tree: half-blessing (半吉, han-kichi)", ":tanabata_tree: future blessing (末吉, sue-kichi)", ":tanabata_tree: future small blessing (末小吉, sue-shō-kichi)", ":ghost: curse (凶, kyō)", ":ghost: small curse (小凶, shō-kyō)", ":ghost: half-curse (半凶, han-kyō)", ":ghost: future curse (末凶, sue-kyō)", ":ghost: great curse (大凶, dai-kyō)"] 
-  embed = discord.Embed(description=fortunes, color=discord.Color.blue())          
-  await ctx.send(embed=embed, mention_author=False) 
-       
 #slots
 @bot.command()
 async def slots(ctx):
@@ -516,23 +509,30 @@ async def ask(ctx, *, question):
   responses = ["That is a resounding no" , "It is not looking likely", "Too hard to tell", "It is quite possible", "Definitely", "Reply hazy, try again"]
   embed=discord.Embed(color=discord.Color.blue()) 
   embed.set_author(name="Ask Rimuru-sama", icon_url="https://i.imgur.com/j5EyoN2.jpg")    
-  embed.add_field(name="Question:", value=question, inline=True)
-  embed.add_field(name="Answer:", value=random.choice(responses), inline=True)
-  await ctx.reply(embed=embed)
+  embed.add_field(name=":question: :", value=question, inline=True)
+  embed.add_field(name="<:SlimeOk:853903876818599976> :", value=random.choice(responses), inline=True)
+  await ctx.reply(embed=embed, mention_author=False)
+
+##diablo
+#weather
+@bot.command(pass_context=True)
+async def weather(ctx, *, loc):
+  await ctx.reply("https://wttr.in/{0}.png?m".format(loc), mention_author=False)  
+
 
 ##help
 @bot.command()
 async def help(ctx): 
   embed = discord.Embed(title=":t_rex:  Rimuru", url="https://top.gg/bot/841573836445188136/vote", color=discord.Color.blue())    
   embed.add_field(name=":calling:  Interactions", value="`rimuru`  `yo`  `hi`  `hello`  `hey`  `goodmorning`  `goodnight`  `badslime`  `goodslime`  `bye`", inline=False)
-  embed.add_field(name=":jigsaw:  Fun", value="`cookie`  `weather`  `tierlist`", inline=False)       
+  embed.add_field(name=":jigsaw:  Fun", value="`cookie`  `tierlist`", inline=False)       
   embed.add_field(name=":earth_americas:  Profile", value="`simp`  `hearts`  `avatar`", inline=False) 
   embed.add_field(name=":performing_arts:  Roleplay", value="`nickname`  `sing`  `shizue`", inline=False) 
   embed.add_field(name=":adhesive_bandage:  Hard Drive", value="`neko`  `bunny`  `sauce`", inline=False)     
   embed.add_field(name=":jack_o_lantern:  Actions", value="`cuddle`  `hug`  `pat`  `kiss`  `lick`  `bite`  `poke`  `slap`  `punch`  `kill`", inline=False)      
   embed.add_field(name=":beers:  Snack and Bar", value="`pizza`  `hotdog`  `hamburger`  `sandwich`  `popcorn`  `doughnut`  `cupcake`  `cake`  `water`  `milk`  `coffee`  `juice`  `wine`  `beer`", inline=False)
-  embed.add_field(name=":crystal_ball:  Festival Games", value="`fortune`  `slots`  `throwball`  `ask`", inline=False) 
-  embed.add_field(name=":construction:  Diablo", value="`~`", inline=False)                          
+  embed.add_field(name=":crystal_ball:  Festival Games", value="`slots`  `throwball`  `ask`", inline=False) 
+  embed.add_field(name=":construction:  Diablo", value="`weather`", inline=False)                          
   await ctx.reply(embed=embed, mention_author=False) 
 
 ##run
