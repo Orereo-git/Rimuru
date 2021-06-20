@@ -515,7 +515,7 @@ async def ask(ctx, *, question=None):
  else:
   responses = ["too hard to tell 🧶", "it is quite possible 🧶", "definitely 🧶", "!! 🧶", "➜ nop 🧶", "no 🧶", "Yes 🧶", "i don't think so 🧶", "too soon 🧶", "i don't know 🧶", "no chance 🧶", "Yep 🧶", "no deal 🧶", "likewise 🧶"]
   embed=discord.Embed(color=discord.Color.blue()) 
-  embed.set_author(name="Ask Rimuru", icon_url="https://i.imgur.com/4TyRbLu.jpg")    
+  embed.set_author(name="Ask Rimuru??", icon_url="https://i.imgur.com/4TyRbLu.jpg")    
   embed.add_field(name=question, value="\u200b", inline=True)
   embed.set_thumbnail(url="https://i.imgur.com/QfW81jH.gif")
   load=  await ctx.reply(embed=embed, mention_author=False)
