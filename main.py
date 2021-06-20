@@ -277,7 +277,7 @@ async def punch(ctx, otaku: discord.Member=None):
     embed.set_author(name="tag @someone ⚠️", icon_url=ctx.author.avatar_url)      
     await ctx.send(embed=embed, mention_author=False)
   else:   
-    gif = ["https://i.imgur.com/AVnDEnx.gif", "https://i.imgur.com/A1uSB0q.gif", "https://i.imgur.com/xcGvJfh.gif", "https://i.imgur.com/aI3vBjX.gif", "https://i.imgur.com/sV44BxK.gif", "https://i.imgur.com/valk8VY.gif", "https://i.imgur.com/ALR0hTq.gif"]
+    gif = ["https://i.imgur.com/AVnDEnx.gif", "https://i.imgur.com/A1uSB0q.gif", "https://i.imgur.com/xcGvJfh.gif", "https://i.imgur.com/sV44BxK.gif", "https://i.imgur.com/valk8VY.gif", "https://i.imgur.com/ALR0hTq.gif"]
     embed=discord.Embed(color=discord.Color.blue()) 
     embed.set_author(name="{0} punches {1}!! whoom!!".format(ctx.message.author.name, otaku.name), icon_url=ctx.author.avatar_url)   
     embed.set_image(url=random.choice(gif))       
@@ -290,7 +290,7 @@ async def kill(ctx, otaku: discord.Member=None):
     embed.set_author(name="tag @someone ⚠️", icon_url=ctx.author.avatar_url)     
     await ctx.send(embed=embed, mention_author=False)
   else:  
-    gif = ["https://i.imgur.com/JUJcXN6.gif", "https://i.imgur.com/x7CVt5X.gif", "https://i.imgur.com/nNgJdci.gif", "https://i.imgur.com/eN5Pb2x.gif", "https://i.imgur.com/BwhkFBj.gif", "https://i.imgur.com/LBfxEry.gif", "https://i.imgur.com/XJmObBf.gif", "https://i.imgur.com/VUdvFGF.gif", "https://i.imgur.com/DP7h49u.gif"]
+    gif = ["https://i.imgur.com/JUJcXN6.gif", "https://i.imgur.com/x7CVt5X.gif", "https://i.imgur.com/eN5Pb2x.gif", "https://i.imgur.com/BwhkFBj.gif", "https://i.imgur.com/LBfxEry.gif", "https://i.imgur.com/XJmObBf.gif", "https://i.imgur.com/VUdvFGF.gif", "https://i.imgur.com/DP7h49u.gif"]
     embed=discord.Embed(color=discord.Color.blue()) 
     embed.set_author(name="{0} kills {1}!! wasted!!".format(ctx.message.author.name, otaku.name), icon_url=ctx.author.avatar_url)   
     embed.set_image(url=random.choice(gif))       
@@ -513,17 +513,16 @@ async def ask(ctx, *, question=None):
   embed.set_author(name="question?? ⚠️", icon_url=ctx.author.avatar_url)        
   await ctx.send(embed=embed, mention_author=False)
  else:
-  responses = ["**➜ pretty likely** 🧶", "**➜ too hard to tell** 🧶", "**➜ it is quite possible** 🧶", "**➜ definitely** 🧶", "**➜ !!** 🧶", "**➜ nop** 🧶", "**➜ no** 🧶", "**➜ Yes** 🧶", "**➜ i don't think so** 🧶", "**➜ not very likely** 🧶", "**➜ too soon** 🧶", "**➜ i don't know** 🧶", "**➜ no chance** 🧶"]
+  responses = ["too hard to tell 🧶", "it is quite possible 🧶", "definitely 🧶", "!! 🧶", "➜ nop 🧶", "no 🧶", "Yes 🧶", "i don't think so 🧶", "too soon 🧶", "i don't know 🧶", "no chance 🧶", "Yep 🧶", "no deal 🧶", "likewise 🧶"]
   embed=discord.Embed(color=discord.Color.blue()) 
   embed.set_author(name="Ask Rimuru", icon_url="https://i.imgur.com/4TyRbLu.jpg")    
   embed.add_field(name=question, value="\u200b", inline=True)
   embed.set_thumbnail(url="https://i.imgur.com/QfW81jH.gif")
   load=  await ctx.reply(embed=embed, mention_author=False)
-  await asyncio.sleep(1)
+  await asyncio.sleep(2)
   embed1=discord.Embed(color=discord.Color.blue()) 
   embed1.set_author(name="Ask Rimuru", icon_url="https://i.imgur.com/4TyRbLu.jpg")    
   embed1.add_field(name=question, value=random.choice(responses), inline=True)
-  embed1.set_thumbnail(url="https://i.imgur.com/QfW81jH.gif")
   await load.edit(embed=embed1, mention_author=False)
 
 ##diablo
