@@ -513,7 +513,7 @@ async def ask(ctx, *, question=None):
   embed.set_author(name="question?? ⚠️", icon_url=ctx.author.avatar_url)        
   await ctx.send(embed=embed, mention_author=False)
  else:
-  responses = ["too hard to tell 🧶", "it is quite possible 🧶", "definitely 🧶", "!! 🧶", "➜ nop 🧶", "no 🧶", "Yes 🧶", "i don't think so 🧶", "too soon 🧶", "i don't know 🧶", "no chance 🧶", "Yep 🧶", "no deal 🧶", "likewise 🧶"]
+  responses = ["too hard to tell 🧶", "it is quite possible 🧶", "definitely 🧶", "!! 🧶", "nop 🧶", "no 🧶", "Yes 🧶", "i don't think so 🧶", "too soon 🧶", "i don't know 🧶", "no chance 🧶", "Yep 🧶", "no deal 🧶", "likewise 🧶"]
   embed=discord.Embed(color=discord.Color.blue()) 
   embed.set_author(name="Ask Rimuru??", icon_url="https://i.imgur.com/4TyRbLu.jpg")    
   embed.add_field(name=question, value="\u200b", inline=True)
@@ -524,6 +524,35 @@ async def ask(ctx, *, question=None):
   embed1.set_author(name="Ask Rimuru", icon_url="https://i.imgur.com/4TyRbLu.jpg")    
   embed1.add_field(name=question, value=random.choice(responses), inline=True)
   await load.edit(embed=embed1, mention_author=False)
+
+#rps rock/papers/scissors
+#rps
+@bot.command(pass_context=True)
+async def rps(ctx, rps=None):
+  if rps == "rock":
+    embed=discord.Embed(color=discord.Color.blue())
+    embed.set_author(name="i am picking Paper!! i won!!", icon_url=ctx.author.avatar_url)    
+    await ctx.reply(embed=embed, mention_author=False)
+  if rps == "paper":
+    embed=discord.Embed(color=discord.Color.blue())
+    embed.set_author(name="i am picking Scissors!! i won!!", icon_url=ctx.author.avatar_url)    
+    await ctx.reply(embed=embed, mention_author=False)
+  if rps == "scissors": 
+    embed=discord.Embed(color=discord.Color.blue())
+    embed.set_author(name="i am picking Rock!! i won!!", icon_url=ctx.author.avatar_url)    
+    await ctx.reply(embed=embed, mention_author=False)
+  if rps == "r":
+    embed=discord.Embed(color=discord.Color.blue())
+    embed.set_author(name="i am picking Paper!! i won!!", icon_url=ctx.author.avatar_url)    
+    await ctx.reply(embed=embed, mention_author=False)
+  if rps == "p":
+    embed=discord.Embed(color=discord.Color.blue())
+    embed.set_author(name="i am picking Scissors!! i won!!", icon_url=ctx.author.avatar_url)    
+    await ctx.reply(embed=embed, mention_author=False)
+  if rps == "s": 
+    embed=discord.Embed(color=discord.Color.blue())
+    embed.set_author(name="i am picking Rock!! i won!!", icon_url=ctx.author.avatar_url)    
+    await ctx.reply(embed=embed, mention_author=False)
 
 ##diablo
 #god
@@ -543,7 +572,7 @@ async def help(ctx):
   embed.add_field(name=":adhesive_bandage:  Hard Drive", value="`neko`  `bunny`  `sauce`", inline=False)     
   embed.add_field(name=":jack_o_lantern:  Actions", value="`cuddle`  `hug`  `pat`  `kiss`  `lick`  `bite`  `poke`  `slap`  `punch`  `kill`", inline=False)      
   embed.add_field(name=":beers:  Snack and Bar", value="`pizza`  `hotdog`  `hamburger`  `sandwich`  `popcorn`  `doughnut`  `cupcake`  `cake`  `water`  `milk`  `coffee`  `juice`  `wine`  `beer`", inline=False)
-  embed.add_field(name=":crystal_ball:  Festival Games", value="`slots`  `throwball`  `ask`", inline=False) 
+  embed.add_field(name=":crystal_ball:  Festival Games", value="`slots`  `throwball`  `rps r/p/s`  `ask`", inline=False) 
   embed.add_field(name=":construction:  Diablo", value="`god`", inline=False)                          
   await ctx.reply(embed=embed, mention_author=False) 
 
