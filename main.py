@@ -515,15 +515,8 @@ async def ask(ctx, *, question=None):
  else:
   responses = ["too hard to tell 🧶", "it is quite possible 🧶", "definitely 🧶", "!! 🧶", "nop 🧶", "no 🧶", "Yes 🧶", "i don't think so 🧶", "too soon 🧶", "i don't know 🧶", "no chance 🧶", "Yep 🧶", "no deal 🧶", "likewise 🧶"]
   embed=discord.Embed(color=discord.Color.blue()) 
-  embed.set_author(name="Ask Rimuru?", icon_url="https://i.imgur.com/4TyRbLu.jpg")    
-  embed.add_field(name="{0}?".format(question), value=":8ball:", inline=True)
-  load=  await ctx.reply(embed=embed, mention_author=False)
-  await asyncio.sleep(2)
-  embed1=discord.Embed(color=discord.Color.blue()) 
-  embed1.set_author(name="Ask Rimuru?", icon_url="https://i.imgur.com/4TyRbLu.jpg")    
-  embed1.add_field(name="{0}?".format(question), value=":8ball:", inline=True)
-  embed1.set_footer(text=random.choice(responses))   
-  await load.edit(embed=embed1, mention_author=False)
+  embed.set_author(name=random.choice(responses), icon_url="https://i.imgur.com/4TyRbLu.jpg")    
+  await ctx.reply(embed=embed, mention_author=False)
 
 #rps rock/papers/scissors
 #rps
