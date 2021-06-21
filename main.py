@@ -93,7 +93,7 @@ async def cookie(ctx, user: discord.Member=None):
 @bot.command(pass_context=True)
 async def ratewaifu(ctx, *, waifu=None): 
   if waifu:
-    rating = ["8️⃣", "9️⃣", "8️⃣", "9️⃣", "1️⃣0️⃣"]
+    rating = ["8️⃣", "9️⃣", "1️⃣0️⃣", "7️⃣", "6️⃣", "5️⃣", "4️⃣", "3️⃣", "2️⃣", "1️⃣"]
     embed=discord.Embed(color=discord.Color.blue()) 
     embed.set_author(name="{0}".format(random.choice(rating)), icon_url="https://i.imgur.com/GGzfgHn.jpg")         
     await ctx.send(embed=embed, mention_author=False) 
@@ -108,6 +108,13 @@ async def ratewaifu(ctx, *, waifu=None):
 async def tierlist(ctx):
   embed=discord.Embed(color=discord.Color.blue()) 
   embed.set_image(url="https://i.imgur.com/kHH1AKB.png")     
+  await ctx.reply(embed=embed, mention_author=False) 
+
+#say
+@bot.command(pass_context=True)
+async def say(ctx, *, text):
+  embed=discord.Embed(color=discord.Color.blue()) 
+  embed.set_image(url="https://res.cloudinary.com/dr9n1yibx/image/upload/w_240,y_260,x_8,a_-20,h_60,g_north,c_fit,l_text:Indie%20Flower_30_center_line_spacing_-50:{0}/v1624270041/1.png".format(text))    
   await ctx.reply(embed=embed, mention_author=False) 
 
 ##profile
