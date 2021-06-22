@@ -110,13 +110,6 @@ async def tierlist(ctx):
   embed.set_image(url="https://i.imgur.com/kHH1AKB.png")     
   await ctx.reply(embed=embed, mention_author=False) 
 
-#say
-@bot.command(pass_context=True)
-async def say(ctx, *, text):
-  embed=discord.Embed(color=discord.Color.blue()) 
-  embed.set_image(url="https://res.cloudinary.com/dr9n1yibx/image/upload/w_240,y_260,x_8,a_-20,h_60,g_north,c_fit,l_text:Indie%20Flower_30_center_line_spacing_-50:{0}/v1624270041/1.png".format(text))    
-  await ctx.reply(embed=embed, mention_author=False) 
-
 ##profile
 #simp
 @bot.command()
@@ -553,7 +546,7 @@ async def rps(ctx, rps=None):
     await ctx.reply(embed=embed, mention_author=False)
   if rps == "scissors": 
     embed=discord.Embed(color=discord.Color.blue())
-    embed.set_author(name="i am picking Rock!! i won!! 👊🏼", icon_url="https://i.imgur.com/GGzfgHn.jpg")    
+    embed.set_author(name="i am picking Rock!! i won!! 👊🏻", icon_url="https://i.imgur.com/GGzfgHn.jpg")    
     await ctx.reply(embed=embed, mention_author=False)
   if rps == "r":
     embed=discord.Embed(color=discord.Color.blue())
@@ -565,7 +558,7 @@ async def rps(ctx, rps=None):
     await ctx.reply(embed=embed, mention_author=False)
   if rps == "s": 
     embed=discord.Embed(color=discord.Color.blue())
-    embed.set_author(name="i am picking Rock!! i won!! 👊🏼", icon_url="https://i.imgur.com/GGzfgHn.jpg")    
+    embed.set_author(name="i am picking Rock!! i won!! 👊🏻", icon_url="https://i.imgur.com/GGzfgHn.jpg")    
     await ctx.reply(embed=embed, mention_author=False)
 
 ##diablo
