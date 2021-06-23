@@ -569,22 +569,22 @@ async def god(ctx):
 
 #countdown
 @bot.command()
-async def countdown(ctx, seconds):
+async def countdown(ctx, seconds, *, timername):
   try:
     secondint = int(seconds)
     if secondint <= 0:
-      await ctx.send("`I dont think im allowed to do negatives`")
+      await ctx.send("`Error number`")
       raise BaseException
-    message = await ctx.send(f"`Timer: {seconds}`")
+    message = await ctx.send(f"`{timername}: {seconds}`")
     while True:
       secondint -= 1
       if secondint == 0:
-        await message.edit(content="`Ended`")
+        await message.edit(content=f"`{timername} ended`{ctx.message.author.mention}")
         break
-      await message.edit(content=f"`Timer: {secondint}`")
+      await message.edit(content=f"`{timername} {secondint}`")
       await asyncio.sleep(1)
   except ValueError:
-    await ctx.send("Must be a number!")
+    await ctx.send("`Error number`")
 
 ##help
 @bot.command()
