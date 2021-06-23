@@ -570,6 +570,10 @@ async def god(ctx):
 #countdown
 @bot.command()
 async def countdown(ctx, seconds, *, timername):
+  if not timername:
+    await ctx.send("`counddown <time in seconds> <timer name>`") 
+  if not seconds:
+    await ctx.send("`counddown <time in seconds> <timer name>`") 
   try:
     secondint = int(seconds)
     if secondint <= 0:
@@ -598,7 +602,7 @@ async def help(ctx):
   embed.add_field(name=":adhesive_bandage:  Hard Drive", value="`neko`  `bunny`  `sauce`", inline=False)     
   embed.add_field(name=":jack_o_lantern:  Actions", value="`cuddle`  `hug`  `pat`  `kiss`  `lick`  `bite`  `poke`  `slap`  `punch`  `kill`", inline=False)      
   embed.add_field(name=":beers:  Snack and Bar", value="`pizza`  `hotdog`  `hamburger`  `sandwich`  `popcorn`  `doughnut`  `cupcake`  `cake`  `water`  `milk`  `coffee`  `juice`  `wine`  `beer`", inline=False)
-  embed.add_field(name=":crystal_ball:  Festival Games", value="`slots`  `throwball`  `rps r/p/s`  `ask`", inline=False) 
+  embed.add_field(name=":crystal_ball:  Festival Games", value="`slots`  `throwball`  `rps <r/p/s>`  `ask`", inline=False) 
   embed.add_field(name=":construction:  Diablo", value="`god`  `countdown`", inline=False)                          
   await ctx.reply(embed=embed, mention_author=False) 
 
