@@ -570,21 +570,21 @@ async def god(ctx):
 #countdown
 @bot.command()
 async def countdown(ctx, seconds):
-    try:
-        secondint = int(seconds)
-        if secondint <= 0:
-            await ctx.send("`I dont think im allowed to do negatives`")
-            raise BaseException
-        message = await ctx.send("`Timer: {seconds}`")
-        while True:
-            secondint -= 1
-            if secondint == 0:
-                await message.edit(content="`Ended`")
-                break
-            await message.edit(content=f"`Timer: {secondint}`")
-            await asyncio.sleep(1)
-    except ValueError:
-        await ctx.send("Must be a number!")
+  try:
+    secondint = int(seconds)
+    if secondint <= 0:
+      await ctx.send("`I dont think im allowed to do negatives`")
+      raise BaseException
+    message = await ctx.send(f"`Timer: {seconds}`")
+    while True:
+      secondint -= 1
+      if secondint == 0:
+        await message.edit(content="`Ended`")
+        break
+      await message.edit(content=f"`Timer: {secondint}`")
+      await asyncio.sleep(1)
+  except ValueError:
+    await ctx.send("Must be a number!")
 
 ##help
 @bot.command()
