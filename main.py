@@ -1,6 +1,7 @@
 import os
 import json
 import asyncio
+#random
 import random
 from random import randint
 #discord
@@ -568,6 +569,25 @@ async def god(ctx):
   messages = ["`Rim#0003`"]
   await ctx.reply(random.choice(messages), mention_author=False)
 
+#countdown
+@bot.command()
+async def countdown(ctx, seconds):
+    try:
+        secondint = int(seconds)
+        if secondint <= 0:
+            await ctx.send("`I dont think im allowed to do negatives`")
+            raise BaseException
+        message = await ctx.send("`Timer: {seconds}`")
+        while True:
+            secondint -= 1
+            if secondint == 0:
+                await message.edit(content="`Ended`")
+                break
+            await message.edit(content=f"`Timer: {secondint}`")
+            await asyncio.sleep(1)
+    except ValueError:
+        await ctx.send("Must be a number!")
+
 ##help
 @bot.command()
 async def help(ctx): 
@@ -581,7 +601,7 @@ async def help(ctx):
   embed.add_field(name=":jack_o_lantern:  Actions", value="`cuddle`  `hug`  `pat`  `kiss`  `lick`  `bite`  `poke`  `slap`  `punch`  `kill`", inline=False)      
   embed.add_field(name=":beers:  Snack and Bar", value="`pizza`  `hotdog`  `hamburger`  `sandwich`  `popcorn`  `doughnut`  `cupcake`  `cake`  `water`  `milk`  `coffee`  `juice`  `wine`  `beer`", inline=False)
   embed.add_field(name=":crystal_ball:  Festival Games", value="`slots`  `throwball`  `rps r/p/s`  `ask`", inline=False) 
-  embed.add_field(name=":construction:  Diablo", value="`god`", inline=False)                          
+  embed.add_field(name=":construction:  Diablo", value="`god`  `countdown`", inline=False)                          
   await ctx.reply(embed=embed, mention_author=False) 
 
 ##run
