@@ -7,8 +7,6 @@ from random import randint
 #discord
 import discord
 from discord.ext import commands
-#keep awake
-from keep_awake import keep_awake
 
 bot = commands.Bot(command_prefix='~')
 bot.remove_command('help')
@@ -605,5 +603,4 @@ async def help(ctx):
   await ctx.reply(embed=embed, mention_author=False) 
 
 ##run
-keep_awake()
 bot.run(os.getenv('TOKEN'))        
