@@ -535,6 +535,10 @@ async def ask(ctx, *, question=None):
 #rps
 @bot.command(pass_context=True)
 async def rps(ctx, rps=None):
+  if not rps:
+    embed=discord.Embed(color=discord.Color.blue())
+    embed.set_author(name="Pick one rps <r/p/s>", icon_url="https://i.imgur.com/GGzfgHn.jpg")    
+    await ctx.reply(embed=embed, mention_author=False)
   if rps == "rock":
     embed=discord.Embed(color=discord.Color.blue())
     embed.set_author(name="i am picking Paper!! i won!! ✌🏻", icon_url="https://i.imgur.com/GGzfgHn.jpg")    
@@ -562,18 +566,20 @@ async def rps(ctx, rps=None):
 
 ##diablo
 #god
-@bot.command()
+@bot.command(pass_context=True)
 async def god(ctx):
   messages = ["`Rim#0003`"]
   await ctx.reply(random.choice(messages), mention_author=False)
 
 #countdown
 @bot.command()
-async def countdown(ctx, seconds, *, timername):
+async def countdown(ctx, seconds=None, *, timername=None):
   if not timername:
-    await ctx.send("`counddown <time in seconds> <timer name>`") 
+    await ctx.send("`countdown <time in seconds> <timer name>`") 
+    raise BaseException
   if not seconds:
-    await ctx.send("`counddown <time in seconds> <timer name>`") 
+    await ctx.send("`countdown <time in seconds> <timer name>`") 
+    raise BaseException
   try:
     secondint = int(seconds)
     if secondint <= 0:
