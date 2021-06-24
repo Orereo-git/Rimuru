@@ -7,6 +7,8 @@ from random import randint
 #discord
 import discord
 from discord.ext import commands
+#keep awake
+from keep_awake import keep_awake
 
 bot = commands.Bot(command_prefix='~')
 bot.remove_command('help')
@@ -536,8 +538,8 @@ async def ask(ctx, *, question=None):
 @bot.command(pass_context=True)
 async def rps(ctx, rps=None):
   if not rps:
-    embed=discord.Embed(color=discord.Color.blue())
-    embed.set_author(name="Pick one rps <r/p/s>", icon_url="https://i.imgur.com/GGzfgHn.jpg")    
+    embed=discord.Embed(color=discord.Color.dark_red())
+    embed.set_author(name="Pick one rps <r/p/s> ⚠️", icon_url="https://i.imgur.com/GGzfgHn.jpg")    
     await ctx.reply(embed=embed, mention_author=False)
   if rps == "rock":
     embed=discord.Embed(color=discord.Color.blue())
@@ -613,4 +615,5 @@ async def help(ctx):
   await ctx.reply(embed=embed, mention_author=False) 
 
 ##run
+keep_awake()
 bot.run(os.getenv('TOKEN'))        
