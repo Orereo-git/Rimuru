@@ -594,13 +594,7 @@ async def countdown(ctx, seconds=None, type=None, *, timername=None):
   if not seconds:
     await ctx.send("`countdown <time in seconds> <timer name>`") 
     raise BaseException
-  secondint = int(seconds)
-  if type == "m":
-    secondint = secondint * 60
-  if type == "h":
-    secondint = secondint * 3600
-  if type == "s":
-    secondint = secondint * 1    
+  secondint = int(seconds)   
   try:
     if secondint <= 0:
       await ctx.send("`Error number`")
