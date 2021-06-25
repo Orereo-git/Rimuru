@@ -522,7 +522,7 @@ async def throwball(ctx):
   embed5.add_field(name=":soccer:", value=":soccer:", inline=False)
   embed5.add_field(name=":soccer:", value=":soccer:", inline=False) 
   embed5.set_footer(text="wowo~ a clear hit!!")   
-  ems = [embed1, embed2, embed3, embed4, embed5]                                     
+  ems = [embed1, embed5, embed2, embed5, embed3, embed5, embed4, embed5]                                     
   em = await ctx.reply(embed=embed, mention_author=False) 
   await em.add_reaction('⚽') 
   def check(reaction, user):
@@ -539,9 +539,10 @@ async def ask(ctx, *, question=None):
   embed.set_author(name="question?? ⚠️", icon_url=icon)        
   await ctx.send(embed=embed, mention_author=False)
  else:
-  responses = ["too hard to tell 🧶", "it is quite possible 🧶", "definitely 🧶", "!! 🧶", "nop 🧶", "no 🧶", "Yes 🧶", "i don't think so 🧶", "too soon 🧶", "i don't know 🧶", "no chance 🧶", "Yep 🧶", "no deal 🧶", "likewise 🧶"]
+  responses = ["too hard to tell 🎱", "it is quite possible 🎱", "definitely 🎱", "!! 🎱", "nop 🎱", "no 🎱", "Yes 🎱", "i don't think so 🎱", "too soon 🎱", "i don't know 🎱", "no chance 🎱", "Yep 🎱", "no deal 🎱", "likewise 🎱"]
   embed=discord.Embed(color=discord.Color.blue()) 
-  embed.set_author(name=random.choice(responses), icon_url=icon)    
+  embed.set_author(name=random.choice(responses), icon_url=icon)  
+  embed.set_footer(text="Rimuru-sama has spoken!")   
   await ctx.reply(embed=embed, mention_author=False)
 
 #rps rock/papers/scissors
@@ -592,7 +593,7 @@ async def god(ctx):
 
 #countdown
 @bot.command()
-async def countdown(ctx, seconds=None, type=None, *, timername=None):
+async def countdown(ctx, seconds=None, *, timername=None):
   if not timername:
     await ctx.send("`countdown <time in seconds> <timer name>`") 
     raise BaseException
@@ -619,14 +620,15 @@ async def countdown(ctx, seconds=None, type=None, *, timername=None):
 #send
 @bot.command()
 async def send(ctx, member:discord.Member=None, *, msg=None):
+ rim=814512313084149804 
+ if ctx.message.author.id != rim:
+    await ctx.send("`God only command`")
+    await ctx.message.add_reaction('❌') 
  rim=814512313084149804
  if ctx.message.author.id == rim:
     channel = await member.create_dm()
     await channel.send(msg)
-    await ctx.message.add_reaction('✅') 
- if ctx.message.author.id != rim:
-    await channel.send("`God only command`")
-    await ctx.message.add_reaction('❌') 
+    await ctx.message.add_reaction('✅')
 
 ##help
 @bot.command()
