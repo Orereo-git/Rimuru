@@ -545,37 +545,37 @@ async def ask(ctx, *, question=None):
 async def rps(ctx, rps=None):
   if not rps:
     embed=discord.Embed(color=discord.Color.dark_red())
-    embed.set_author(name="Pick one rps <r/p/s> ⚠️", icon_url="https://i.imgur.com/IehVlWn.png")    
+    embed.set_author(name="Pick one rps <r/p/s> ⚠️", icon_url=icon)    
     await ctx.reply(embed=embed, mention_author=False)
   if rps == "rock":
     embed=discord.Embed(color=discord.Color.blue())
     rr= ["i am picking Paper!! i won!! 👊🏻", "i am picking Paper!! i won!! 👊🏻", "i picked ✌🏻!! baka!!"]
-    embed.set_author(name=random.choice(rr), icon_url=ctx.message.author.avatar_url)    
+    embed.set_author(name=random.choice(rr), icon_url=icon)    
     await ctx.reply(embed=embed, mention_author=False)
   if rps == "paper":
     embed=discord.Embed(color=discord.Color.blue())
     pp= ["i am picking Scissors!! i won!! ✌🏻", "i am picking Scissors!! i won!! ✌🏻", "i picked 👊🏻!! baka!!"]
-    embed.set_author(name=random.choice(pp), icon_url=ctx.message.author.avatar_url)     
+    embed.set_author(name=random.choice(pp), icon_url=icon)     
     await ctx.reply(embed=embed, mention_author=False)
   if rps == "scissors": 
     embed=discord.Embed(color=discord.Color.blue())
     ss= ["i am picking Rock!! i won!! 👊🏻", "i am picking Rock!! i won!! 👊🏻", "i picked ✋🏻!! baka!!"]
-    embed.set_author(name=random.choice(ss), icon_url=ctx.message.author.avatar_url)    
+    embed.set_author(name=random.choice(ss), icon_url=icon)    
     await ctx.reply(embed=embed, mention_author=False)
   if rps == "r":
     embed=discord.Embed(color=discord.Color.blue())
     rrr= ["i am picking Paper!! i won!! 👊🏻", "i am picking Paper!! i won!! 👊🏻", "i picked ✌🏻!! baka!!"]
-    embed.set_author(name=random.choice(rrr), icon_url=ctx.message.author.avatar_url)     
+    embed.set_author(name=random.choice(rrr), icon_url=icon)     
     await ctx.reply(embed=embed, mention_author=False)
   if rps == "p":
     embed=discord.Embed(color=discord.Color.blue())
     ppp= ["i am picking Scissors!! i won!! ✌🏻", "i am picking Scissors!! i won!! ✌🏻", "i picked 👊🏻!! baka!!"]
-    embed.set_author(name=random.choice(ppp), icon_url=ctx.message.author.avatar_url)  
+    embed.set_author(name=random.choice(ppp), icon_url=icon)  
     await ctx.reply(embed=embed, mention_author=False)
   if rps == "s": 
     embed=discord.Embed(color=discord.Color.blue())
     sss= ["i am picking Rock!! i won!! 👊🏻", "i am picking Rock!! i won!! 👊🏻", "i picked ✋🏻!! baka!!"]
-    embed.set_author(name=random.choice(sss), icon_url=ctx.message.author.avatar_url)    
+    embed.set_author(name=random.choice(sss), icon_url=icon)    
     await ctx.reply(embed=embed, mention_author=False)
 
 ##diablo
