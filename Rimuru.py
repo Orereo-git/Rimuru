@@ -99,7 +99,11 @@ async def ratewaifu(ctx, *, waifu=None):
     embed=discord.Embed(color=discord.Color.blue()) 
     embed.set_author(name="1️⃣0️⃣", icon_url=icon)         
     await ctx.send(embed=embed, mention_author=False) 
-  if waifu != "rimuru":
+  elif waifu == "shizue":
+    embed=discord.Embed(color=discord.Color.blue()) 
+    embed.set_author(name="1️⃣0️⃣", icon_url=icon)         
+    await ctx.send(embed=embed, mention_author=False) 
+  else:
     rating = ["8️⃣", "9️⃣", "7️⃣", "6️⃣", "5️⃣", "4️⃣", "3️⃣", "2️⃣", "1️⃣"]
     embed=discord.Embed(color=discord.Color.blue()) 
     embed.set_author(name="{0}".format(random.choice(rating)), icon_url=icon)         
@@ -542,7 +546,7 @@ async def ask(ctx, *, question=None):
   responses = ["too hard to tell 🎱", "it is quite possible 🎱", "definitely 🎱", "!! 🎱", "nop 🎱", "no 🎱", "Yes 🎱", "i don't think so 🎱", "too soon 🎱", "i don't know 🎱", "no chance 🎱", "Yep 🎱", "no deal 🎱", "likewise 🎱"]
   embed=discord.Embed(color=discord.Color.blue()) 
   embed.set_author(name=random.choice(responses), icon_url=icon)  
-  embed.set_footer(text="Rimuru-sama has spoken!")   
+  embed.set_footer(text="Rimuru-sama has spoken!!")   
   await ctx.reply(embed=embed, mention_author=False)
 
 #rps rock/papers/scissors
@@ -555,7 +559,7 @@ async def rps(ctx, rps=None):
     await ctx.reply(embed=embed, mention_author=False)
   if rps == "rock":
     embed=discord.Embed(color=discord.Color.blue())
-    rr= ["i am picking Paper!! i won!! 👊🏻", "i am picking Paper!! i won!! 👊🏻", "i picked ✌🏻!! baka!!"]
+    rr= ["i am picking Paper!! i won!! ✋🏻", "i am picking Paper!! i won!! ✋🏻", "i picked ✌🏻!! baka!!"]
     embed.set_author(name=random.choice(rr), icon_url=icon)    
     await ctx.reply(embed=embed, mention_author=False)
   if rps == "paper":
@@ -570,7 +574,7 @@ async def rps(ctx, rps=None):
     await ctx.reply(embed=embed, mention_author=False)
   if rps == "r":
     embed=discord.Embed(color=discord.Color.blue())
-    rrr= ["i am picking Paper!! i won!! 👊🏻", "i am picking Paper!! i won!! 👊🏻", "i picked ✌🏻!! baka!!"]
+    rrr= ["i am picking Paper!! i won!! ✋🏻", "i am picking Paper!! i won!! ✋🏻", "i picked ✌🏻!! baka!!"]
     embed.set_author(name=random.choice(rrr), icon_url=icon)     
     await ctx.reply(embed=embed, mention_author=False)
   if rps == "p":
