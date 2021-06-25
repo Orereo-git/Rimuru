@@ -26,7 +26,7 @@ def randomN(n):
   return randint(range_start, range_end)
 
 #icon
-i = ["https://i.imgur.com/KBMesb1.png", "https://i.imgur.com/IehVlWn.png"]
+i = ["https://i.imgur.com/IehVlWn.png", "https://i.imgur.com/KBMesb1.png", "https://i.imgur.com/IehVlWn.png"]
 icon = random.choice(i)
 
 ##Events
@@ -95,8 +95,12 @@ async def cookie(ctx, user: discord.Member=None):
 #ratewaifu
 @bot.command(pass_context=True)
 async def ratewaifu(ctx, *, waifu=None): 
-  if waifu:
-    rating = ["8️⃣", "9️⃣", "1️⃣0️⃣", "7️⃣", "6️⃣", "5️⃣", "4️⃣", "3️⃣", "2️⃣", "1️⃣"]
+  if waifu == "rimuru":
+    embed=discord.Embed(color=discord.Color.blue()) 
+    embed.set_author(name="1️⃣0️⃣", icon_url=icon)         
+    await ctx.send(embed=embed, mention_author=False) 
+  if waifu != "rimuru":
+    rating = ["8️⃣", "9️⃣", "7️⃣", "6️⃣", "5️⃣", "4️⃣", "3️⃣", "2️⃣", "1️⃣"]
     embed=discord.Embed(color=discord.Color.blue()) 
     embed.set_author(name="{0}".format(random.choice(rating)), icon_url=icon)         
     await ctx.send(embed=embed, mention_author=False) 
