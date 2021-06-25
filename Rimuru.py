@@ -164,7 +164,8 @@ async def nickname(ctx, user: discord.Member=None, *, name=None):
   nicknames = ["Acheron", "Adbeel", "Azazel", "Belial", "Buer", "Charon", "Dagon", "Damien", "Eligor", "Forneus", "Gresill", "Helel", "Iblis", "Lestat", "Leviatha", "Lucifer", "Malacoda", "Naberius", "Orobas", "Radna", "Samael", "Sedit", "Seth", "Ubel", "Zagan", "Achlys", "Akeldama", "Carmen", "Carmilla", "Claudia", "Enyo", "Gello", "Hel", "Lilin", "Mare", "Mircalla", "Pandora", "Puck", "Selene"]
   await ctx.author.edit(nick=(random.choice(nicknames)))
   await ctx.message.add_reaction('✅')  
- else:   
+ rim=814512313084149804
+ if ctx.message.author.id == rim:  
   await user.edit(nick=name)         
   await ctx.message.add_reaction('✅')  
 
@@ -582,7 +583,7 @@ async def rps(ctx, rps=None):
     embed.set_author(name=random.choice(sss), icon_url=icon)    
     await ctx.reply(embed=embed, mention_author=False)
 
-##diablo
+##Raphael
 #god
 @bot.command(pass_context=True)
 async def god(ctx):
@@ -618,14 +619,14 @@ async def countdown(ctx, seconds=None, type=None, *, timername=None):
 #send
 @bot.command()
 async def send(ctx, member:discord.Member=None, *, msg=None):
-  if not msg:
-    await ctx.send("`send <user> <msg>`") 
-  if not member:
-    await ctx.send("`send <user> <msg>`") 
-  else:
+ rim=814512313084149804
+ if ctx.message.author.id == rim:
     channel = await member.create_dm()
     await channel.send(msg)
     await ctx.message.add_reaction('✅') 
+ if ctx.message.author.id != rim:
+    await channel.send("`God only command`")
+    await ctx.message.add_reaction('❌') 
 
 ##help
 @bot.command()
@@ -640,7 +641,7 @@ async def help(ctx):
   embed.add_field(name=":jack_o_lantern:  Actions", value="`cuddle`  `hug`  `pat`  `kiss`  `lick`  `bite`  `poke`  `slap`  `punch`  `kill`", inline=False)      
   embed.add_field(name=":beers:  Snack and Bar", value="`pizza`  `hotdog`  `hamburger`  `sandwich`  `popcorn`  `doughnut`  `cupcake`  `cake`  `water`  `milk`  `coffee`  `juice`  `wine`  `beer`", inline=False)
   embed.add_field(name=":crystal_ball:  Festival Games", value="`slots`  `throwball`  `rps <r/p/s>`  `ask <query>`", inline=False) 
-  embed.add_field(name=":construction:  Diablo", value="`god`  `countdown`  `send`", inline=False)                          
+  embed.add_field(name=":package:  Raphael", value="`god`  `countdown`  `send`", inline=False)                          
   await ctx.reply(embed=embed, mention_author=False) 
 
 ##run
