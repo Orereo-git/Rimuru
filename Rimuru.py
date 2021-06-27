@@ -30,10 +30,10 @@ while True:
     num2 = float(input("2nd number: "))
 
     if operation == '+':
-     print(num1, "+", num2, "=", add(num1, num2))
+      print(num1, "+", num2, "=", add(num1, num2))
 
     if operation == '-':
-     print(num1, "-", num2, "=", subtract(num1, num2))
+      print(num1, "-", num2, "=", subtract(num1, num2))
 
     if operation == '*':
       print(num1, "*", num2, "=", multiply(num1, num2))
