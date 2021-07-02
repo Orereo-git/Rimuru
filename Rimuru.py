@@ -363,14 +363,7 @@ async def pizza(ctx):
   embed=discord.Embed(color=discord.Color.blue()) 
   embed.set_author(name="{0} noms pizza!! 🍕".format(ctx.message.author.name), icon_url=ctx.message.author.avatar_url)     
   embed.set_image(url=random.choice(gif))  
-  await ctx.reply(embed=embed, mention_author=False)          
-@bot.command()
-async def hotdog(ctx):
-  gif= ["https://i.imgur.com/fj5OyK3.gif", "https://i.imgur.com/R5a6mIq.gif"]
-  embed=discord.Embed(color=discord.Color.blue()) 
-  embed.set_author(name="{0} noms hotdog!! 🌭".format(ctx.message.author.name), icon_url=ctx.message.author.avatar_url)       
-  embed.set_image(url=random.choice(gif))  
-  await ctx.reply(embed=embed, mention_author=False)    
+  await ctx.reply(embed=embed, mention_author=False)           
 @bot.command()
 async def hamburger(ctx):
   gif= ["https://i.imgur.com/pPJu9Ct.gif", "https://i.imgur.com/t9J3BWH.gif", "https://i.imgur.com/CMtIZs9.gif", "https://i.imgur.com/lWEaI4c.gif", "https://i.imgur.com/N92i3sW.gif"]
@@ -400,13 +393,6 @@ async def doughnut(ctx):
   embed.set_image(url=random.choice(gif))  
   await ctx.reply(embed=embed, mention_author=False)   
 @bot.command()
-async def cupcake(ctx):
-  gif= ["https://i.imgur.com/h7vxIT7.gif", "https://i.imgur.com/Iicw9Kr.gif"]
-  embed=discord.Embed(color=discord.Color.blue()) 
-  embed.set_author(name="{0} noms cupcake!! 🧁".format(ctx.message.author.name), icon_url=ctx.message.author.avatar_url)     
-  embed.set_image(url=random.choice(gif))  
-  await ctx.reply(embed=embed, mention_author=False)   
-@bot.command()
 async def cake(ctx):
   gif= ["https://i.imgur.com/As4ee6u.gif", "https://i.imgur.com/Xw1pvrO.gif"]
   embed=discord.Embed(color=discord.Color.blue()) 
@@ -422,13 +408,6 @@ async def beer(ctx):
   embed.set_author(name="{0} sips beer!! 🍺".format(ctx.message.author.name), icon_url=ctx.message.author.avatar_url)     
   embed.set_image(url=random.choice(gif))  
   await ctx.reply(embed=embed, mention_author=False)                          
-@bot.command()
-async def wine(ctx):
-  gif= ["https://i.imgur.com/ufls5Qk.gif"]
-  embed=discord.Embed(color=discord.Color.blue()) 
-  embed.set_author(name="{0} sips wine!! 🍷".format(ctx.message.author.name), icon_url=ctx.message.author.avatar_url)     
-  embed.set_image(url=random.choice(gif))  
-  await ctx.reply(embed=embed, mention_author=False)  
 @bot.command()
 async def juice(ctx):
   gif= ["https://i.imgur.com/83L84cD.gif"]
@@ -647,7 +626,7 @@ async def help(ctx):
   embed.add_field(name=":performing_arts:  Roleplay", value="`nickname`  `sing`", inline=False) 
   embed.add_field(name=":adhesive_bandage:  Hard Drive", value="`neko`  `bunny`  `sauce`", inline=False)     
   embed.add_field(name=":jack_o_lantern:  Actions", value="`cuddle`  `hug`  `pat`  `kiss`  `lick`  `bite`  `poke`  `slap`  `punch`  `kill`", inline=False)      
-  embed.add_field(name=":beers:  Snack and Bar", value="`pizza`  `hotdog`  `hamburger`  `sandwich`  `popcorn`  `doughnut`  `cupcake`  `cake`  `water`  `milk`  `coffee`  `juice`  `wine`  `beer`", inline=False)
+  embed.add_field(name=":beers:  Snack and Bar", value="`pizza`  `hamburger`  `sandwich`  `popcorn`  `doughnut`  `cake`  `water`  `milk`  `coffee`  `juice`  `beer`", inline=False)
   embed.add_field(name=":crystal_ball:  Festival Games", value="`slots`  `throwball`  `rps <r/p/s>`  `ask <query>`", inline=False) 
   embed.add_field(name=":package:  Raphael", value="`god`  `countdown`  `send`", inline=False)                          
   await ctx.reply(embed=embed, mention_author=False) 
